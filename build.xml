@@ -3,6 +3,10 @@
   <property environment="env" />
   <property file="build.properties" />
 
+  <property name="javadoc.dir" location="docs" />
+
+  <!-- -->
+
   <target name="all" depends="clean, initial_message, eclipse, key, lib, maven, switch_jdk, final_message" description="Install all"/>
 
   <target name="clean" description="Clean up">
@@ -214,6 +218,19 @@
       <arg value="-c" />
       <arg value="echo '2' | alternatives --config java" />
     </exec>
+  </target>
+
+  <target name="javadoc">
+    <javadoc destdir="${javadoc.dir}" >
+      <sourcepath path="workspace/Aplot/src" />
+      <sourcepath path="workspace/Iplot/src" />
+      <sourcepath path="workspace/JnlpGenerator/src" />
+      <sourcepath path="workspace/Judas/src" />
+      <sourcepath path="workspace/Mplot/src" />
+      <sourcepath path="workspace/Plugins/src" />
+      <sourcepath path="workspace/Tplot/src" />
+      <sourcepath path="workspace/XYplot/src" />
+    </javadoc>
   </target>
 
 </project>

@@ -16,10 +16,6 @@ import java.awt.event.ActionEvent;
 import java.awt.print.PrinterJob;
 import java.io.File;
 import java.io.FileInputStream;
-<<<<<<< HEAD
-=======
-import java.io.FileNotFoundException;
->>>>>>> 9f897e0... This is initial commit.
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
@@ -41,11 +37,6 @@ public class Judas extends JFrame {
 	private FileFilter[] filterThemisTemplate; // tgt
 	private JTextField textField;
 	private static JPanel panel;
-<<<<<<< HEAD
-=======
-	private Properties properties;
-
->>>>>>> 9f897e0... This is initial commit.
 	// private UndoManager undoManager;
 	static private UndoManager undoManager;
 
@@ -127,7 +118,6 @@ public class Judas extends JFrame {
 		//
 		try {
 			String userHome = System.getProperty("user.home");
-<<<<<<< HEAD
 			System.out.println("userHome="+userHome);
 			File file = new File(
 					userHome
@@ -141,37 +131,17 @@ public class Judas extends JFrame {
 //			themisRemotedataDir = properties
 //					.getProperty("THEMIS_REMOTEDATA_DIR");
 //			judsDataDir = properties.getProperty("JUDAS_DATA_DIR");
-=======
-			System.out.println(userHome);
-			File file = new File(
-					userHome
-							+ "/JudasWing/workspace/JudasWing/conf/application.properties");
-			InputStream inputStream;
-			inputStream = new FileInputStream(file);
-			properties.load(inputStream);
-
-			themisDataDir = properties.getProperty("THEMIS_DATA_DIR");
-			themisRemotedataDir = properties
-					.getProperty("THEMIS_REMOTEDATA_DIR");
-			judsDataDir = properties.getProperty("JUDAS_DATA_DIR");
->>>>>>> 9f897e0... This is initial commit.
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		//
-<<<<<<< HEAD
-=======
-		System.out.println("JudasWing");
-		//
->>>>>>> 9f897e0... This is initial commit.
 		undoManager = new UndoManager();
 		undoableEditSupport = new UndoableEditSupport();
 		undoableEditSupport.addUndoableEditListener(undoManager);
 		System.out.println(undoManager.getLimit());
 		//
-<<<<<<< HEAD
 		setTitle("Judas");
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
@@ -179,15 +149,6 @@ public class Judas extends JFrame {
 		setBounds(100, 100, 900, 900);
 		contentPane = new JPanel();
 		contentPane.setName("Judas");
-=======
-		setTitle("JudasWing");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				Judas.class.getResource("/favicon.ico")));
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 900, 900);
-		contentPane = new JPanel();
-		contentPane.setName("JudasWing");
->>>>>>> 9f897e0... This is initial commit.
 		contentPane.setPreferredSize(new Dimension(900, 900));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -343,10 +304,7 @@ public class Judas extends JFrame {
 		mnTemplate.add(mntmOpenTemplate);
 
 		JMenuItem mntmSaveTemplate = new JMenuItem("Save Template...");
-<<<<<<< HEAD
 		/*
-=======
->>>>>>> 9f897e0... This is initial commit.
 		mntmSaveTemplate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Save Template...");
@@ -364,18 +322,11 @@ public class Judas extends JFrame {
 
 				}
 			}
-<<<<<<< HEAD
 		});*/
 		mnTemplate.add(mntmSaveTemplate);
 
 		JMenuItem mntmSaveTemplateAs = new JMenuItem("Save Template As...");
 		/*
-=======
-		});
-		mnTemplate.add(mntmSaveTemplate);
-
-		JMenuItem mntmSaveTemplateAs = new JMenuItem("Save Template As...");
->>>>>>> 9f897e0... This is initial commit.
 		mntmSaveTemplateAs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Save Template As...");
@@ -393,10 +344,7 @@ public class Judas extends JFrame {
 				}
 			}
 		});
-<<<<<<< HEAD
 		*/
-=======
->>>>>>> 9f897e0... This is initial commit.
 		mnTemplate.add(mntmSaveTemplateAs);
 
 		JMenu mnResetTemplate = new JMenu("Reset Template");
@@ -541,13 +489,8 @@ public class Judas extends JFrame {
 		mnFile.add(separator_3);
 
 		JMenuItem mntmPrint = new JMenuItem("Print...");
-<<<<<<< HEAD
 		
 		mntmPrint.setIcon(icons.getImageIcon("icons/print20.png"));
-=======
-		mntmPrint
-				.setIcon(new ImageIcon(Judas.class.getResource("/print20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		mntmPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Print...");
@@ -612,13 +555,8 @@ public class Judas extends JFrame {
 
 		mntmUndo = new JMenuItem("Undo");
 		mntmUndo.setEnabled(false);
-<<<<<<< HEAD
 	
 		mntmUndo.setIcon(icons.getImageIcon("icons/arrow-1-left20.png"));	
-=======
-		mntmUndo.setIcon(new ImageIcon(Judas.class
-				.getResource("/arrow-1-backward20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		mntmUndo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Undo");
@@ -634,13 +572,8 @@ public class Judas extends JFrame {
 
 		mntmRedo = new JMenuItem("Redo");
 		mntmRedo.setEnabled(false);
-<<<<<<< HEAD
 		
 		mntmRedo.setIcon(icons.getImageIcon("icons/arrow-1-right20.png"));
-=======
-		mntmRedo.setIcon(new ImageIcon(Judas.class
-				.getResource("/arrow-1-forward20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		mntmRedo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Redo");
@@ -655,12 +588,8 @@ public class Judas extends JFrame {
 		mnEdit.add(separator_6);
 
 		JMenuItem mntmCopy = new JMenuItem("Copy");
-<<<<<<< HEAD
 
 		mntmCopy.setIcon(icons.getImageIcon("icons/copy20.png"));
-=======
-		mntmCopy.setIcon(new ImageIcon(Judas.class.getResource("/copy20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		mntmCopy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Copy");
@@ -1328,13 +1257,8 @@ public class Judas extends JFrame {
 		menuBar.add(mnAnalysis);
 
 		JMenuItem mntmCalculate = new JMenuItem("Calculate...");
-<<<<<<< HEAD
 
 		mntmCalculate.setIcon(icons.getImageIcon("icons/copy20.png"));
-=======
-		mntmCalculate.setIcon(new ImageIcon(Judas.class
-				.getResource("/calculator20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		mntmCalculate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Calculate...");
@@ -1357,13 +1281,8 @@ public class Judas extends JFrame {
 		mnAnalysis.add(mntmNudgeTraces);
 
 		JMenuItem mntmDataProcessing = new JMenuItem("Data Processing...");
-<<<<<<< HEAD
 
 		mntmDataProcessing.setIcon(icons.getImageIcon("icons/arrow-1-left20.png"));
-=======
-		mntmDataProcessing.setIcon(new ImageIcon(Judas.class
-				.getResource("/function20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		mntmDataProcessing.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Data Processing...");
@@ -1426,13 +1345,8 @@ public class Judas extends JFrame {
 		mnHelp.add(mntmHelpWindow);
 
 		JMenuItem mntmHelpRequestForm = new JMenuItem("Help Request Form...");
-<<<<<<< HEAD
 
 		mntmHelpRequestForm.setIcon(icons.getImageIcon("icons/info20.png"));
-=======
-		mntmHelpRequestForm.setIcon(new ImageIcon(Judas.class
-				.getResource("/mail-sent20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		mntmHelpRequestForm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Help Request Form...");
@@ -1459,14 +1373,9 @@ public class Judas extends JFrame {
 		panel_5.setPreferredSize(new Dimension(900, 40));
 		panel_5.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 5));
 
-<<<<<<< HEAD
 		mntmOpenThemisDocument.setIcon(icons.getImageIcon("icons/folder20.png"));
 		
 		JButton btnOpenThemisDocument = new JButton(icons.getImageIcon("icons/folder20.png"));
-=======
-		JButton btnOpenThemisDocument = new JButton(new ImageIcon(
-				Judas.class.getResource("/folder20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		btnOpenThemisDocument.setForeground(Color.BLACK);
 		btnOpenThemisDocument.setToolTipText("Open File");
 		btnOpenThemisDocument.addActionListener(new ActionListener() {
@@ -1494,14 +1403,9 @@ public class Judas extends JFrame {
 		btnOpenThemisDocument.setPreferredSize(new Dimension(54, 30));
 		panel_5.add(btnOpenThemisDocument);
 
-<<<<<<< HEAD
 		mntmSaveThemisDocument.setIcon(icons.getImageIcon("icons/save20.png"));
 		
 		JButton btnSaveThemisDocument = new JButton(icons.getImageIcon("icons/save20.png"));
-=======
-		JButton btnSaveThemisDocument = new JButton(new ImageIcon(
-				Judas.class.getResource("/save20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		btnSaveThemisDocument.setToolTipText("Save File");
 		btnSaveThemisDocument.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -1526,12 +1430,7 @@ public class Judas extends JFrame {
 		btnSaveThemisDocument.setPreferredSize(new Dimension(54, 30));
 		panel_5.add(btnSaveThemisDocument);
 
-<<<<<<< HEAD
 		JButton btnPrint = new JButton(icons.getImageIcon("icons/print20.png"));
-=======
-		JButton btnPrint = new JButton(new ImageIcon(
-				Judas.class.getResource("/print20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		btnPrint.setToolTipText("Print");
 		btnPrint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -1543,14 +1442,8 @@ public class Judas extends JFrame {
 		btnPrint.setPreferredSize(new Dimension(54, 30));
 		panel_5.add(btnPrint);
 		PrinterJob printerJob = PrinterJob.getPrinterJob();
-<<<<<<< HEAD
 		
 		JButton btnCopyToClipboard = new JButton(icons.getImageIcon("icons/copy20.png"));
-=======
-
-		JButton btnCopyToClipboard = new JButton(new ImageIcon(
-				Judas.class.getResource("/copy20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		btnCopyToClipboard.setToolTipText("Copy to Clipboard");
 		btnCopyToClipboard.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -1560,12 +1453,7 @@ public class Judas extends JFrame {
 		btnCopyToClipboard.setPreferredSize(new Dimension(54, 30));
 		panel_5.add(btnCopyToClipboard);
 
-<<<<<<< HEAD
 		JButton btnLoadData = new JButton(icons.getImageIcon("icons/unfold-multiple20.png"));
-=======
-		JButton btnLoadData = new JButton(new ImageIcon(
-				Judas.class.getResource("/unfold-multiple20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		btnLoadData.setToolTipText("Load Data");
 		btnLoadData.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -1579,12 +1467,7 @@ public class Judas extends JFrame {
 		btnLoadData.setPreferredSize(new Dimension(54, 30));
 		panel_5.add(btnLoadData);
 
-<<<<<<< HEAD
 		JButton btnManageGuiDataAndImportAndExportTplot = new JButton(icons.getImageIcon("icons/settings20.png"));
-=======
-		JButton btnManageGuiDataAndImportAndExportTplot = new JButton(
-				new ImageIcon(Judas.class.getResource("/settings20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		btnManageGuiDataAndImportAndExportTplot
 				.setToolTipText("Manage GUI Data and Import and Export Tplot data");
 		btnManageGuiDataAndImportAndExportTplot
@@ -1602,12 +1485,7 @@ public class Judas extends JFrame {
 				54, 30));
 		panel_5.add(btnManageGuiDataAndImportAndExportTplot);
 
-<<<<<<< HEAD
 		JButton btnPlotData = new JButton(icons.getImageIcon("icons/activity20.png"));
-=======
-		JButton btnPlotData = new JButton(new ImageIcon(
-				Judas.class.getResource("/activity20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		btnPlotData.setToolTipText("Plot Data");
 		btnPlotData.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -1617,12 +1495,7 @@ public class Judas extends JFrame {
 		btnPlotData.setPreferredSize(new Dimension(54, 30));
 		panel_5.add(btnPlotData);
 
-<<<<<<< HEAD
 		JButton btnCreateNewPage = new JButton(icons.getImageIcon("icons/window-stack20.png"));
-=======
-		JButton btnCreateNewPage = new JButton(new ImageIcon(
-				Judas.class.getResource("/window-stack20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		btnCreateNewPage.setToolTipText("Create New Page");
 		btnCreateNewPage.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -1632,12 +1505,7 @@ public class Judas extends JFrame {
 		btnCreateNewPage.setPreferredSize(new Dimension(54, 30));
 		panel_5.add(btnCreateNewPage);
 
-<<<<<<< HEAD
 		JButton btnHelp = new JButton(icons.getImageIcon("icons/info20.png"));
-=======
-		JButton btnHelp = new JButton(new ImageIcon(
-				Judas.class.getResource("/info20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		btnHelp.setToolTipText("Help");
 		btnHelp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -1672,12 +1540,7 @@ public class Judas extends JFrame {
 		panel_5.add(panel_3);
 		panel_3.setLayout(new GridLayout(2, 0, 0, 0));
 
-<<<<<<< HEAD
 		JButton btnUp = new JButton(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-		JButton btnUp = new JButton(new ImageIcon(
-				Judas.class.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
 		btnUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Up");
@@ -1689,12 +1552,7 @@ public class Judas extends JFrame {
 		btnUp.setPreferredSize(new Dimension(54, 15));
 		panel_3.add(btnUp);
 
-<<<<<<< HEAD
 		JButton btnDown = new JButton(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-		JButton btnDown = new JButton(new ImageIcon(
-				Judas.class.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
 		btnDown.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("Down");
@@ -1706,11 +1564,7 @@ public class Judas extends JFrame {
 		btnDown.setPreferredSize(new Dimension(54, 15));
 		panel_3.add(btnDown);
 
-<<<<<<< HEAD
 		JButton button = new JButton(icons.getImageIcon("icons/database20.png"));
-=======
-		JButton button = new JButton("");
->>>>>>> 9f897e0... This is initial commit.
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				openBrowser();
@@ -1731,11 +1585,7 @@ public class Judas extends JFrame {
 			}
 		});
 
-<<<<<<< HEAD
 		JButton btnJythonCommandLine = new JButton(icons.getImageIcon("icons/keyboard20.png"));
-=======
-		JButton btnJythonCommandLine = new JButton("");
->>>>>>> 9f897e0... This is initial commit.
 		btnJythonCommandLine.setToolTipText("Jython Command Line");
 		btnJythonCommandLine.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -1745,18 +1595,10 @@ public class Judas extends JFrame {
 				console.setVisible(true);
 			}
 		});
-<<<<<<< HEAD
 		btnJythonCommandLine.setIcon(icons.getImageIcon("icons/keyboard20.png"));
 		panel_5.add(btnJythonCommandLine);
 		button.setToolTipText("IUGONET Metadata Database");
 		button.setIcon(icons.getImageIcon("icons/database20.png"));
-=======
-		btnJythonCommandLine.setIcon(new ImageIcon(Judas.class
-				.getResource("/keyboard20.png")));
-		panel_5.add(btnJythonCommandLine);
-		button.setToolTipText("IUGONET Metadata Database");
-		button.setIcon(new ImageIcon(Judas.class.getResource("/database20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		panel_5.add(button);
 		//
 		panel = new JPanel();
@@ -1800,13 +1642,10 @@ public class Judas extends JFrame {
 	public void setScaleSizeTextField(int value) {
 		textField.setText(String.valueOf(value));
 	}
-<<<<<<< HEAD
 	
 	/*
 	private Properties getProperties(String filename){
 		
 	}*/
 	
-=======
->>>>>>> 9f897e0... This is initial commit.
 }

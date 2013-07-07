@@ -3,5 +3,11 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/java-getopt-1.0.13.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/fest-assert-1.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/fest-reflect-1.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/fest-swing-1.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/fest-util-1.1.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -42,7 +42,8 @@
 	<target name="clean">
 		<delete>
 			<fileset file="${jar.path}" />
-			<fileset dir="${bin.dir}" includes="**" />
+			<fileset dir="${bin.dir}" includes="**/*.class" />
+			<fileset dir="${javadoc.dir}" includes="**" />
 		</delete>
 	</target>
 
