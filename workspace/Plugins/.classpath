@@ -48,5 +48,10 @@
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/Aplot.jar"/>
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jcommon-1.0.17.jar"/>
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jfreechart-1.0.14.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/cdfjava.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/Iplot.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jai_codec.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jai_core.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/netcdf-4.3.13.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

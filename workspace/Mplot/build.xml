@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="Mplot" default="jar" basedir=".">
+	<property environment="env"/>
+	<property file="../../build.properties"/>
+
+	<property name="src.dir" location="src" />
+	<property name="bin.dir" location="bin" />
+	<property name="lib.dir" location="../../lib" />
+	<property name="ext.dir" location="${lib.dir}/external" />
+	<property name="javadoc.dir" location="docs" />
+	<property name="jar.name" value="Mplot.jar" />
+	<property name="jar.path" location="${lib.dir}/${jar.name}" />
+
+	<path id="utl.classpath">
+		<pathelement location="${ext.dir}/${gt-api.jar}" />
+		<pathelement location="${ext.dir}/${gt-coverage.jar}" />
+		<pathelement location="${ext.dir}/${gt-data.jar}" />
+		<pathelement location="${ext.dir}/${gt-main.jar}" />
+		<pathelement location="${ext.dir}/${gt-metadata.jar}" />
+		<pathelement location="${ext.dir}/${gt-opengis.jar}" />
+		<pathelement location="${ext.dir}/${gt-render.jar}" />
+		<pathelement location="${ext.dir}/${gt-swing.jar}" />
+		<pathelement location="${ext.dir}/${gt-referencing.jar}" />
+	</path>
+
+	<target name="jar" depends="compile">
+		<jar jarfile="${jar.path}">
+			<fileset dir="${src.dir}" includes="**" />
+			<fileset dir="${bin.dir}" includes="**" />
+		</jar>
+	</target>
+	<target name="compile">
+		<mkdir dir="${bin.dir}" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
+	</target>
+	<target name="clean">
+		<delete>
+			<fileset file="${jar.path}" />
+			<fileset dir="${bin.dir}" includes="**" />
+		</delete>
+	</target>
+	<target name="javadoc">
+		<javadoc destdir="${javadoc.dir}">
+			<fileset dir="${src.dir}" />
+		</javadoc>
+	</target>
+</project>

@@ -16,12 +16,4 @@ public class MplotTest {
 	public void tearDown() throws Exception {
 	}
 
-<<<<<<< HEAD
-=======
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-
->>>>>>> 137266c... Fixed
 }
