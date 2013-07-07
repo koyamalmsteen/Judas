@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/PoesTxt"/>
+	<classpathentry kind="src" path="test/src/Eiscat"/>
+	<classpathentry kind="src" path="test/src/ImagNipr"/>
+	<classpathentry kind="src" path="test/src/Cira86Ascii"/>
+	<classpathentry kind="src" path="test/src/GOES"/>
+	<classpathentry kind="src" path="test/src/Mm210"/>
+	<classpathentry kind="src" path="test/src/Lfrto"/>
+	<classpathentry kind="src" path="test/src/HfTohokuu"/>
+	<classpathentry kind="src" path="test/src/NoaaBi"/>
+	<classpathentry kind="src" path="test/src/AeIndex"/>
+	<classpathentry kind="src" path="test/src/WIND"/>
+	<classpathentry kind="src" path="test/src/PoesTxt"/>
+	<classpathentry kind="src" path="test/src/Wdc"/>
+	<classpathentry kind="src" path="test/src/NoaaPower"/>
+	<classpathentry kind="src" path="test/src/ACE"/>
+	<classpathentry kind="src" path="test/src/SymIndex"/>
+	<classpathentry kind="src" path="test/src/Iprt"/>
+	<classpathentry kind="src" path="test/src/FmagNipr"/>
+	<classpathentry kind="src" path="test/src/DstIndex"/>
+	<classpathentry kind="src" path="test/src/MU"/>
+	<classpathentry kind="src" path="src/NoaaPower"/>
+	<classpathentry kind="src" path="src/WIND"/>
+	<classpathentry kind="src" path="src/Mm210"/>
+	<classpathentry kind="src" path="src/org"/>
+	<classpathentry kind="src" path="src/SuperDARN"/>
+	<classpathentry kind="src" path="src/NoaaBi"/>
+	<classpathentry kind="src" path="src/MU"/>
+	<classpathentry kind="src" path="src/DstIndex"/>
+	<classpathentry kind="src" path="src/ImagNipr"/>
+	<classpathentry kind="src" path="src/HfTohokuu"/>
+	<classpathentry kind="src" path="src/Lfrto"/>
+	<classpathentry kind="src" path="src/Eiscat"/>
+	<classpathentry kind="src" path="src/GeneralImage"/>
+	<classpathentry kind="src" path="src/FmagNipr"/>
+	<classpathentry kind="src" path="src/GOES"/>
+	<classpathentry kind="src" path="src/Iprt"/>
+	<classpathentry kind="src" path="src/SymIndex"/>
+	<classpathentry kind="src" path="src/Wdc"/>
+	<classpathentry kind="src" path="src/AeIndex"/>
+	<classpathentry kind="src" path="src/Cira86Ascii"/>
+	<classpathentry kind="src" path="src/ACE"/>
+	<classpathentry excluding="Eiscat/|ImagNipr/|Cira86Ascii/|GOES/|Mm210/|Lfrto/|HfTohokuu/|NoaaBi/|AeIndex/|WIND/|PoesTxt/|Wdc/|NoaaPower/|ACE/|SymIndex/|Iprt/|FmagNipr/|DstIndex/|MU/" kind="src" path="test/src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,36 @@
+package org.iugonet.www;
+
+import org.jfree.data.time.TimeSeries;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class FmagNiprTest {
+	FmagNipr fmagNipr;
+	String url;
+	String filepath;
+
+	@Before
+	public void setUp() throws Exception {
+		fmagNipr = new FmagNipr();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		url = "http://iugonet0.nipr.ac.jp";
+		filepath = "/data/fmag/tjo/2sec/1988/nipr_2sec_fmag_tjo_19880529_v02.cdf";
+		fmagNipr.file_http_copy(url + filepath);
+		fmagNipr.readData(filepath);
+
+		TimeSeries[] timeSeries = fmagNipr.getTimeSeries();
+		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {
+			System.out.print(timeSeries[0].getTimePeriod(i).getStart() + " ");
+			System.out.println(timeSeries[0].getDataItem(i).getValue());
+		}
+	}
+
+}

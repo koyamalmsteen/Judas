@@ -1,0 +1,153 @@
+package org.iugonet.www;
+
+import java.util.ArrayList;
+import java.lang.Double;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+
+import java.net.URL;
+import java.net.URLConnection;
+
+import gsfc.nssdc.cdf.CDF;
+import gsfc.nssdc.cdf.util.Epoch;
+import gsfc.nssdc.cdf.Variable;
+
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.time.Second;
+import org.jfree.data.time.TimeSeriesCollection;
+
+public class HfTohokuu extends Tplot {
+
+	HfTohokuu() {
+		super(1);
+		//timeSeries[0].setKey("Iitate HF");
+	}
+
+	@Override
+	void readData(String arg0) {
+
+		try {
+			ArrayList<Second> second = new ArrayList<Second>();
+
+			int yyyy, mm, dd, hr, mn, sc;
+			int i, j;
+			long num;
+			double depoch;
+			float[] drh, dlh;
+
+			CDF cdf = null;
+			cdf = CDF.open("/tmp" + arg0, 0);
+
+			Variable epoch = cdf.getVariable(0);
+			Variable channel = cdf.getVariable(1);
+			Variable rh = cdf.getVariable(2);
+			Variable lh = cdf.getVariable(3);
+
+			num = epoch.getMaxAllocatedRecord();
+			depoch = ((Double) epoch.getRecord(0)).doubleValue();
+			//
+			// for (i = 0; i < 1000; i++) {
+			// System.out.println(channel.getScalarData(i));
+			// }
+
+			long numc = channel.getDimSizes()[0];
+			float[] dchannel = (float[]) channel.getRecord(0);
+			// for (i = 0; i < numc; i++){
+			// System.out.println(dchannel[i]);
+			// }
+
+			for (i = 0; i < num + 1; i++) {
+				depoch = ((Double) epoch.getRecord(i)).doubleValue();
+				yyyy = (int) Epoch.breakdown(depoch)[0];
+				mm = (int) Epoch.breakdown(depoch)[1];
+				dd = (int) Epoch.breakdown(depoch)[2];
+				hr = (int) Epoch.breakdown(depoch)[3];
+				mn = (int) Epoch.breakdown(depoch)[4];
+				sc = (int) Epoch.breakdown(depoch)[5];
+				if (yyyy >= 1900 && yyyy <= 9999) {
+					second.add(new Second(sc, mn, hr, dd, mm, yyyy));
+					drh = (float[]) rh.getRecord(i);
+					dlh = (float[]) lh.getRecord(i);
+					System.out.println("\n\n");
+					System.out.println("" + yyyy + mm + dd + hr + mn + sc);
+					for (j = 0; j < numc; j++) {
+						System.out.println("" + dchannel[j] + "  " + drh[j]);
+					}
+				}
+			}
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	void file_http_copy(String arg0, String arg1) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void file_http_copy(String arg0) {
+		URL url;
+		try {
+			url = new URL(arg0);
+
+			String[] strArray = url.getPath().split("/");
+			String strDir = "/tmp";
+			for (int i = 0; i < strArray.length - 1; i++) {
+				strDir = strDir + "/" + strArray[i];
+			}
+
+			File fileDir = new File(strDir);
+
+			if (fileDir.exists()) {
+				System.out.println(fileDir + "Directory exists.");
+			} else {
+				if (fileDir.mkdirs()) {
+					System.out.println(fileDir.getPath()
+							+ " Created directories to store data.");
+				} else {
+					System.out.println(fileDir.getPath()
+							+ " Couldn't created directories to store data.");
+				}
+			}
+
+			URLConnection conn = url.openConnection();
+			InputStream in = conn.getInputStream();
+
+			File file = new File("/tmp" + url.getPath());
+			FileOutputStream out = new FileOutputStream(file, false);
+			int b;
+			while ((b = in.read()) != -1) {
+				out.write(b);
+			}
+			out.close();
+			in.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public ChartPanel getChartPanel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public JFreeChart getChart() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TimeSeriesCollection loadData(String strUrl) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="Judas" default="all" basedir=".">
+  <property environment="env" />
+  <property file="build.properties" />
+
+  <target name="all" depends="clean, initial_message, eclipse, key, lib, maven, switch_jdk, final_message" description="Install all"/>
+
+  <target name="clean" description="Clean up">
+    <subant target="clean">
+      <fileset file="workspace/Aplot/build.xml" />
+      <fileset file="workspace/Tplot/build.xml" />
+      <fileset file="workspace/Iplot/build.xml" />
+      <fileset file="workspace/Mplot/build.xml" />
+      <fileset file="workspace/XYplot/build.xml" />
+      <fileset file="workspace/JnlpGenerator/build.xml" />
+      <fileset file="workspace/Plugins/build.xml" />
+      <fileset file="workspace/Judas/build.xml" />
+    </subant>
+    <delete>
+      <fileset dir="plugins" includes="**" />
+      <fileset dir="lib" includes="**" />
+    </delete>
+  </target>
+
+  <target name="jar" description="Install all Judas">
+    <subant target="jar">
+      <fileset file="workspace/Aplot/build.xml" />
+      <fileset file="workspace/Tplot/build.xml" />
+      <fileset file="workspace/Iplot/build.xml" />
+      <fileset file="workspace/Mplot/build.xml" />
+      <fileset file="workspace/XYplot/build.xml" />
+      <fileset file="workspace/JnlpGenerator/build.xml" />
+      <fileset file="workspace/Plugins/build.xml" />
+      <fileset file="workspace/Judas/build.xml" />
+    </subant>
+  </target>
+
+  <target name="initial_message" description="Display initial message">
+    <echo message="###&#x0A;###&#x0A;This installation process takes 11 minutes at least.&#x0A;###&#x0A;###&#x0A;"/>
+  </target>
+  
+  <target name="eclipse" description="Install eclipse">
+    <get src="${src_eclipse}" dest="${dst_eclipse}" usetimestamp="yes"/>
+    <!-- To stay away to use untar task because untar task for ant 1.7.1 is buggy. -->
+    <exec executable="tar" dir="${tmp}">
+      <arg value="xvzf"/>
+      <arg value="${dst_eclipse}"/>
+      <arg value="--directory"/>
+      <arg value="${env.HOME}/Documents"/>
+    </exec>
+    <echo message="&#x0A;###&#x0A;###&#x0A;&#x0A;Please type&#x0A;&#x0A;~/eclipse.sh&#x0A;&#x0A;###&#x0A;###&#x0A;"/>
+    <!-- -->
+    <echo message="#!/bin/env bash&#x0A;" file="${env.HOME}/eclipse.sh"/>
+    <echo message="${env.HOME}/Documents/eclipse/eclipse -data ${env.HOME}/Judas/workspace" file="${env.HOME}/eclipse.sh" append="yes"/>
+    <chmod file="${env.HOME}/eclipse.sh" perm="+x"/>
+  </target>
+
+  <target name="key" description="Create Security Key">
+    <exec executable="keytool">
+      <arg line="-genkey -alias iugonet -keystore ${env.HOME}/Judas/key/keystore -storepass password -keypass password -dname &quot;CN=localhost, OU=IUGONET Project, O=IUGONET project, L=Sakyo-ku, ST=Kyoto, C=JP&quot; -validity 730"/>
+    </exec>
+    <exec executable="keytool">
+      <arg line="-list -v -keystore ${env.HOME}/Judas/key/keystore -storepass password"/>
+    </exec>
+  </target>
+
+  <target name="lib" description="Install some jar files as external library">
+    <get src="${src_jfreechart}" dest="${dst_jfreechart}" usetimestamp="yes"/>
+    <untar src="${dst_jfreechart}" dest="${tmp}" compression="gzip"/>
+    <copy file="${tmp}/${jfreechart_prefix}/lib/${jfreechart_prefix}.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${jfreechart_prefix}/lib/${jcommon_prefix}.jar" todir="${judas_home}/lib/external"/>
+    <!-- -->
+    <get src="${src_geotools}" dest="${dst_geotools}" usetimestamp="yes"/>
+    <unzip src="${dst_geotools}" dest="${tmp}"/>
+    <copy file="${tmp}/${geotools_prefix}/gt-swing-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/gt-data-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/gt-render-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/gt-api-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/gt-main-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/gt-coverage-${geotools_version}.jar" todir="${judas_home}/lib/external" />
+    <copy file="${tmp}/${geotools_prefix}/gt-metadata-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/gt-opengis-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/gt-referencing-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/${jts.jar}" todir="${judas_home}/lib/external"/>
+    <!-- -->
+    <get src="${src_jythonconsole}" dest="${dst_jythonconsole}" usetimestamp="yes"/>
+    <unzip src="${dst_jythonconsole}" dest="${tmp}"/>
+    <!-- -->
+    <get src="${src_commons_math}" dest="${dst_commons_math}" usetimestamp="yes"/>
+    <unzip src="${dst_commons_math}" dest="${tmp}"/>
+    <copy file="${tmp}/${commons_math_sub_prefix}/${commons_math_sub_prefix}.jar" todir="${judas_home}/lib/external"/>
+    <!-- -->
+    <get src="${src_commons_validator}" dest="${dst_commons_validator}" usetimestamp="yes"/>
+    <unzip src="${dst_commons_validator}" dest="${tmp}"/>
+    <copy file="${tmp}/${commons_validator_sub_prefix}/${commons_validator_sub_prefix}.jar" todir="${judas_home}/lib/external"/>
+    <!-- -->
+    <get src="${src_jdom}" dest="${dst_jdom}" usetimestamp="yes"/>
+    <unzip src="${dst_jdom}" dest="${tmp}"/>
+    <copy file="${tmp}/${jdom_prefix}.jar" todir="${judas_home}/lib/external"/>
+    <!-- -->
+    <get src="${src_festSwing}" dest="${dst_festSwing}" usetimestamp="yes"/>
+    <unzip src="${dst_festSwing}" dest="${tmp}"/>
+    <copy file="${tmp}/${festSwing_prefix}/${festSwing_prefix}.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${festSwing_prefix}/lib/fest-reflect-1.2.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${festSwing_prefix}/lib/fest-assert-1.2.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${festSwing_prefix}/lib/fest-util-1.1.2.jar" todir="${judas_home}/lib/external"/>
+    <!-- -->
+    <get src="${src_jyconsole}" dest="${dst_jyconsole}" usetimestamp="yes"/>
+    <unzip src="${dst_jyconsole}" dest="${tmp}"/>
+    <copy file="${tmp}/${jyconsole_prefix}/JyConsole.jar" todir="${judas_home}/lib/external"/>
+    <!-- -->
+    <!--
+    <get src="${src_swingx}" dest="${dst_swingx}" usetimestamp="yes"/>
+    -->
+    <exec executable="curl" dir="${tmp}">
+      <arg line="-O ${src_swingx}" />
+    </exec>
+    <copy file="${tmp}/${swingx}" todir="${judas_home}/lib/external"/>
+    <!-- -->
+    <get src="${src_java_getopt}" dest="${dst_java_getopt}" usetimestamp="yes"/>
+    <copy file="${tmp}/${java_getopt}" todir="${judas_home}/lib/external"/>
+    <!-- -->
+    <get src="${src_jai}" dest="${dst_jai}" usetimestamp="yes"/>
+    <unzip src="${dst_jai}" dest="${tmp}"/>
+    <copy file="${tmp}/jai-${jai_version}/lib/jai_codec.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/jai-${jai_version}/lib/jai_core.jar" todir="${judas_home}/lib/external"/>
+    <!-- -->
+    <get src="${src_cdfjava}" dest="${dst_cdfjava}" usetimestamp="yes"/>
+    <copy file="${tmp}/${cdfjava}" todir="${judas_home}/lib/external"/>
+    <!-- -->
+    <get src="${src_swexpl-eclipse}" dest="${dst_swexpl-eclipse}" usetimestamp="yes"/>
+    <unzip src="${dst_swexpl-eclipse}" dest="${env.HOME}/Documents/eclipse"/>
+    <!-- -->
+    <get src="${src_fits}" dest="${dst_fits}" usetimestamp="yes"/>
+    <copy file="${dst_fits}" todir="${judas_home}/lib/external"/>    
+    <!-- -->
+    <get src="${src_hdf5}" dest="${dst_hdf5}" usetimestamp="yes" />
+    <untar src="${dst_hdf5}" dest="${tmp}" compression="bzip2" />
+    <copy file="${dst_hdf5}" todir="${judas_home}/lib/external" />    
+    <!-- -->
+    <get src="${src_hdf4}" dest="${dst_hdf4}" usetimestamp="yes" />
+    <untar src="${dst_hdf4}" dest="${tmp}" compression="bzip2" />
+    <copy file="${dst_hdf4}" todir="${judas_home}/lib/external" />    
+    <!-- -->
+    <get src="${src_hdf-java_linux32}" dest="${dst_hdf-java_linux32}" usetimestamp="yes" />
+    <untar src="${dst_hdf-java_linux32}" dest="${tmp}" />
+    <copy file="${dst_hdf-java_linux32}" todir="${judas_home}/lib/external" />     <!-- -->
+    <get src="${src_hdf-java_macintel32}" dest="${dst_hdf-java_macintel32}" usetimestamp="yes" />
+    <untar src="${dst_hdf-java_macintel32}" dest="${tmp}" />
+    <copy file="${dst_hdf-java_macintel32}" todir="${judas_home}/lib/external" />
+    <!-- -->
+    <get src="${src_hdf-java_win32}" dest="${dst_hdf-java_win32}" usetimestamp="yes" />
+    <untar src="${dst_hdf-java_win32}" dest="${tmp}" />
+    <copy file="${dst_hdf-java_win32}" todir="${judas_home}/lib/external" />
+    <!-- -->
+    <get src="${src_jython}" dest="${dst_jython}" usetimestamp="yes"/>
+    <copy file="${dst_jython}" todir="${judas_home}/lib/external"/>    
+    <!-- -->
+    <get src="${src_jeditor}" dest="${dst_jeditor}" usetimestamp="yes"/>
+    <unzip src="${dst_jeditor}" dest="${tmp}"/>
+    <copy file="${tmp}/jEditorGPL.jar" todir="${judas_home}/lib/external"/>    
+    <!-- couldn't execute get task behind the http proxy to ftp server -->
+    <!--
+    <get src="${src_netcdf}" dest="${dst_netcdf}" usetimestamp="yes"/>
+    -->
+    <echo message="${src_netcdf}" />    
+    <exec executable="curl" dir="${tmp}">
+      <arg line="-O ${src_netcdf} -o ${netcdf}" />
+    </exec>
+    <copy file="${dst_netcdf}" todir="${judas_home}/lib/external"/>
+
+    <!-- -->
+    <get src="${src_jpf}" dest="${dst_jpf}" usetimestamp="yes"/>
+    <unzip src="${dst_jpf}" dest="${tmp}"/>
+    <copy file="${tmp}/jpf.jar" todir="${judas_home}/lib/external"/>
+    <!-- -->
+    <get src="${src_jruby}" dest="${dst_jruby}" usetimestamp="yes"/>
+    <unzip src="${dst_jruby}" dest="${tmp}"/>
+    <exec executable="ant" dir="/tmp/jruby-${jruby_version}">
+      <arg line="jar jar-console" />
+    </exec>
+    <copy file="${tmp}/jruby-${jruby_version}/lib/jruby.jar" todir="${judas_home}/lib/external"/>    
+    <copy file="${tmp}/jruby-${jruby_version}/lib/jruby-console.jar" todir="${judas_home}/lib/external"/>    
+  </target>
+
+  <target name="final_message" description="Display final message">
+    <echo message="###&#x0A;###&#x0A;&#x0A;Please type&#x0A;&#x0A;source ~/.bash_profile&#x0A;&#x0A;###&#x0A;###&#x0A;"/>
+  </target>
+
+  <target name="maven" description="Install Apache Maven">
+    <condition property="have.resources">
+      <available file="${tmp}/${maven}"/>
+    </condition>
+
+    <echo message="${have.resources}"/>
+
+    <condition property="have.resources">
+      <available file="${maven_home}"/>
+    </condition>
+
+    <echo message="${have.resources}"/>
+
+    <echo message='### for MAVEN&#10;' file="${env_set_file}" append="yes"/>
+    <echo message='export MAVEN_HOME=${maven_home}&#10;' file="${env_set_file}" append="yes"/>
+    <echo message='export PATH=${MAVEN_HOME}/bin:${PATH}&#10;' file="${env_set_file}" append="yes"/>
+    <get src="${src_maven}" dest="${dst_maven}" usetimestamp="true"/>
+    <unzip src="${dst_maven}" dest="${install_dir}"/>
+    <chmod file="${install_dir}/${maven_prefix}/bin/mvn" perm="gou+x"/>
+  </target>
+
+  <target name="switch_jdk">
+    <exec executable="bash">
+      <arg value="-c" />
+      <arg value="echo '2' | alternatives --config java" />
+    </exec>
+  </target>
+
+</project>

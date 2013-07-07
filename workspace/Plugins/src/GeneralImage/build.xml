@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="GeneralImage" default="jar" basedir=".">
+	<property environment="env"/>
+	<property file="../../../../build.properties"/>
+		
+	<property name="src.dir" location="." />
+	<property name="bin.dir" location="bin" />
+	<property name="lib.dir" location="../../../../lib" />
+	<property name="ext.dir" location="${lib.dir}/external" />
+	<property name="javadoc.dir" location="docs" />
+	<property name="jar.name" value="GeneralImage.jar" />
+	<property name="jar.path" location="../../../../plugins/${jar.name}" />
+	
+	<path id="utl.classpath">
+		<pathelement location="${lib.dir}/Iplot.jar" />
+		<pathelement location="${ext.dir}/${jai_core.jar}" />
+		<pathelement location="${ext.dir}/${jai_codec.jar}" />
+	</path>
+			
+	<target name="jar" depends="compile">
+		<jar jarfile="${jar.path}">
+			<fileset dir="${src.dir}" includes="**" />
+			<fileset dir="${bin.dir}" includes="**" />
+			<manifest>
+				<attribute name="Plugin-Class" value="GeneralImage" />	
+			</manifest>	
+		</jar>
+	</target>
+	<target name="compile">
+		<subant target="compile">
+			<fileset file="../../../Tplot/build.xml" />
+		</subant>
+		<subant target="jar">
+			<fileset file="../../../Tplot/build.xml" erroronmissingdir="false" />
+		</subant>
+		<mkdir dir="${bin.dir}" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
+	</target>
+	<target name="clean"> 
+		<delete>
+			<fileset file="${jar.path}" />
+			<fileset dir="${bin.dir}" includes="**" />
+		</delete>
+	</target>
+	<target name="javadoc">
+		<javadoc destdir="${javadoc.dir}">
+			<fileset dir="${src.dir}" />
+		</javadoc>
+	</target>
+</project>

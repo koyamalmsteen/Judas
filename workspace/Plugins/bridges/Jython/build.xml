@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="all" default="jython" basedir=".">
+  <property environment="env"/>
+  <property file="build.properties"/>
+
+  <target name="clean" description="Clean up">
+  </target>
+
+  <target name="jython" description="Install jython">
+    <condition property="have.resources">
+      <available file="${tmp}/${jython}"/>
+    </condition>
+
+    <echo message="${have.resources}"/>
+
+    <condition property="have.resources">
+      <available file="${install_dir}"/>
+    </condition>
+
+    <echo message="${have.resources}"/>
+
+    <condition property="have.resources">
+      <available file="${jython_home}"/>
+    </condition>
+
+    <echo message="${have.resources}"/>
+
+    <get src="${src_jython}" dest="${dst_jython}" usetimestamp="true"/>
+    <echo message="### for jython&#10;" file="${env_set_file}" append="yes"/>
+    <echo message="export PATH=$PATH:${jython_home}/bin&#10;" file="${env_set_file}" append="yes"/>
+  </target>
+  
+</project>

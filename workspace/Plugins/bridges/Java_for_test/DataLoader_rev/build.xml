@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="DataLoader_rev" default="jar" basedir=".">
+	<property name="src.dir" value="src" />
+	<property name="bin.dir" value="bin" />
+	<property name="javadoc.dir" value="docs" />
+	<property name="jar.name" value="DataLoader_rev.jar" />
+	<property name="jar.dir" value="../lib/external/${jar.name}" />
+	<target name="jar" depends="compile">
+		<jar jarfile="${jar.dir}">
+			<fileset dir="${src.dir}" includes="**" />
+			<fileset dir="${bin.dir}" includes="**" />
+		</jar>
+	</target>
+	<target name="compile">
+		<subant target="compile">
+			<fileset file="../../../../Tplot/build.xml" />
+		</subant>
+		<subant target="jar">
+			<fileset file="../../../../Tplot/build.xml" erroronmissingdir="false" />
+		</subant>
+		<mkdir dir="${bin.dir}" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" />
+	</target>
+	<target name="javadoc">
+		<javadoc destdir="${javadoc.dir}">
+			<fileset dir="${src.dir}" />
+		</javadoc>
+	</target>
+</project>

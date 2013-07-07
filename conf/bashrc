@@ -1,0 +1,3 @@
+export ROOT_DATA_DIR=~/data
+export THEMIS_DATA_DIR=~/themis
+export THEMIS_REMOTEDATA_DIR='http://themis.stp.isas.jaxa.jp/data/themis/'

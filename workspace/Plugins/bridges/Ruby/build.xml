@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="ruby" default="jruby" basedir=".">
+  <property environment="env"/>
+  <property file="build.properties"/>
+
+  <target name="clean" description="Clean up">
+  </target>
+
+  <target name="jruby" description="Install jruby">
+    <condition property="have.resources">
+      <available file="${tmp}/${jruby}"/>
+    </condition>
+
+    <echo message="${have.resources}"/>
+
+    <condition property="have.resources">
+      <available file="${install_dir}"/>
+    </condition>
+
+    <echo message="${have.resources}"/>
+
+    <condition property="have.resources">
+      <available file="${jruby_home}"/>
+    </condition>
+
+    <echo message="${have.resources}"/>
+
+    <echo message="### for jruby&#10;" file="${env_set_file}" append="yes"/>
+    <echo message="export JRUBY_HOME=${jruby_home}&#10;" file="${env_set_file}" append="yes"/>
+    <echo message="export PATH=$PATH:${jruby_home}/bin&#10;" file="${env_set_file}" append="yes"/>
+    <echo message="export JAVA_HOME=${java_home}&#10;" file="${env_set_file}" append="yes"/>
+
+    <get src="${src_jruby}" dest="${dst_jruby}" usetimestamp="true"/>
+    <untar src="${dst_jruby}" dest="${install_dir}" compression="gzip"/>
+    <chmod file="${jruby_home}/bin/jruby" perm="gou+x"/>
+    <chmod file="${jruby_home}/bin/jirb" perm="gou+x"/>
+  </target>
+  
+</project>

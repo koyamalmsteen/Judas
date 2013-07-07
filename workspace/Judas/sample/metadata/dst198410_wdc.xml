@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Spase lang="en" xmlns="http://www.iugonet.org/data/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iugonet.org/data/schema http://www.iugonet.org/data/schema/iugonet-1_0_0.xsd ">
+  <Version>1.0.0</Version>
+  <Granule>
+  	<ResourceID>spase://IUGONET/Granule/WDC_Kyoto/WDC/Dst/index/PT1H/dst198410_wdc</ResourceID>
+  	<ReleaseDate>2011-02-04T12:19:23</ReleaseDate>
+  	<ParentID>spase://IUGONET/NumericalData/WDC_Kyoto/WDC/Dst/index/PT1H</ParentID>
+  	<StartDate>1984-10-01</StartDate>
+  	<StopDate>1984-10-31</StopDate>
+  	<Source>
+  		<SourceType>Data</SourceType>
+  		<URL>http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410</URL>
+  	</Source>
+  	<SpatialCoverage>
+  		<CoordinateSystem>
+  			<CoordinateRepresentation>Spherical</CoordinateRepresentation>
+  			<CoordinateSystemName>GEO</CoordinateSystemName>
+  		</CoordinateSystem>
+  		<NorthernmostLatitude>36.233</NorthernmostLatitude>
+  		<SouthernmostLatitude>-34.425</SouthernmostLatitude>
+  		<EasternmostLongitude>180</EasternmostLongitude>
+  		<WesternmostLongitude>-180</WesternmostLongitude>
+  		<Unit>Degree</Unit>
+  	</SpatialCoverage>
+  </Granule>
+</Spase>
