@@ -22,7 +22,7 @@
     </delete>
   </target>
 
-  <target name="jar" description="Install all Judas">
+  <target name="jar" description="Generate jar files">
     <subant target="jar">
       <fileset file="workspace/Aplot/build.xml" />
       <fileset file="workspace/Tplot/build.xml" />
