@@ -43,5 +43,10 @@
 	<classpathentry kind="src" path="src/ACE"/>
 	<classpathentry excluding="Eiscat/|ImagNipr/|Cira86Ascii/|GOES/|Mm210/|Lfrto/|HfTohokuu/|NoaaBi/|AeIndex/|WIND/|PoesTxt/|Wdc/|NoaaPower/|ACE/|SymIndex/|Iprt/|FmagNipr/|DstIndex/|MU/" kind="src" path="test/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/Tplot.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/Aplot.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jcommon-1.0.17.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jfreechart-1.0.14.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
