@@ -28,6 +28,7 @@
 			<fileset file="src/GeneralImage/build.xml" />
 		</subant>
 	</target>
+	
 	<target name="clean">
 		<subant target="clean">
 			<fileset file="src/ACE/build.xml" />
@@ -56,4 +57,5 @@
 		  <fileset dir="bin/org/iugonet/www/" includes="**" />
 		</delete>
 	</target>
+	
 </project>

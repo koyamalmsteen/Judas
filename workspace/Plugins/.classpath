@@ -23,7 +23,6 @@
 	<classpathentry kind="src" path="src/NoaaPower"/>
 	<classpathentry kind="src" path="src/WIND"/>
 	<classpathentry kind="src" path="src/Mm210"/>
-	<classpathentry kind="src" path="src/org"/>
 	<classpathentry kind="src" path="src/SuperDARN"/>
 	<classpathentry kind="src" path="src/NoaaBi"/>
 	<classpathentry kind="src" path="src/MU"/>

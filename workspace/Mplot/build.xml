@@ -10,6 +10,17 @@
 	<property name="javadoc.dir" location="docs" />
 	<property name="jar.name" value="Mplot.jar" />
 	<property name="jar.path" location="${lib.dir}/${jar.name}" />
+	
+	<!-- -->
+	<property name="test.src" location="test/src" />
+	<property name="test.bin" location="bin" />
+	<property name="test.class.name" value="sample.MainTest" />
+	
+	<path id="test.classpath">
+		<pathelement location="${build}" />
+		<pathelement location="${test.bin}" />
+		<pathelement location="../../../Documents/eclipse/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar" />
+	</path>
 
 	<path id="utl.classpath">
 		<pathelement location="${ext.dir}/${gt-api.jar}" />
@@ -21,6 +32,7 @@
 		<pathelement location="${ext.dir}/${gt-render.jar}" />
 		<pathelement location="${ext.dir}/${gt-swing.jar}" />
 		<pathelement location="${ext.dir}/${gt-referencing.jar}" />
+		<pathelement location="../../../Documents/eclipse/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar" />
 	</path>
 
 	<target name="jar" depends="compile">
@@ -39,6 +51,7 @@
 		</subant>
 		<mkdir dir="${bin.dir}" />
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
+		<javac srcdir="${test.src}" destdir="${test.bin}" includeantruntime="false" classpathref="test.classpath" />
 	</target>
 	
 	<target name="clean">

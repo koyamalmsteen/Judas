@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="Judas" default="jar" basedir=".">
-<<<<<<< HEAD
 	<property environment="env"/>
 	<property file="../../build.properties"/>
 		
@@ -12,6 +11,17 @@
 	<property name="javadoc.dir" location="docs" />
 	<property name="jar.name" value="Judas.jar" />
 	<property name="jar.path" location="${lib.dir}/${jar.name}" />
+	
+	<!-- -->
+	<property name="test.src" location="test/src" />
+	<property name="test.bin" location="bin" />
+	<property name="test.class.name" value="sample.MainTest" />
+	
+	<path id="test.classpath">
+		<pathelement location="${build}" />
+		<pathelement location="${test.bin}" />
+		<pathelement location="../../../Documents/eclipse/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar" />
+	</path>
 	
 	<path id="utl.classpath">
 		<pathelement location="${lib.dir}/Tplot.jar" />
@@ -26,6 +36,7 @@
 		<pathelement location="${ext.dir}/${swingx.jar}" />
 		<pathelement location="../../plugins/DstIndex.jar" />
 		<pathelement location="../../plugins/AeIndex.jar" />		
+		<pathelement location="../../../Documents/eclipse/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar" />
 	</path>
 
 	<target name="jar" depends="compile">
@@ -39,48 +50,30 @@
 		</jar>
 		<antcall target="sign" />
 	</target>
+	
 	<target name="compile">
 		<mkdir dir="${bin.dir}" />
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
+		<javac srcdir="${test.src}" destdir="${test.bin}" includeantruntime="false" classpathref="test.classpath" />
 	</target>
+	
 	<target name="clean"> 
 		<delete>
 			<fileset file="${jar.path}" />
 			<fileset dir="${bin.dir}" includes="**" />
 		</delete>
-=======
-	<property name="src.dir" value="src" />
-	<property name="bin.dir" value="bin" />
-	<property name="javadoc.dir" value="docs" />
-	<property name="jar.name" value="Judas.jar" />
-	<property name="jar.dir" value="../lib/external/${jar.name}" />
-	<target name="jar" depends="compile">
-		<jar jarfile="${jar.dir}">
-			<fileset dir="${src.dir}" includes="**" />
-			<fileset dir="${bin.dir}" includes="**" />
-		</jar>
-		<antcall target="sign"/>
 	</target>
-	<target name="compile">
-		<mkdir dir="${bin.dir}" />
-		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false"/>
->>>>>>> 66a48c3... This is initial commit.
-	</target>
+	
 	<target name="javadoc">
 		<javadoc destdir="${javadoc.dir}">
 			<fileset dir="${src.dir}" />
 		</javadoc>
 	</target>
+	
 	<target name="sign">
 		<exec executable="jarsigner">
-<<<<<<< HEAD
 			<arg line="-keystore ../../key/keystore -storepass password -keypass password ${jar.path} iugonet" />
 		</exec>
 	</target>
 
-=======
-			<arg line="-keystore ../../key/keystore -storepass password -keypass password ${jar.dir} iugonet"/>
-		</exec>
-	</target>
->>>>>>> 66a48c3... This is initial commit.
 </project>
