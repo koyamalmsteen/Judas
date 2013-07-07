@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<<<<<<< HEAD
 <project name="MU" default="jar" basedir=".">
 	<property environment="env"/>
 	<property file="../../../../build.properties"/>
@@ -26,27 +25,10 @@
 			<manifest>
 				<attribute name="Plugin-Class" value="MU" />	
 			</manifest>	
-=======
-<project name="DataLoader" default="jar" basedir=".">
-	<property name="src.experimental.dir" value="src.experimental" />
-	<property name="src.theoretical.dir" value="src.theoretical" />
-	<property name="src.computational.dir" value="src.computational" />
-	<property name="bin.dir" value="bin" />
-	<property name="javadoc.dir" value="docs" />
-	<property name="jar.name" value="DataLoader.jar" />
-	<property name="jar.dir" value="../../lib/external/${jar.name}" />
-	<target name="jar" depends="compile">
-		<jar jarfile="${jar.dir}">
-			<fileset dir="${src.experimental.dir}" includes="**" />
-			<fileset dir="${src.theoretical.dir}" includes="**" />
-			<fileset dir="${src.computational.dir}" includes="**" />
-			<fileset dir="${bin.dir}" includes="**" />
->>>>>>> a982d91... Fixed
 		</jar>
 	</target>
 	<target name="compile">
 		<subant target="compile">
-<<<<<<< HEAD
 			<fileset file="../../../Tplot/build.xml" />
 		</subant>
 		<subant target="jar">
@@ -60,17 +42,6 @@
 			<fileset file="${jar.path}" />
 			<fileset dir="${bin.dir}" includes="**" />
 		</delete>
-=======
-			<fileset file="../Tplot/build.xml" />
-		</subant>
-		<subant target="jar">
-			<fileset file="../Tplot/build.xml" erroronmissingdir="false" />
-		</subant>
-		<mkdir dir="${bin.dir}" />
-		<javac srcdir="${src.experimental.dir}" destdir="${bin.dir}" includeantruntime="false" />
-		<javac srcdir="${src.theoretical.dir}" destdir="${bin.dir}" includeantruntime="false" />
-		<javac srcdir="${src.computational.dir}" destdir="${bin.dir}" includeantruntime="false" />
->>>>>>> a982d91... Fixed
 	</target>
 	<target name="javadoc">
 		<javadoc destdir="${javadoc.dir}">
