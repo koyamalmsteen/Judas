@@ -11,10 +11,11 @@
 	<property name="jar.name" value="GOES.jar" />
 	<property name="jar.path" location="../../../../plugins/${jar.name}" />
 	
-	<!-- -->
 	<property name="test.src" location="test/src" />
 	<property name="test.bin" location="bin" />
 	<property name="test.class.name" value="sample.MainTest" />
+
+	<!-- -->
 	
 	<path id="test.classpath">
 		<pathelement location="${test.bin}" />
