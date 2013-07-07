@@ -22,6 +22,7 @@
 	</path>
 	
 	<path id="utl.classpath">
+		<pathelement location="./plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jarib/junit-4.10.jar" />
 	</path>
 
 	<target name="jar" depends="compile">
@@ -30,6 +31,7 @@
 			<fileset dir="${bin.dir}" includes="**" />
 		</jar>
 	</target>
+	
 	<target name="compile">
 		<mkdir dir="${bin.dir}" />
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
@@ -41,14 +43,17 @@
 			<fileset dir="${bin.dir}" includes="**" />
 		</delete>
 	</target>
+	
 	<target name="javadoc">
 		<javadoc destdir="${javadoc.dir}">
 			<fileset dir="${src.dir}" />
 		</javadoc>
 	</target>
+	
 	<target name="test" depends="compile" description="test the source">
 		<junit fork="yes" haltonfailure="yes" />
 		<formatter type="plain" usefile="false" />
 		<classpath refid="test.classpath" />
-	</target>	
+	</target>
+	
 </project>

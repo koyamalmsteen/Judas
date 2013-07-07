@@ -15,24 +15,34 @@
 	</path>
 
 	<target name="jar" depends="compile">
+		<subant>
+			<fileset file="../Aplot/build.xml" />
+		</subant>
 		<jar jarfile="${jar.path}">
 			<fileset dir="${src.dir}" includes="**" />
 			<fileset dir="${bin.dir}" includes="**" />
 		</jar>
 	</target>
+	
 	<target name="compile">
+		<subant>
+			<fileset file="../Aplot/build.xml" />
+		</subant>
 		<mkdir dir="${bin.dir}" />
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
 	</target>
+	
 	<target name="clean">
 		<delete>
 			<fileset file="${jar.path}" />
 			<fileset dir="${bin.dir}" includes="**" />
 		</delete>
 	</target>
+	
 	<target name="javadoc">
 		<javadoc destdir="${javadoc.dir}">
 			<fileset dir="${src.dir}" />
 		</javadoc>
 	</target>
+	
 </project>
