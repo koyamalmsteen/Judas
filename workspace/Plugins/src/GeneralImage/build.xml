@@ -15,8 +15,6 @@
 	<property name="test.bin" location="bin" />
 	<property name="test.class.name" value="sample.MainTest" />
 
-	<!-- -->
-		
 	<path id="test.classpath">
 		<pathelement location="${test.bin}" />
 		<pathelement location="../../../Documents/eclipse/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar" />
@@ -27,7 +25,9 @@
 		<pathelement location="${ext.dir}/${jai_core.jar}" />
 		<pathelement location="${ext.dir}/${jai_codec.jar}" />
 	</path>
-			
+
+	<!-- -->
+		
 	<target name="jar" depends="compile">
 		<jar jarfile="${jar.path}">
 			<fileset dir="${src.dir}" includes="**" />

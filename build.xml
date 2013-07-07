@@ -56,6 +56,7 @@
   </target>
 
   <target name="key" description="Create Security Key">
+    <mkdir dir="key" />
     <exec executable="keytool">
       <arg line="-genkey -alias iugonet -keystore ${env.HOME}/Judas/key/keystore -storepass password -keypass password -dname &quot;CN=localhost, OU=IUGONET Project, O=IUGONET project, L=Sakyo-ku, ST=Kyoto, C=JP&quot; -validity 730"/>
     </exec>
