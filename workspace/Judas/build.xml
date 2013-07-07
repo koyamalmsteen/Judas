@@ -69,6 +69,13 @@
 		</javadoc>
 	</target>
 	
+	<target name="test" depends="compile" description="test the source">
+		<junit fork="yes" haltonfailure="yes">
+			<formatter type="plain" usefile="false" />
+			<classpath refid="test.classpath" />
+		</junit>
+	</target>
+	
 	<target name="sign">
 		<exec executable="jarsigner">
 			<arg line="-keystore ../../key/keystore -storepass password -keypass password ${jar.path} iugonet" />

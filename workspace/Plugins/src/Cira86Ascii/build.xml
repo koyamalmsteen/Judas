@@ -62,4 +62,11 @@
 		</javadoc>
 	</target>
 
+	<target name="test" depends="compile" description="test the source">
+		<junit fork="yes" haltonfailure="yes">
+			<formatter type="plain" usefile="false" />
+			<classpath refid="test.classpath" />
+		</junit>
+	</target>
+
 </project>

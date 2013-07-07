@@ -25,7 +25,7 @@
 	</path>
 
 	<!-- -->
-		
+
 	<target name="jar" depends="compile">
 		<jar jarfile="${jar.path}">
 			<fileset dir="${src.dir}" includes="**" />
@@ -53,9 +53,10 @@
 	</target>
 
 	<target name="test" depends="compile" description="test the source">
-		<junit fork="yes" haltonfailure="yes" />
-		<formatter type="plain" usefile="false" />
-		<classpath refid="test.classpath" />
+		<junit fork="yes" haltonfailure="yes">
+			<formatter type="plain" usefile="false" />
+			<classpath refid="test.classpath" />
+		</junit>
 	</target>
 
 </project>
