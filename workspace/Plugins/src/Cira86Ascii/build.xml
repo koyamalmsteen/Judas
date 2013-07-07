@@ -24,7 +24,6 @@
 	<path id="utl.classpath">
 		<pathelement location="${lib.dir}/Mplot.jar" />
 		<pathelement location="${ext.dir}/${gt_swing.jar}" />
-		<pathelement location="../../../Documents/eclipse/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar" />
 	</path>
 
 	<target name="jar" depends="compile">

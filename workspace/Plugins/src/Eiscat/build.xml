@@ -25,7 +25,6 @@
 		<pathelement location="${lib.dir}/Tplot.jar" />
 		<pathelement location="${ext.dir}/${jfreechart.jar}" />
 		<pathelement location="${ext.dir}/${jcommon.jar}" />
-		<pathelement location="../../../Documents/eclipse/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar" />
 	</path>
 			
 	<target name="jar" depends="compile">

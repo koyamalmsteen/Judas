@@ -34,8 +34,7 @@
 		<pathelement location="${ext.dir}/${gt_swing.jar}" />
 		<pathelement location="${ext.dir}/${swingx.jar}" />
 		<pathelement location="../../plugins/DstIndex.jar" />
-		<pathelement location="../../plugins/AeIndex.jar" />		
-		<pathelement location="../../../Documents/eclipse/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar" />
+		<pathelement location="../../plugins/AeIndex.jar" />
 	</path>
 
 	<target name="jar" depends="compile">
