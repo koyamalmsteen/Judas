@@ -162,7 +162,9 @@
     <copy file="${dst_hdf-java_win32}" todir="${judas_home}/lib/external" />
     <!-- -->
     <get src="${src_jython}" dest="${dst_jython}" usetimestamp="yes"/>
-    <copy file="${dst_jython}" todir="${judas_home}/lib/external"/>    
+    <exec executable="java">
+      <arg line="-jar ${dst_jython} -s -d /home/iugonet/jython${jython_version}" />
+    </exec>
     <!-- -->
     <get src="${src_jeditor}" dest="${dst_jeditor}" usetimestamp="yes"/>
     <unzip src="${dst_jeditor}" dest="${tmp}"/>
