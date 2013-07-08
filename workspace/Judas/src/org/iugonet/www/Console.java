@@ -84,11 +84,7 @@ public class Console extends JDialog {
 		jyConsole.setPreferredSize(new Dimension(650, 420));
 		contentPanel.add(jyConsole);
 		/*
-<<<<<<< HEAD
 		 * Close by using ESC-Key
-=======
-		 * Close by usig ESC-Key
->>>>>>> 9f897e0... This is initial commit.
 		 */
 		InputMap imap = getRootPane().getInputMap(
 				JComponent.WHEN_IN_FOCUSED_WINDOW);

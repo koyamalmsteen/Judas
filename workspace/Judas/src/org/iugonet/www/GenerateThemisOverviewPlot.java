@@ -10,10 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.undo.UndoableEditSupport;
 
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -22,15 +18,9 @@ import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Font;
 import java.awt.Insets;
-<<<<<<< HEAD
 import javax.swing.AbstractAction;
 import javax.swing.ButtonGroup;
-=======
 
-import javax.swing.AbstractAction;
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.InputMap;
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
@@ -226,10 +216,16 @@ public class GenerateThemisOverviewPlot extends JDialog {
 		{
 			JButton btnMyCalendar_2 = new JButton("");
 			btnMyCalendar_2.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
+				public void actionPerformed1(ActionEvent e) {
 					MyCalendar calendar = new MyCalendar();
 					calendar.setLocationRelativeTo(null);
 					calendar.setVisible(true);
+				}
+
+				@Override
+				public void actionPerformed(ActionEvent arg0) {
+					// TODO Auto-generated method stub
+					
 				}
 			});
 
@@ -278,7 +274,7 @@ public class GenerateThemisOverviewPlot extends JDialog {
 			}
 		}
 		/*
-		 * Close by usig ESC-Key
+		 * Close by using ESC-Key
 		 */
 		InputMap imap = getRootPane().getInputMap(
 				JComponent.WHEN_IN_FOCUSED_WINDOW);

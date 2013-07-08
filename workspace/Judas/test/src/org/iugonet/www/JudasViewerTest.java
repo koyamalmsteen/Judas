@@ -2,11 +2,6 @@ package org.iugonet.www;
 
 import static org.junit.Assert.*;
 
-<<<<<<< HEAD
-=======
-import java.awt.Robot;
-
->>>>>>> 6410a28... Fixed
 import org.fest.swing.core.MouseButton;
 import org.fest.swing.fixture.FrameFixture;
 
@@ -23,11 +18,8 @@ public class JudasViewerTest {
 
 	@Before
 	public void setUp() throws Exception {
-<<<<<<< HEAD
 		judasViewer = new JudasViewer("http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410","DstIndex");
-=======
-		judasViewer = new JudasViewer("http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410",1);
->>>>>>> 6410a28... Fixed
+
 		frameFixture = new FrameFixture(judasViewer);
 		frameFixture.show();
 		

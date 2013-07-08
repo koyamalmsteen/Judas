@@ -123,7 +123,7 @@ public class MyCalendar extends JDialog {
 		}
 
 		/*
-		 * Close by usig ESC-Key
+		 * Close by using ESC-Key
 		 */
 		InputMap imap = getRootPane().getInputMap(
 				JComponent.WHEN_IN_FOCUSED_WINDOW);

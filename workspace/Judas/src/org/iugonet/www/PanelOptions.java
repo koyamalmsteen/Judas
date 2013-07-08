@@ -2,10 +2,7 @@ package org.iugonet.www;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.AbstractAction;
 import javax.swing.InputMap;
 import javax.swing.JButton;
@@ -22,20 +19,13 @@ import javax.swing.undo.UndoableEditSupport;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
+
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import javax.swing.JComboBox;
 import java.awt.Insets;
 import javax.swing.JTextField;
-<<<<<<< HEAD
-=======
-import javax.swing.ImageIcon;
->>>>>>> 9f897e0... This is initial commit.
 
 public class PanelOptions extends JDialog {
 
@@ -329,7 +319,7 @@ public class PanelOptions extends JDialog {
 			}
 		}
 		/*
-		 * Close by usig ESC-Key
+		 * Close by using ESC-Key
 		 */
 		InputMap imap = getRootPane().getInputMap(
 				JComponent.WHEN_IN_FOCUSED_WINDOW);

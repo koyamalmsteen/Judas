@@ -2,12 +2,8 @@ package org.iugonet.www;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.AbstractAction;
-import javax.swing.ImageIcon;
 import javax.swing.InputMap;
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -20,10 +16,7 @@ import javax.swing.undo.UndoableEditSupport;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
+
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import java.awt.GridLayout;
@@ -33,7 +26,8 @@ public class HelpRequestForm extends JDialog {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID1 = 1L;
+	private static final long serialVersionUID = 1L;
+
 	private final JPanel contentPanel = new JPanel();
 
 	protected UndoableEditSupport undoableEditSupport;
@@ -139,9 +133,9 @@ public class HelpRequestForm extends JDialog {
 				buttonPane.add(btnOk);
 				getRootPane().setDefaultButton(btnOk);
 			}
-		}
+		}		
 		/*
-		 * Close by usig ESC-Key
+		 * Close by using ESC-Key
 		 */
 		InputMap imap = getRootPane().getInputMap(
 				JComponent.WHEN_IN_FOCUSED_WINDOW);
@@ -152,10 +146,12 @@ public class HelpRequestForm extends JDialog {
 			 */
 			private static final long serialVersionUID = 1L;
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 			}
 		});
 	}
+	
 
 }
