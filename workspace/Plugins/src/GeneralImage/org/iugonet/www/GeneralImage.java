@@ -21,7 +21,7 @@ public class GeneralImage extends Iplot{
 	private BufferedReader bufferedReader;
 	private String strUrl = "http://wdc.kugi.kyoto-u.ac.jp/film/image/rapid/aso/1953/r530823.tif";
 
-	GeneralImage() {
+	public GeneralImage() {
 		super();
 //		super(1);
 		// timeSeries[0].setKey("Dst index");

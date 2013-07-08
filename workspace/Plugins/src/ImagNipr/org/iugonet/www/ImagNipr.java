@@ -20,7 +20,7 @@ import org.jfree.data.time.TimeSeriesCollection;
 
 public class ImagNipr extends Tplot {
 
-	ImagNipr() {
+	public ImagNipr() {
 		super(4);
 		/*
 		timeSeries[0]

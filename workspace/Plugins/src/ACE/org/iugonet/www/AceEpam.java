@@ -19,7 +19,7 @@ public class AceEpam extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	AceEpam() {
+	public AceEpam() {
 		super(1);
 		//timeSeries[0].setKey("ACE Electron, Proton, and Alpha Monitor");
 	}

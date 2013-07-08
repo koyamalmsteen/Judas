@@ -20,7 +20,7 @@ import ucar.nc2.Variable;
 
 public class MuIsdataDriftNcdf extends Tplot {
 
-	MuIsdataDriftNcdf() {
+	public MuIsdataDriftNcdf() {
 		super(9);
 		//timeSeries[0].setKey("netcdf");
 	}

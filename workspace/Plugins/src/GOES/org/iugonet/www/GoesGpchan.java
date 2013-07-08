@@ -19,7 +19,7 @@ public class GoesGpchan extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	GoesGpchan() {
+	public GoesGpchan() {
 		super(1);
 		//timeSeries[0].setKey("GOES Energetic Proton Flux Channels");
 	}

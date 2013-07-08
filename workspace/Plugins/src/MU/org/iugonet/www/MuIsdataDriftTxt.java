@@ -19,7 +19,7 @@ public class MuIsdataDriftTxt extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	MuIsdataDriftTxt() {
+	public MuIsdataDriftTxt() {
 		super(1);
 		//timeSeries[0].setKey("MU ionosphere drift");
 	}

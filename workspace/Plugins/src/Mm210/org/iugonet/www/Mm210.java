@@ -21,7 +21,7 @@ import org.jfree.data.time.TimeSeriesCollection;
 
 public class Mm210 extends Tplot {
 
-	Mm210() {
+	public Mm210() {
 		super(1);
 		//timeSeries[0].setKey("MM210 magnetometer");
 	}

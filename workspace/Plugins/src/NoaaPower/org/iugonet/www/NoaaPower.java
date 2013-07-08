@@ -19,7 +19,7 @@ public class NoaaPower extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	NoaaPower() {
+	public NoaaPower() {
 		super(1);
 		//timeSeries[0].setKey("NOAA POES (Power)");
 	}

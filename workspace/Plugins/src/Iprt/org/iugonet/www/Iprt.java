@@ -18,7 +18,7 @@ import org.jfree.data.time.TimeSeriesCollection;
 
 public class Iprt extends Tplot {
 
-	Iprt() {
+	public Iprt() {
 		super(820);
 	}
 

@@ -23,7 +23,7 @@ public class AeIndex extends Tplot {
 	private BufferedReader bufferedReader;
 	private String strUrl = "http://wdc-data.iugonet.org/data/hour/index/ae/1957/ae.5707.ngdc5";
 	
-	AeIndex() {
+	public AeIndex() {
 		super(1);
 		//timeSeries[0].setKey("AE index");
 	}

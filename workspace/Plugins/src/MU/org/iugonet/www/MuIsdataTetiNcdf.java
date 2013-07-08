@@ -20,7 +20,7 @@ import ucar.nc2.Variable;
 
 public class MuIsdataTetiNcdf extends Tplot {
 
-	MuIsdataTetiNcdf() {
+	public MuIsdataTetiNcdf() {
 		// 7 parameter, 12 height channel;
 		super(7 * 12);
 	}

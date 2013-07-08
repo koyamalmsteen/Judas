@@ -19,7 +19,7 @@ public class SymIndex extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	SymIndex() {
+	public SymIndex() {
 		super(1);
 		//timeSeries[0].setKey("SYM-H index");
 	}

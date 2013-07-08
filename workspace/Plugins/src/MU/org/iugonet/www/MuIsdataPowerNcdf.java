@@ -18,7 +18,7 @@ import ucar.nc2.NetcdfFile;
 
 public class MuIsdataPowerNcdf extends Tplot {
 
-	MuIsdataPowerNcdf() {
+	public MuIsdataPowerNcdf() {
 		super(256 * 4);
 	}
 

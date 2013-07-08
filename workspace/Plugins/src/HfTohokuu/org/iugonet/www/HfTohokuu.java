@@ -21,7 +21,7 @@ import org.jfree.data.time.TimeSeriesCollection;
 
 public class HfTohokuu extends Tplot {
 
-	HfTohokuu() {
+	public HfTohokuu() {
 		super(1);
 		//timeSeries[0].setKey("Iitate HF");
 	}

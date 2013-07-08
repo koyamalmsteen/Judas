@@ -18,7 +18,7 @@ public class Eiscat extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	Eiscat() {
+	public Eiscat() {
 		// ACE - Electron, Proton, and Alpha Monitor
 		super(16);
 		/*

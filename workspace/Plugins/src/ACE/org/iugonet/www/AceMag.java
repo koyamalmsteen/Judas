@@ -19,7 +19,7 @@ public class AceMag extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	AceMag() {
+	public AceMag() {
 		super(1);
 		//timeSeries[0].setKey("ACE Magnetometer");
 	}

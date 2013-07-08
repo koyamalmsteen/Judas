@@ -20,7 +20,7 @@ import org.jfree.data.time.TimeSeriesCollection;
 
 public class Lfrto extends Tplot {
 
-	Lfrto() {
+	public Lfrto() {
 		super(2);
 		//timeSeries[0].setKey("LFRTO - power(amplitude)");
 		//timeSeries[1].setKey("LFRTO - phase");

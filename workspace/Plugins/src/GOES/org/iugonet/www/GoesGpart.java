@@ -19,7 +19,7 @@ public class GoesGpart extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	GoesGpart() {
+	public GoesGpart() {
 		super(1);
 		//timeSeries[0].setKey("GOES Solar Particle and Electron Flux");
 	}

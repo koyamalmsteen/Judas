@@ -20,7 +20,7 @@ public class MuMeteorTxt extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	MuMeteorTxt() {
+	public MuMeteorTxt() {
 		super(41);
 		for (int i = 0; i < 41; i++) {
 			/*timeSeries[i].setKey("MU Meteor wind observation - Altitude: "

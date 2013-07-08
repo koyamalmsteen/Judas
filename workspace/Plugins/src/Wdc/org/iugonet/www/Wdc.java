@@ -20,7 +20,7 @@ public class Wdc extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	Wdc() {
+	public Wdc() {
 		super(4);
 		// getTimeSeries(1).setKey("Geomagnetic Data");
 	}

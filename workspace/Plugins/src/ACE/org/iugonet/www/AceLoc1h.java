@@ -19,7 +19,7 @@ public class AceLoc1h extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	AceLoc1h() {
+	public AceLoc1h() {
 		super(1);
 		//timeSeries[0].setKey("ACE Location (GSE Coordinates)");
 	}

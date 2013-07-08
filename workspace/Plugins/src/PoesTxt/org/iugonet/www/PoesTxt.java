@@ -19,7 +19,7 @@ public class PoesTxt extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	PoesTxt() {
+	public PoesTxt() {
 		super(34);
 	}
 

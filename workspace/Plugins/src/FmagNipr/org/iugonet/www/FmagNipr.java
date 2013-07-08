@@ -21,7 +21,7 @@ import org.jfree.data.time.TimeSeriesCollection;
 
 public class FmagNipr extends Tplot {
 
-	FmagNipr() {
+	public FmagNipr() {
 		super(3);
 		/*
 		timeSeries[0]

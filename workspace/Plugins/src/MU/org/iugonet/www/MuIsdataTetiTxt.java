@@ -19,7 +19,7 @@ public class MuIsdataTetiTxt extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	MuIsdataTetiTxt() {
+	public MuIsdataTetiTxt() {
 		super(1);
 		//timeSeries[0].setKey("MU ionosphere power");
 	}

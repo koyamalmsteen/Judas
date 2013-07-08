@@ -19,7 +19,7 @@ public class NoaaBi extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	NoaaBi() {
+	public NoaaBi() {
 		super(1);
 		//timeSeries[0].setKey("NOAA POES (Energetic Particle Belt Indices)");
 	}

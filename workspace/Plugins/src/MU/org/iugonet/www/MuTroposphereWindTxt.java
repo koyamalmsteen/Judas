@@ -19,7 +19,7 @@ public class MuTroposphereWindTxt extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	MuTroposphereWindTxt() {
+	public MuTroposphereWindTxt() {
 		super(118);
 	}
 

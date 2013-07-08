@@ -2,7 +2,7 @@ package org.iugonet.www;
 
 public class SuperDARN {
 
-	SuperDARN(){
+	public SuperDARN(){
 		
 	}
 	

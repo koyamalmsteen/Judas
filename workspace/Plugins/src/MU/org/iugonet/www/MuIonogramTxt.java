@@ -18,7 +18,7 @@ public class MuIonogramTxt extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	MuIonogramTxt() {
+	public MuIonogramTxt() {
 		super(1);
 		//timeSeries[0].setKey("MU Ionosonde");
 	}

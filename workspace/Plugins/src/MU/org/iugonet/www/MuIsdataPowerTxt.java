@@ -19,7 +19,7 @@ public class MuIsdataPowerTxt extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	MuIsdataPowerTxt() {
+	public MuIsdataPowerTxt() {
 		super(1);
 		//timeSeries[0].setKey("MU ionosphere power");
 	}

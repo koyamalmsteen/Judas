@@ -23,7 +23,7 @@ import org.jfree.data.time.TimeSeriesCollection;
 
 public class WindMfih0 extends Tplot {
 
-	WindMfih0() {
+	public WindMfih0() {
 //		super(43);
 		super(3);
 	}

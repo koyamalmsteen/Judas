@@ -20,7 +20,7 @@ import ucar.nc2.Variable;
 
 public class MuMeteorNcdf extends Tplot {
 
-	MuMeteorNcdf(int num) {
+	public MuMeteorNcdf(int num) {
 		super(num);
 	}
 

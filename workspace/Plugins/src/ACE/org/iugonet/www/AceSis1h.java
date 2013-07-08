@@ -19,7 +19,7 @@ public class AceSis1h extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	AceSis1h() {
+	public AceSis1h() {
 		super(1);
 		//timeSeries[0].setKey("ACE Solar Isotope Spectrometer (1hour)");
 	}

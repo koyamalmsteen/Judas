@@ -19,7 +19,7 @@ public class AceSwepam extends Tplot {
 
 	private BufferedReader bufferedReader;
 
-	AceSwepam() {
+	public AceSwepam() {
 		super(1);
 		//timeSeries[0].setKey("ACE Solar Wind Electron Proton Alpha Monitor");
 	}
