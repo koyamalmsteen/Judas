@@ -16,7 +16,7 @@
 	<property name="test.class.name" value="sample.MainTest" />
 	
 	<path id="test.classpath">
-		<pathelement location="${test.bin}" />
+<!--		<pathelement location="${test.bin}" /> -->
 		<pathelement location="${ext.dir}/${junit.jar}" />
 	</path>
 	
@@ -31,8 +31,8 @@
 	
 	<target name="jar" depends="compile">
 		<jar jarfile="${jar.path}">
-			<fileset dir="${src.dir}" includes="**" />
-			<fileset dir="${bin.dir}" includes="**" />
+			<fileset dir="${src.dir}" includes="**/*.java" />
+			<fileset dir="${bin.dir}" includes="**/*.class" />
 			<manifest>
 				<attribute name="Plugin-Class" value="ACE" />	
 			</manifest>	

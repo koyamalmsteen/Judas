@@ -32,8 +32,8 @@
 		
 	<target name="jar" depends="compile">
 		<jar jarfile="${jar.path}">
-			<fileset dir="${src.dir}" includes="**" />
-			<fileset dir="${bin.dir}" includes="**" />
+			<fileset dir="${src.dir}" includes="**/*.java" />
+			<fileset dir="${bin.dir}" includes="**/*.class" />
 			<manifest>
 				<attribute name="Plugin-Class" value="FmagNipr" />	
 			</manifest>	
