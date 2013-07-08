@@ -22,7 +22,7 @@ public class DstIndex extends Tplot {
 	private BufferedReader bufferedReader;
 	private String strUrl = "http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410";
 
-	DstIndex() {
+	public DstIndex() {
 		super(1);
 		// timeSeries[0].setKey("Dst index");
 	}
