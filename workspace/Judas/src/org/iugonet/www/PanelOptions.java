@@ -74,13 +74,10 @@ public class PanelOptions extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Panel Options");
-<<<<<<< HEAD
+
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				PanelOptions.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+
 		setBounds(100, 100, 600, 650);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -171,12 +168,8 @@ public class PanelOptions extends JDialog {
 		}
 		{
 			JButton button = new JButton("");
-<<<<<<< HEAD
 			button.setIcon(icons.getImageIcon("icons/info20.png"));
-=======
-			button.setIcon(new ImageIcon(PanelOptions.class
-					.getResource("/info20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.insets = new Insets(0, 0, 5, 0);
 			gbc_button.gridx = 4;

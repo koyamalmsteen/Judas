@@ -111,13 +111,8 @@ public class XXXAxisOptions extends JDialog {
 
 		setModal(true);
 		setAlwaysOnTop(true);
-<<<<<<< HEAD
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				XXXAxisOptions.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
 		setBounds(100, 100, 500, 670);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());

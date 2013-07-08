@@ -15,18 +15,12 @@ import javax.swing.undo.UndoableEditSupport;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
+
 import javax.swing.JLabel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-<<<<<<< HEAD
-=======
-import javax.swing.ImageIcon;
->>>>>>> 9f897e0... This is initial commit.
+
 import java.awt.Font;
 import javax.swing.JScrollPane;
 
@@ -63,13 +57,10 @@ public class DataProcessing extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Data Processing");
-<<<<<<< HEAD
+		
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				DataProcessing.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+		
 		setBounds(100, 100, 900, 600);
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[] { 896, 0 };
@@ -229,15 +220,12 @@ public class DataProcessing extends JDialog {
 				public void actionPerformed(ActionEvent arg0) {
 				}
 			});
-<<<<<<< HEAD
+
 			/*
 			 * button.setIcon(new ImageIcon(DataProcessing.class
 			 * .getResource("/arrow-1-right20.png")));
 			 */
-=======
-			button.setIcon(new ImageIcon(DataProcessing.class
-					.getResource("/arrow-1-right20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.gridheight = 2;
 			gbc_button.insets = new Insets(0, 0, 5, 5);
@@ -262,15 +250,11 @@ public class DataProcessing extends JDialog {
 		}
 		{
 			JButton btnLeftArrow = new JButton("");
-<<<<<<< HEAD
 			/*
 			 * btnLeftArrow.setIcon(new ImageIcon(DataProcessing.class
 			 * .getResource("/arrow-1-left20.png")));
 			 */
-=======
-			btnLeftArrow.setIcon(new ImageIcon(DataProcessing.class
-					.getResource("/arrow-1-left20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_btnLeftArrow = new GridBagConstraints();
 			gbc_btnLeftArrow.gridheight = 2;
 			gbc_btnLeftArrow.insets = new Insets(0, 0, 5, 5);

@@ -2,6 +2,7 @@ package org.iugonet.www;
 
 import java.awt.BorderLayout;
 
+
 import java.awt.FlowLayout;
 
 import javax.swing.AbstractAction;
@@ -20,19 +21,11 @@ import javax.swing.undo.UndoableEditSupport;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-<<<<<<< HEAD
-=======
-import javax.swing.ImageIcon;
->>>>>>> 9f897e0... This is initial commit.
 
 public class PlotLayoutOptions extends JDialog {
 
@@ -73,13 +66,10 @@ public class PlotLayoutOptions extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Plot Layout Options");
-<<<<<<< HEAD
+		
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				PlotLayoutOptions.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+
 		setBounds(100, 100, 1000, 650);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -355,12 +345,7 @@ public class PlotLayoutOptions extends JDialog {
 		}
 		{
 			JButton button = new JButton("");
-<<<<<<< HEAD
 			button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-			button.setIcon(new ImageIcon(PlotLayoutOptions.class
-					.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.anchor = GridBagConstraints.WEST;
 			gbc_button.gridwidth = 2;
@@ -371,13 +356,8 @@ public class PlotLayoutOptions extends JDialog {
 		}
 		{
 			JButton button = new JButton("");
-<<<<<<< HEAD
 			
 			button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-			button.setIcon(new ImageIcon(PlotLayoutOptions.class
-					.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.anchor = GridBagConstraints.WEST;
 			gbc_button.gridwidth = 2;
@@ -410,12 +390,7 @@ public class PlotLayoutOptions extends JDialog {
 		}
 		{
 			JButton button = new JButton("");
-<<<<<<< HEAD
 			button.setIcon(icons.getImageIcon("icons/arrow-3-up8"));
-=======
-			button.setIcon(new ImageIcon(PlotLayoutOptions.class
-					.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.insets = new Insets(0, 0, 5, 0);
 			gbc_button.gridx = 7;
@@ -424,12 +399,8 @@ public class PlotLayoutOptions extends JDialog {
 		}
 		{
 			JButton button = new JButton("");
-<<<<<<< HEAD
 			button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-			button.setIcon(new ImageIcon(PlotLayoutOptions.class
-					.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.insets = new Insets(0, 0, 5, 0);
 			gbc_button.gridx = 7;
@@ -460,12 +431,8 @@ public class PlotLayoutOptions extends JDialog {
 		}
 		{
 			JButton button = new JButton("");
-<<<<<<< HEAD
 			button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-			button.setIcon(new ImageIcon(PlotLayoutOptions.class
-					.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.insets = new Insets(0, 0, 5, 0);
 			gbc_button.gridx = 7;
@@ -474,12 +441,8 @@ public class PlotLayoutOptions extends JDialog {
 		}
 		{
 			JButton button = new JButton("");
-<<<<<<< HEAD
 			button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-			button.setIcon(new ImageIcon(PlotLayoutOptions.class
-					.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.insets = new Insets(0, 0, 5, 0);
 			gbc_button.gridx = 7;
@@ -509,12 +472,8 @@ public class PlotLayoutOptions extends JDialog {
 		}
 		{
 			JButton button = new JButton("");
-<<<<<<< HEAD
 			button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-			button.setIcon(new ImageIcon(PlotLayoutOptions.class
-					.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.insets = new Insets(0, 0, 5, 0);
 			gbc_button.gridx = 7;
@@ -523,12 +482,8 @@ public class PlotLayoutOptions extends JDialog {
 		}
 		{
 			JButton button = new JButton("");
-<<<<<<< HEAD
 			button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-			button.setIcon(new ImageIcon(PlotLayoutOptions.class
-					.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.insets = new Insets(0, 0, 5, 0);
 			gbc_button.gridx = 7;
@@ -625,9 +580,5 @@ public class PlotLayoutOptions extends JDialog {
 			}
 		});
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 9f897e0... This is initial commit.
 }

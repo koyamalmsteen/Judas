@@ -7,6 +7,7 @@ import java.awt.FlowLayout;
 
 >>>>>>> 9f897e0... This is initial commit.
 import javax.swing.AbstractAction;
+import javax.swing.ImageIcon;
 import javax.swing.InputMap;
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -60,13 +61,10 @@ public class HelpRequestForm extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("HelpRequestForm");
-<<<<<<< HEAD
+		
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				HelpRequestForm.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+
 		setBounds(100, 100, 500, 600);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

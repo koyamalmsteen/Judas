@@ -9,5 +9,15 @@
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/fest-reflect-1.2.jar"/>
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/fest-swing-1.2.jar"/>
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/fest-util-1.1.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/swingx-all-1.6.4.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-api-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-coverage-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-data-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-main-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-metadata-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-opengis-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-referencing-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-render-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-swing-9.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

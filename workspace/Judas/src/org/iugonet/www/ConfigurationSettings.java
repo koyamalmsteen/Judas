@@ -17,6 +17,7 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.AbstractAction;
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.InputMap;
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
@@ -26,10 +27,6 @@ import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.KeyStroke;
 
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -72,13 +69,10 @@ public class ConfigurationSettings extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Configuration Settings");
-<<<<<<< HEAD
+		
 		Icons icons = new Icons();
-		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				ConfigurationSettings.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+		setIconImage(icons.getImage("/calendar-alt-1-20.png"));
+
 		setBounds(100, 100, 666, 500);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

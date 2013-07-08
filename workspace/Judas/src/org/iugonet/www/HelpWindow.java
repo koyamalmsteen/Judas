@@ -1,12 +1,11 @@
 package org.iugonet.www;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
+import java.awt.FlowLayout;
+
 import javax.swing.AbstractAction;
+import javax.swing.ImageIcon;
 import javax.swing.InputMap;
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -20,10 +19,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
 import java.awt.GridLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -62,13 +57,10 @@ public class HelpWindow extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Help Window");
-<<<<<<< HEAD
+		
 		Icons icons = new Icons();
-		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				HelpWindow.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+		setIconImage(icons.getImage("/calendar-alt-1-20.png"));
+		
 		setBounds(100, 100, 900, 180);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -123,8 +115,5 @@ public class HelpWindow extends JDialog {
 			}
 		});
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> 9f897e0... This is initial commit.
+	
 }

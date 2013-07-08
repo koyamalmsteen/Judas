@@ -1,11 +1,9 @@
 package org.iugonet.www;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
+import java.awt.FlowLayout;
+
 import javax.swing.AbstractAction;
 import javax.swing.InputMap;
 import javax.swing.JButton;
@@ -19,18 +17,12 @@ import javax.swing.undo.UndoableEditSupport;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
+
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-<<<<<<< HEAD
-=======
-import javax.swing.ImageIcon;
->>>>>>> 9f897e0... This is initial commit.
+
 import javax.swing.JTree;
 import javax.swing.JList;
 
@@ -67,14 +59,10 @@ public class ManageDataAndImportExportTplot extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Manage Data And Import/Export Tplot");
-<<<<<<< HEAD
+
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				ManageDataAndImportExportTplot.class
-						.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+
 		setBounds(100, 100, 650, 500);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -116,14 +104,8 @@ public class ManageDataAndImportExportTplot extends JDialog {
 		}
 		{
 			JButton btnRightArrow = new JButton("");
-<<<<<<< HEAD
 			btnRightArrow.setIcon(icons
 					.getImageIcon("icons/arrow-1-right20.png"));
-=======
-			btnRightArrow.setIcon(new ImageIcon(
-					ManageDataAndImportExportTplot.class
-							.getResource("/arrow-1-right20.png")));
->>>>>>> 9f897e0... This is initial commit.
 			GridBagConstraints gbc_btnRightArrow = new GridBagConstraints();
 			gbc_btnRightArrow.insets = new Insets(0, 0, 5, 5);
 			gbc_btnRightArrow.gridx = 1;
@@ -141,12 +123,8 @@ public class ManageDataAndImportExportTplot extends JDialog {
 		}
 		{
 			JButton button = new JButton("");
-<<<<<<< HEAD
 			button.setIcon(icons.getImageIcon("icons/arrow-1-left20.png"));
-=======
-			button.setIcon(new ImageIcon(ManageDataAndImportExportTplot.class
-					.getResource("/arrow-1-left20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.insets = new Insets(0, 0, 5, 5);
 			gbc_button.gridx = 1;
@@ -155,12 +133,8 @@ public class ManageDataAndImportExportTplot extends JDialog {
 		}
 		{
 			JButton btnTrash = new JButton("");
-<<<<<<< HEAD
 			btnTrash.setIcon(icons.getImageIcon("icons/trash-empty20.png"));
-=======
-			btnTrash.setIcon(new ImageIcon(ManageDataAndImportExportTplot.class
-					.getResource("/trash-empty20.png")));
->>>>>>> 9f897e0... This is initial commit.
+			
 			GridBagConstraints gbc_btnTrash = new GridBagConstraints();
 			gbc_btnTrash.insets = new Insets(0, 0, 5, 5);
 			gbc_btnTrash.gridx = 1;
@@ -169,12 +143,8 @@ public class ManageDataAndImportExportTplot extends JDialog {
 		}
 		{
 			JButton btnZoom = new JButton("");
-<<<<<<< HEAD
 			btnZoom.setIcon(icons.getImageIcon("icons/zoom-in20.png"));
-=======
-			btnZoom.setIcon(new ImageIcon(ManageDataAndImportExportTplot.class
-					.getResource("/zoom-in20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_btnZoom = new GridBagConstraints();
 			gbc_btnZoom.insets = new Insets(0, 0, 0, 5);
 			gbc_btnZoom.gridx = 1;

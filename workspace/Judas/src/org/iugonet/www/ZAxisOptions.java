@@ -68,8 +68,8 @@ public class ZAxisOptions extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Z Axis Options");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				ZAxisOptions.class.getResource("/favicon.ico")));
+		Icons icons = new Icons();
+		setIconImage(icons.getImage("icons/favicon.ico"));
 		setBounds(100, 100, 500, 670);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

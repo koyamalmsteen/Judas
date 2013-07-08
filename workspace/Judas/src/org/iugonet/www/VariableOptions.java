@@ -1,11 +1,9 @@
 package org.iugonet.www;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
+import java.awt.FlowLayout;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -17,10 +15,6 @@ import javax.swing.undo.UndoableEditSupport;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.AbstractAction;
 import javax.swing.InputMap;
 import javax.swing.JCheckBox;
@@ -34,10 +28,6 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import javax.swing.JComboBox;
 import java.awt.Insets;
-<<<<<<< HEAD
-=======
-import javax.swing.ImageIcon;
->>>>>>> 9f897e0... This is initial commit.
 
 public class VariableOptions extends JDialog {
 
@@ -78,13 +68,10 @@ public class VariableOptions extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Variable Options");
-<<<<<<< HEAD
+		
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				VariableOptions.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+		
 		setBounds(100, 100, 600, 550);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -147,12 +134,8 @@ public class VariableOptions extends JDialog {
 		}
 		{
 			JButton btnAdd = new JButton("");
-<<<<<<< HEAD
 			btnAdd.setIcon(icons.getImageIcon("icons/add20.png"));
-=======
-			btnAdd.setIcon(new ImageIcon(VariableOptions.class
-					.getResource("/add20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_btnAdd = new GridBagConstraints();
 			gbc_btnAdd.insets = new Insets(0, 0, 5, 5);
 			gbc_btnAdd.gridx = 2;
@@ -161,12 +144,8 @@ public class VariableOptions extends JDialog {
 		}
 		{
 			JButton button = new JButton("");
-<<<<<<< HEAD
 			button.setIcon(icons.getImageIcon("icons/minus20.png"));
-=======
-			button.setIcon(new ImageIcon(VariableOptions.class
-					.getResource("/minus20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.insets = new Insets(0, 0, 5, 5);
 			gbc_button.gridx = 2;
@@ -314,12 +293,8 @@ public class VariableOptions extends JDialog {
 		}
 		{
 			JButton button = new JButton("");
-<<<<<<< HEAD
 			button.setIcon(icons.getImageIcon("icons/info20.png"));
-=======
-			button.setIcon(new ImageIcon(VariableOptions.class
-					.getResource("/info20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.insets = new Insets(0, 0, 5, 5);
 			gbc_button.gridx = 1;

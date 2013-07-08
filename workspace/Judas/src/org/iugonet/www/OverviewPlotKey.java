@@ -1,11 +1,9 @@
 package org.iugonet.www;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
+import java.awt.FlowLayout;
+
 import javax.swing.AbstractAction;
 import javax.swing.InputMap;
 import javax.swing.JButton;
@@ -20,11 +18,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
-<<<<<<< HEAD
-=======
-import javax.swing.ImageIcon;
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 
@@ -61,37 +54,23 @@ public class OverviewPlotKey extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Overview Plot Key");
-<<<<<<< HEAD
+		
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
 		setBounds(100, 100, 800, 550);
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				OverviewPlotKey.class.getResource("/favicon.ico")));
-		setBounds(100, 100, 800, 500);
->>>>>>> 9f897e0... This is initial commit.
+
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		// getContentPane().add(contentPanel, BorderLayout.CENTER);
 
 		JLabel lblNewLabel = new JLabel("");
-<<<<<<< HEAD
 		lblNewLabel.setIcon(icons.getImageIcon("icons/screenshot.png"));
-=======
-		lblNewLabel.setIcon(new ImageIcon(OverviewPlotKey.class
-				.getResource("/screenshot.png")));
->>>>>>> 9f897e0... This is initial commit.
 
 		JScrollPane scrollPane = new JScrollPane(contentPanel);
 		{
 			JLabel lblNewLabel_1 = new JLabel("");
-<<<<<<< HEAD
 			lblNewLabel_1.setIcon(icons.getImageIcon("icons/screenshot_iug_crib_blr_rish_txt.png"));
-=======
-			lblNewLabel_1.setIcon(new ImageIcon(OverviewPlotKey.class
-					.getResource("/screenshot_iug_crib_blr_rish_txt.png")));
->>>>>>> 9f897e0... This is initial commit.
 			contentPanel.add(lblNewLabel_1);
 		}
 		scrollPane
@@ -134,8 +113,5 @@ public class OverviewPlotKey extends JDialog {
 			}
 		});
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
 }

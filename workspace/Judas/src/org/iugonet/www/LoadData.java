@@ -14,19 +14,11 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.undo.UndoableEditSupport;
 import javax.swing.JTabbedPane;
 
-<<<<<<< HEAD
 //import org.iugonet.www.Wind;
-=======
-import org.iugonet.www.Wind;
->>>>>>> 9f897e0... This is initial commit.
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
 
 public class LoadData extends JDialog {
 
@@ -61,13 +53,10 @@ public class LoadData extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Load Data");
-<<<<<<< HEAD
+		
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				LoadData.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+		
 		setBounds(100, 100, 1000, 700);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());
@@ -77,30 +66,18 @@ public class LoadData extends JDialog {
 			JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 			// contentPanel.add(tabbedPane);
 
-<<<<<<< HEAD
 			ThemisGui themis = new ThemisGui();
 			ThemisDerivedSpectra themisDerivedSpectra = new ThemisDerivedSpectra();
 			GoesGui goes = new GoesGui();
 			// WindGui wind = new WindGui();
 			AceGui ace = new AceGui();
-=======
-			Themis themis = new Themis();
-			ThemisDerivedSpectra themisDerivedSpectra = new ThemisDerivedSpectra();
-			Goes goes = new Goes();
-			Wind wind = new Wind();
-			Ace ace = new Ace();
->>>>>>> 9f897e0... This is initial commit.
 			Iugonet iugonet = new Iugonet();
 
 			tabbedPane.addTab(themis.getProjectName(), themis);
 			tabbedPane.addTab(themisDerivedSpectra.getProjectName(),
 					themisDerivedSpectra);
 			tabbedPane.addTab(goes.getProjectName(), goes);
-<<<<<<< HEAD
 			// tabbedPane.addTab(wind.getProjectName(), wind);
-=======
-			tabbedPane.addTab(wind.getProjectName(), wind);
->>>>>>> 9f897e0... This is initial commit.
 			tabbedPane.addTab(ace.getProjectName(), ace);
 			tabbedPane.addTab(iugonet.getProjectName(), iugonet);
 

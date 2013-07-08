@@ -1,11 +1,9 @@
 package org.iugonet.www;
 
 import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
+import java.awt.FlowLayout;
+
 import javax.swing.AbstractAction;
 import javax.swing.InputMap;
 import javax.swing.JButton;
@@ -17,10 +15,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.undo.UndoableEditSupport;
 
 import org.jdesktop.swingx.JXMonthView;
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -62,13 +57,10 @@ public class MyCalendar extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Calendar");
-<<<<<<< HEAD
+		
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				MyCalendar.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+
 		setBounds(100, 100, 750, 800);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());

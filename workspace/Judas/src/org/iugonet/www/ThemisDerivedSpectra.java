@@ -1,16 +1,13 @@
 package org.iugonet.www;
 
 import java.awt.GridBagLayout;
+
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-<<<<<<< HEAD
-=======
-import javax.swing.ImageIcon;
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JList;
@@ -118,15 +115,8 @@ public class ThemisDerivedSpectra extends Project {
 		gbc_btnMyCalendar_1.gridx = 2;
 		gbc_btnMyCalendar_1.gridy = 1;
 		add(btnMyCalendar_1, gbc_btnMyCalendar_1);
-<<<<<<< HEAD
 		Icons icons = new Icons();
 		btnMyCalendar_1.setIcon(icons.getImageIcon("icons/calendar-alt-1-20.png"));
-		
-=======
-		btnMyCalendar_1.setIcon(new ImageIcon(Themis.class
-				.getResource("/calendar-alt-1-20.png")));
-
->>>>>>> 9f897e0... This is initial commit.
 		JLabel lblMinev = new JLabel("Min (eV):");
 		GridBagConstraints gbc_lblMinev = new GridBagConstraints();
 		gbc_lblMinev.anchor = GridBagConstraints.WEST;
@@ -236,12 +226,7 @@ public class ThemisDerivedSpectra extends Project {
 		gbc_btnMyCalendar_2.gridx = 2;
 		gbc_btnMyCalendar_2.gridy = 2;
 		add(btnMyCalendar_2, gbc_btnMyCalendar_2);
-<<<<<<< HEAD
 		btnMyCalendar_2.setIcon(icons.getImageIcon("icons/calendar-alt-1-20.png"));
-=======
-		btnMyCalendar_2.setIcon(new ImageIcon(Themis.class
-				.getResource("/calendar-alt-1-20.png")));
->>>>>>> 9f897e0... This is initial commit.
 		if (chckbxUseSingleDay.isSelected()) {
 			textField_4.setEnabled(false);
 		}

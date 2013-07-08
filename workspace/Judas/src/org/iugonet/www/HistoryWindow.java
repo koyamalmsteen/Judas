@@ -1,6 +1,7 @@
 package org.iugonet.www;
 
 import java.awt.BorderLayout;
+
 import java.awt.FlowLayout;
 
 import javax.swing.AbstractAction;
@@ -16,10 +17,6 @@ import javax.swing.undo.UndoableEditSupport;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
 
 public class HistoryWindow extends JDialog {
 
@@ -54,13 +51,10 @@ public class HistoryWindow extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("History Window");
-<<<<<<< HEAD
+		
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				HistoryWindow.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+		
 		setBounds(100, 100, 500, 600);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());
@@ -94,15 +88,9 @@ public class HistoryWindow extends JDialog {
 				buttonPane.add(btnCancel);
 			}
 		}
-<<<<<<< HEAD
 
 		// * Close by usig ESC-Key
 
-=======
-		/*
-		 * Close by usig ESC-Key
-		 */
->>>>>>> 9f897e0... This is initial commit.
 		InputMap imap = getRootPane().getInputMap(
 				JComponent.WHEN_IN_FOCUSED_WINDOW);
 		imap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), "escape");

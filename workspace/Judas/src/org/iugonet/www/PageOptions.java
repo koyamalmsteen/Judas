@@ -1,6 +1,7 @@
 package org.iugonet.www;
 
 import java.awt.BorderLayout;
+
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
@@ -14,11 +15,7 @@ import javax.swing.undo.UndoableEditSupport;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
 
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.AbstractAction;
 import javax.swing.InputMap;
 import javax.swing.JCheckBox;
@@ -77,13 +74,10 @@ public class PageOptions extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Page Options");
-<<<<<<< HEAD
+
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				PageOptions.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+
 		setBounds(100, 100, 600, 500);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());

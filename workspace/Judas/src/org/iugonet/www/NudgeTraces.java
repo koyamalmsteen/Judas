@@ -1,13 +1,9 @@
 package org.iugonet.www;
 
 import java.awt.BorderLayout;
-<<<<<<< HEAD
 
 import java.awt.FlowLayout;
-=======
-import java.awt.FlowLayout;
 
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.AbstractAction;
 import javax.swing.InputMap;
 import javax.swing.JButton;
@@ -21,13 +17,7 @@ import javax.swing.undo.UndoableEditSupport;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-<<<<<<< HEAD
 import javax.swing.JLabel;
-=======
-import java.awt.Toolkit;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
->>>>>>> 9f897e0... This is initial commit.
 import java.awt.Font;
 
 public class NudgeTraces extends JDialog {
@@ -63,13 +53,10 @@ public class NudgeTraces extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Nudge Traces");
-<<<<<<< HEAD
+
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				NudgeTraces.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+
 		setBounds(100, 100, 400, 109);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());
@@ -79,13 +66,8 @@ public class NudgeTraces extends JDialog {
 			JLabel lblNewLabel = new JLabel(
 					"Nudge Traces: There are No Active Panels");
 			lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 12));
-<<<<<<< HEAD
 			lblNewLabel.setIcon(icons.getImageIcon("icons/info20.png"));
 			
-=======
-			lblNewLabel.setIcon(new ImageIcon(NudgeTraces.class
-					.getResource("/info20.png")));
->>>>>>> 9f897e0... This is initial commit.
 			contentPanel.add(lblNewLabel);
 		}
 		{
@@ -123,9 +105,5 @@ public class NudgeTraces extends JDialog {
 			}
 		});
 	}
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 9f897e0... This is initial commit.
 }

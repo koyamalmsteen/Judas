@@ -1,24 +1,10 @@
 package org.iugonet.www;
 
-<<<<<<< HEAD
-import javax.swing.JPanel;
-import javax.swing.undo.UndoableEditSupport;
-
-=======
-import java.awt.BorderLayout;
-import java.io.IOException;
 
 import javax.swing.JPanel;
+
 import javax.swing.undo.UndoableEditSupport;
 
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.data.time.Second;
-import org.jfree.data.time.TimeSeries;
-import org.jfree.data.time.TimeSeriesCollection;
-
->>>>>>> 9f897e0... This is initial commit.
 public class PlotPane extends JPanel {
 
 	/**
@@ -94,7 +80,6 @@ public class PlotPane extends JPanel {
 	public void plot(String arg0) {
 		System.out.println("plot");
 
-<<<<<<< HEAD
 		/*
 =======
 >>>>>>> 9f897e0... This is initial commit.
@@ -115,8 +100,6 @@ public class PlotPane extends JPanel {
 		this.add(cpanel);
 <<<<<<< HEAD
 		*/
-=======
->>>>>>> 9f897e0... This is initial commit.
 		this.setVisible(true);
 		this.updateUI();
 	}

@@ -1,6 +1,7 @@
 package org.iugonet.www;
 
 import java.awt.BorderLayout;
+
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
@@ -14,21 +15,14 @@ import javax.swing.undo.UndoableEditSupport;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
+
 import javax.swing.JTabbedPane;
 import javax.swing.JLabel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
-<<<<<<< HEAD
 import java.awt.Image;
 import java.awt.Insets;
 import java.net.URL;
-=======
-import java.awt.Insets;
->>>>>>> 9f897e0... This is initial commit.
 
 import javax.swing.AbstractAction;
 import javax.swing.ButtonGroup;
@@ -122,12 +116,10 @@ public class VelocitySlices extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Velocity Slices");
-<<<<<<< HEAD
-		setIconImage(getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				VelocitySlices.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+		
+		Icons icons = new Icons();
+		setIconImage(icons.getImage("icons/favicon.ico"));
+
 		setBounds(100, 100, 500, 700);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setLayout(new FlowLayout());
@@ -135,10 +127,8 @@ public class VelocitySlices extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		{
 			JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-<<<<<<< HEAD
-			Icons icons = new Icons();
-=======
->>>>>>> 9f897e0... This is initial commit.
+			Icons icons1 = new Icons();
+
 			// contentPanel.add(tabbedPane);
 			{
 				JPanel panel = new JPanel();
@@ -262,12 +252,9 @@ public class VelocitySlices extends JDialog {
 							calendar.setVisible(true);
 						}
 					});
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/calendar-alt-1-20.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/calendar-alt-1-20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/calendar-alt-1-20.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 2;
@@ -304,12 +291,9 @@ public class VelocitySlices extends JDialog {
 							calendar.setVisible(true);
 						}
 					});
-<<<<<<< HEAD
-					btnNewButton_2.setIcon(icons.getImageIcon("icons/calendar-alt-1-20.png"));
-=======
-					btnNewButton_2.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/calendar-alt-1-20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					btnNewButton_2.setIcon(icons1.getImageIcon("icons/calendar-alt-1-20.png"));
+
 					GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
 					gbc_btnNewButton_2.insets = new Insets(0, 0, 5, 5);
 					gbc_btnNewButton_2.gridx = 2;
@@ -340,12 +324,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton btnNewButton_6 = new JButton("");
-<<<<<<< HEAD
-					btnNewButton_6.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					btnNewButton_6.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					btnNewButton_6.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_btnNewButton_6 = new GridBagConstraints();
 					gbc_btnNewButton_6.insets = new Insets(0, 0, 5, 5);
 					gbc_btnNewButton_6.gridx = 2;
@@ -440,12 +421,9 @@ public class VelocitySlices extends JDialog {
 				ButtonGroup buttonGroup = new ButtonGroup();
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 2;
@@ -454,12 +432,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 2;
@@ -468,12 +443,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+					
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 2;
@@ -544,12 +516,9 @@ public class VelocitySlices extends JDialog {
 									.setVisible(true);
 						}
 					});
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/info20.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/info20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/info20.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 2;
@@ -656,12 +625,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 2;
@@ -670,12 +636,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 0, 5);
 					gbc_button.gridx = 2;
@@ -749,12 +712,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 3;
@@ -803,12 +763,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 3;
@@ -927,12 +884,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton btnNewButton_7 = new JButton("");
-<<<<<<< HEAD
-					btnNewButton_7.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					btnNewButton_7.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+					
+					btnNewButton_7.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_btnNewButton_7 = new GridBagConstraints();
 					gbc_btnNewButton_7.insets = new Insets(0, 0, 5, 5);
 					gbc_btnNewButton_7.gridx = 4;
@@ -941,12 +895,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 4;
@@ -977,12 +928,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 4;
@@ -991,12 +939,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 4;
@@ -1178,12 +1123,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 4;
@@ -1255,12 +1197,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 4;
@@ -1500,12 +1439,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 4;
@@ -1514,12 +1450,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 0, 5);
 					gbc_button.gridx = 4;
@@ -1664,12 +1597,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -1700,12 +1630,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -1714,12 +1641,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -1805,12 +1729,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -1898,12 +1819,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -1932,12 +1850,8 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -1988,12 +1902,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -2002,12 +1913,8 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -2062,12 +1969,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -2154,12 +2058,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -2178,12 +2079,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -2192,12 +2090,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton btnNewButton_3 = new JButton("");
-<<<<<<< HEAD
-					btnNewButton_3.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					btnNewButton_3.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+					
+					btnNewButton_3.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_btnNewButton_3 = new GridBagConstraints();
 					gbc_btnNewButton_3.insets = new Insets(0, 0, 5, 0);
 					gbc_btnNewButton_3.gridx = 2;
@@ -2216,12 +2111,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton btnNewButton_4 = new JButton("");
-<<<<<<< HEAD
-					btnNewButton_4.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					btnNewButton_4.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					btnNewButton_4.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_btnNewButton_4 = new GridBagConstraints();
 					gbc_btnNewButton_4.insets = new Insets(0, 0, 5, 0);
 					gbc_btnNewButton_4.gridx = 2;
@@ -2295,12 +2187,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -2384,12 +2273,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+					
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -2398,12 +2284,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -2422,12 +2305,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -2446,12 +2326,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -2460,12 +2337,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
-					button.setIcon(icons.getImageIcon("icons/arrow-3-up8.png"));
-=======
-					button.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-up8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					button.setIcon(icons1.getImageIcon("icons/arrow-3-up8.png"));
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 2;
@@ -2474,12 +2348,9 @@ public class VelocitySlices extends JDialog {
 				}
 				{
 					JButton btnNewButton_5 = new JButton("");
-<<<<<<< HEAD
-					btnNewButton_5.setIcon(icons.getImageIcon("icons/arrow-3-down8.png"));
-=======
-					btnNewButton_5.setIcon(new ImageIcon(VelocitySlices.class
-							.getResource("/arrow-3-down8.png")));
->>>>>>> 9f897e0... This is initial commit.
+
+					btnNewButton_5.setIcon(icons1.getImageIcon("icons/arrow-3-down8.png"));
+
 					GridBagConstraints gbc_btnNewButton_5 = new GridBagConstraints();
 					gbc_btnNewButton_5.insets = new Insets(0, 0, 5, 0);
 					gbc_btnNewButton_5.gridx = 2;
@@ -3337,7 +3208,6 @@ public class VelocitySlices extends JDialog {
 			}
 		});
 	}
-<<<<<<< HEAD
 	
 	private Image getImage(String imageFileName){
 		URL imageUrl = this.getClass().getClassLoader().getResource(imageFileName);
@@ -3346,6 +3216,4 @@ public class VelocitySlices extends JDialog {
 		return image;
 	}
 	
-=======
->>>>>>> 9f897e0... This is initial commit.
 }

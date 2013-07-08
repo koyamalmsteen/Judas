@@ -59,14 +59,10 @@ public class IonElectronVelocitySlicesRotationsLegend extends JDialog {
 		undoableEditSupport = new UndoableEditSupport(this);
 
 		setTitle("Ion/Electron Velocity Slices - Rotations Legend");
-<<<<<<< HEAD
+		
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				IonElectronVelocitySlicesRotationsLegend.class
-						.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+
 		setBounds(100, 100, 650, 240);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));

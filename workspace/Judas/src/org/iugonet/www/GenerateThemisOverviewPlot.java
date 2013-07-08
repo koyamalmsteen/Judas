@@ -73,13 +73,10 @@ public class GenerateThemisOverviewPlot extends JDialog {
 		setModal(true);
 		setAlwaysOnTop(true);
 		setTitle("Generate Themis Overview Plot");
-<<<<<<< HEAD
+		
 		Icons icons = new Icons();
 		setIconImage(icons.getImage("icons/favicon.ico"));
-=======
-		setIconImage(Toolkit.getDefaultToolkit().getImage(
-				GenerateThemisOverviewPlot.class.getResource("/favicon.ico")));
->>>>>>> 9f897e0... This is initial commit.
+		
 		setBounds(100, 100, 400, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -190,14 +187,9 @@ public class GenerateThemisOverviewPlot extends JDialog {
 					calendar.setVisible(true);
 				}
 			});
-<<<<<<< HEAD
+
 			btnMyCalendar_1.setIcon(icons
 					.getImageIcon("icons/calendar-alt-1-20.png"));
-=======
-			btnMyCalendar_1.setIcon(new ImageIcon(
-					GenerateThemisOverviewPlot.class
-							.getResource("/calendar-alt-1-20.png")));
->>>>>>> 9f897e0... This is initial commit.
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.insets = new Insets(0, 0, 5, 5);
 			gbc_button.gridx = 2;
@@ -240,14 +232,9 @@ public class GenerateThemisOverviewPlot extends JDialog {
 					calendar.setVisible(true);
 				}
 			});
-<<<<<<< HEAD
+
 			btnMyCalendar_2.setIcon(icons
 					.getImageIcon("icons/calendar-alt-1-20.png"));
-=======
-			btnMyCalendar_2.setIcon(new ImageIcon(
-					GenerateThemisOverviewPlot.class
-							.getResource("/calendar-alt-1-20.png")));
->>>>>>> 9f897e0... This is initial commit.
 			GridBagConstraints gbc_button = new GridBagConstraints();
 			gbc_button.insets = new Insets(0, 0, 5, 5);
 			gbc_button.gridx = 2;
@@ -309,7 +296,6 @@ public class GenerateThemisOverviewPlot extends JDialog {
 		});
 	}
 
-<<<<<<< HEAD
 	/*
 	 * private Image getImage(String imageFileName){ URL imageUrl =
 	 * this.getClass().getClassLoader().getResource(imageFileName); Image image
@@ -320,6 +306,4 @@ public class GenerateThemisOverviewPlot extends JDialog {
 	 * = new ImageIcon(); imageIcon.setImage(getImage(imageFileName)); return
 	 * imageIcon; }
 	 */
-=======
->>>>>>> 9f897e0... This is initial commit.
 }
