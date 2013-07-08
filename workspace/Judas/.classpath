@@ -19,5 +19,7 @@
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-referencing-9.2.jar"/>
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-render-9.2.jar"/>
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-swing-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jdom-2.0.5.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/JyConsole.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

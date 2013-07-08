@@ -2,10 +2,7 @@ package org.iugonet.www;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.AbstractAction;
 import javax.swing.InputMap;
 import javax.swing.JButton;
@@ -20,10 +17,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
 import java.awt.GridLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;

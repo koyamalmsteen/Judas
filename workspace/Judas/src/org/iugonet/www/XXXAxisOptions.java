@@ -2,10 +2,7 @@ package org.iugonet.www;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -19,20 +16,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
 import javax.swing.JTabbedPane;
-<<<<<<< HEAD
-=======
-import java.awt.Toolkit;
->>>>>>> 9f897e0... This is initial commit.
+
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import javax.swing.JComboBox;
 import java.awt.Insets;
 import java.awt.Font;
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.AbstractAction;
 import javax.swing.ButtonGroup;
 import javax.swing.InputMap;
@@ -40,10 +31,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-<<<<<<< HEAD
-=======
-import javax.swing.ImageIcon;
->>>>>>> 9f897e0... This is initial commit.
+
 import javax.swing.KeyStroke;
 
 public class XXXAxisOptions extends JDialog {
@@ -1072,12 +1060,8 @@ public class XXXAxisOptions extends JDialog {
 				}
 				{
 					JButton btnNewButton = new JButton("");
-<<<<<<< HEAD
 					btnNewButton.setIcon(icons.getImageIcon("icons/info20.png"));
-=======
-					btnNewButton.setIcon(new ImageIcon(XXXAxisOptions.class
-							.getResource("/info20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 					GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 					gbc_btnNewButton.insets = new Insets(0, 0, 5, 0);
 					gbc_btnNewButton.gridx = 1;
@@ -1195,12 +1179,8 @@ public class XXXAxisOptions extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
 					button.setIcon(icons.getImageIcon("icons/info20.png"));
-=======
-					button.setIcon(new ImageIcon(XXXAxisOptions.class
-							.getResource("/info20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 0);
 					gbc_button.gridx = 1;
@@ -1944,12 +1924,8 @@ public class XXXAxisOptions extends JDialog {
 				}
 				{
 					JButton button = new JButton("");
-<<<<<<< HEAD
 					button.setIcon(icons.getImageIcon("icons/info20.png"));
-=======
-					button.setIcon(new ImageIcon(XXXAxisOptions.class
-							.getResource("/info20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 					GridBagConstraints gbc_button = new GridBagConstraints();
 					gbc_button.insets = new Insets(0, 0, 5, 5);
 					gbc_button.gridx = 2;

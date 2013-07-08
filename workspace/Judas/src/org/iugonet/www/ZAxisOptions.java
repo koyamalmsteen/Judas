@@ -12,7 +12,6 @@ import javax.swing.undo.UndoableEdit;
 import javax.swing.undo.UndoableEditSupport;
 
 import java.awt.GridBagLayout;
-import java.awt.Toolkit;
 import javax.swing.JTabbedPane;
 import java.awt.GridBagConstraints;
 import javax.swing.JLabel;

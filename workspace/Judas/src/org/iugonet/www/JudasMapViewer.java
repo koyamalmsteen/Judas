@@ -25,7 +25,6 @@ import org.geotools.swing.JMapFrame;
 import org.geotools.swing.data.JFileDataStoreChooser;
 import org.geotools.swing.dialog.JExceptionReporter;
 import org.geotools.swing.styling.JSimpleStyleDialog;
-import org.jfree.chart.JFreeChart;
 import org.opengis.feature.simple.SimpleFeatureType;
 import org.opengis.style.Style;
 

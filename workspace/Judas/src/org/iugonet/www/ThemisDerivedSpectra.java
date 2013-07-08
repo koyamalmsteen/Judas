@@ -614,8 +614,5 @@ public class ThemisDerivedSpectra extends Project {
 		gbc_btnHelp.gridy = 17;
 		add(btnHelp, gbc_btnHelp);
 	}
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
 }

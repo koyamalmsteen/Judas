@@ -1,18 +1,12 @@
 package org.iugonet.www;
 
 import java.awt.GridBagLayout;
-<<<<<<< HEAD
-=======
 
->>>>>>> 9f897e0... This is initial commit.
 import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import javax.swing.JLabel;
 import java.awt.Insets;
-<<<<<<< HEAD
-=======
-import javax.swing.ImageIcon;
->>>>>>> 9f897e0... This is initial commit.
+
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -95,14 +89,11 @@ public class Iugonet extends Project {
 				calendar.setVisible(true);
 			}
 		});
-<<<<<<< HEAD
+
 		Icons icons = new Icons();
 		btnMyCalendar_1.setIcon(icons
 				.getImageIcon("icons/calendar-alt-1-20.png"));
-=======
-		btnMyCalendar_1.setIcon(new ImageIcon(Iugonet.class
-				.getResource("/calendar-alt-1-20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 		GridBagConstraints gbc_button = new GridBagConstraints();
 		gbc_button.insets = new Insets(0, 0, 5, 5);
 		gbc_button.gridx = 2;
@@ -212,13 +203,10 @@ public class Iugonet extends Project {
 				calendar.setVisible(true);
 			}
 		});
-<<<<<<< HEAD
+		
 		btnMyCalendar_2.setIcon(icons
 				.getImageIcon("icons/calendar-alt-1-20.png"));
-=======
-		btnMyCalendar_2.setIcon(new ImageIcon(Iugonet.class
-				.getResource("/calendar-alt-1-20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.anchor = GridBagConstraints.NORTH;
 		gbc_btnNewButton.insets = new Insets(0, 0, 5, 5);
@@ -230,12 +218,9 @@ public class Iugonet extends Project {
 		}
 
 		JButton button_1 = new JButton("");
-<<<<<<< HEAD
+
 		button_1.setIcon(icons.getImageIcon("icons/arrow-1-right20.png"));
-=======
-		button_1.setIcon(new ImageIcon(Iugonet.class
-				.getResource("/arrow-1-right20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 		GridBagConstraints gbc_button_1 = new GridBagConstraints();
 		gbc_button_1.insets = new Insets(0, 0, 5, 5);
 		gbc_button_1.gridx = 3;
@@ -251,12 +236,9 @@ public class Iugonet extends Project {
 		add(lblInstrumentType, gbc_lblInstrumentType);
 
 		JButton button_2 = new JButton("");
-<<<<<<< HEAD
+
 		button_2.setIcon(icons.getImageIcon("icons/trash-empty20.png"));
-=======
-		button_2.setIcon(new ImageIcon(Iugonet.class
-				.getResource("/trash-empty20.png")));
->>>>>>> 9f897e0... This is initial commit.
+
 		GridBagConstraints gbc_button_2 = new GridBagConstraints();
 		gbc_button_2.insets = new Insets(0, 0, 5, 5);
 		gbc_button_2.gridx = 3;

@@ -28,12 +28,20 @@ public class DialogTest {
 	@Test
 	public void test_01() {
 		dialogFixture.button("btnOk").click();
+		try{
+			Thread.sleep(5000);
+		}catch(Exception e){
+		}
 		assertFalse(dialog.isActive());
 	}
 
 	@Test
 	public void test_02() {
 		dialogFixture.button("btnCancel").click();
+		try{
+			Thread.sleep(5000);
+		}catch(Exception e){
+		}
 		assertFalse(dialog.isActive());
 	}
 }
