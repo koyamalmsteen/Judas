@@ -29,7 +29,7 @@
 
 	<!-- -->
 
-	<target name="jar" depends="compile">
+	<target name="jar" depends="clean,compile">
 		<jar jarfile="${jar.path}">
 			<fileset dir="${src.dir}" includes="**/*.java" />
 			<fileset dir="${bin.dir}" includes="**/*.class" />
@@ -48,7 +48,7 @@
 		</subant>
 		<mkdir dir="${bin.dir}" />
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
-		<javac srcdir="${test.src}" destdir="${test.bin}" includeantruntime="false" classpathref="test.classpath,utl.classpath" />
+<!--		<javac srcdir="${test.src}" destdir="${test.bin}" includeantruntime="false" classpathref="test.classpath,utl.classpath" /> -->
 	</target>
 
 	<target name="clean">

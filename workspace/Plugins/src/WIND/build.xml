@@ -30,7 +30,7 @@
 
 	<!-- -->
 
-	<target name="jar" depends="compile">
+	<target name="jar" depends="clean,compile">
 		<jar jarfile="${jar.path}">
 			<fileset dir="${src.dir}" includes="**/*.java" />
 			<fileset dir="${bin.dir}" includes="**/*.class" />
