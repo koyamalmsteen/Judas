@@ -82,15 +82,6 @@ public class JudasViewer extends JFrame {
 		if ( pluginName.equals("DstIndex") ) {
 			DstIndex dstIndex = new DstIndex();
 			getContentPane().add(dstIndex.getChartPanel());
-		} else if ( pluginName.equals("AeIndex") ){
-			AeIndex aeIndex = new AeIndex();
-			getContentPane().add(aeIndex.getChartPanel());		
-		} else if ( pluginName.equals("GeneralImage") ){
-			GeneralImage generalImage = new GeneralImage();
-			getContentPane().add(generalImage.getJPanel());
-		} else if ( pluginName.equals("Cira86Ascii") ){
-			Cira86Ascii cira86Ascii = new Cira86Ascii();
-			getContentPane().add(cira86Ascii.getJMapPane());
 		}
 		getContentPane().setVisible(true);
 	}

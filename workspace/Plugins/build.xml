@@ -29,6 +29,32 @@
 		</subant>
 	</target>
 	
+	<target name="compile">
+		<subant target="compile">
+			<fileset file="src/ACE/build.xml" />
+			<fileset file="src/DstIndex/build.xml" />
+			<fileset file="src/GOES/build.xml" />
+			<fileset file="src/Iprt/build.xml" />
+			<fileset file="src/MU/build.xml" />
+			<fileset file="src/PoesTxt/build.xml" />
+			<fileset file="src/Wdc/build.xml" />
+			<fileset file="src/AeIndex/build.xml" />
+			<fileset file="src/Eiscat/build.xml" />
+			<fileset file="src/HfTohokuu/build.xml" />
+			<fileset file="src/Lfrto/build.xml" />
+			<fileset file="src/NoaaBi/build.xml" />
+			<fileset file="src/SuperDARN/build.xml" />
+			<fileset file="src/Cira86Ascii/build.xml" />
+			<fileset file="src/FmagNipr/build.xml" />
+			<fileset file="src/ImagNipr/build.xml" />
+			<fileset file="src/Mm210/build.xml" />
+			<fileset file="src/NoaaPower/build.xml" />
+			<fileset file="src/SymIndex/build.xml" />
+			<fileset file="src/WIND/build.xml" />
+			<fileset file="src/GeneralImage/build.xml" />
+		</subant>	
+	</target>
+	
 	<target name="clean">
 		<subant target="clean">
 			<fileset file="src/ACE/build.xml" />
@@ -56,6 +82,58 @@
 		<delete>
 		  <fileset dir="bin/org/iugonet/www/" includes="**" />
 		</delete>
+	</target>
+	
+	<target name="javadoc">
+		<subant target="javadoc">
+			<fileset file="src/ACE/build.xml" />
+			<fileset file="src/DstIndex/build.xml" />
+			<fileset file="src/GOES/build.xml" />
+			<fileset file="src/Iprt/build.xml" />
+			<fileset file="src/MU/build.xml" />
+			<fileset file="src/PoesTxt/build.xml" />
+			<fileset file="src/Wdc/build.xml" />
+			<fileset file="src/AeIndex/build.xml" />
+			<fileset file="src/Eiscat/build.xml" />
+			<fileset file="src/HfTohokuu/build.xml" />
+			<fileset file="src/Lfrto/build.xml" />
+			<fileset file="src/NoaaBi/build.xml" />
+			<fileset file="src/SuperDARN/build.xml" />
+			<fileset file="src/Cira86Ascii/build.xml" />
+			<fileset file="src/FmagNipr/build.xml" />
+			<fileset file="src/ImagNipr/build.xml" />
+			<fileset file="src/Mm210/build.xml" />
+			<fileset file="src/NoaaPower/build.xml" />
+			<fileset file="src/SymIndex/build.xml" />
+			<fileset file="src/WIND/build.xml" />
+			<fileset file="src/GeneralImage/build.xml" />
+		</subant>
+	</target>
+	
+	<target name="test">
+		<subant target="test">
+			<fileset file="src/ACE/build.xml" />
+			<fileset file="src/DstIndex/build.xml" />
+			<fileset file="src/GOES/build.xml" />
+			<fileset file="src/Iprt/build.xml" />
+			<fileset file="src/MU/build.xml" />
+			<fileset file="src/PoesTxt/build.xml" />
+			<fileset file="src/Wdc/build.xml" />
+			<fileset file="src/AeIndex/build.xml" />
+			<fileset file="src/Eiscat/build.xml" />
+			<fileset file="src/HfTohokuu/build.xml" />
+			<fileset file="src/Lfrto/build.xml" />
+			<fileset file="src/NoaaBi/build.xml" />
+			<fileset file="src/SuperDARN/build.xml" />
+			<fileset file="src/Cira86Ascii/build.xml" />
+			<fileset file="src/FmagNipr/build.xml" />
+			<fileset file="src/ImagNipr/build.xml" />
+			<fileset file="src/Mm210/build.xml" />
+			<fileset file="src/NoaaPower/build.xml" />
+			<fileset file="src/SymIndex/build.xml" />
+			<fileset file="src/WIND/build.xml" />
+			<fileset file="src/GeneralImage/build.xml" />
+		</subant>
 	</target>
 	
 </project>

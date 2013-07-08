@@ -11,16 +11,17 @@
 	<property name="jar.name" value="Lfrto.jar" />
 	<property name="jar.path" location="../../../../plugins/${jar.name}" />
 	
-	<property name="test.src" location="test/src" />
+	<property name="test.src" location="../../test/src/Lfrto" />
 	<property name="test.bin" location="bin" />
 	<property name="test.class.name" value="sample.MainTest" />
 
 	<path id="test.classpath">
 		<pathelement location="${test.bin}" />
-		<pathelement location="../../../Documents/eclipse/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar" />
+		<pathelement location="../../../../../Documents/eclipse/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar" />
 	</path>
 			
 	<path id="utl.classpath">
+		<pathelement location="${lib.dir}/Aplot.jar" />
 		<pathelement location="${lib.dir}/Tplot.jar" />
 		<pathelement location="${ext.dir}/${jfreechart.jar}" />
 		<pathelement location="${ext.dir}/${jcommon.jar}" />
@@ -48,7 +49,7 @@
 		</subant>
 		<mkdir dir="${bin.dir}" />
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
-		<javac srcdir="${test.src}" destdir="${test.bin}" includeantruntime="false" classpathref="test.classpath" />
+		<javac srcdir="${test.src}" destdir="${test.bin}" includeantruntime="false" classpathref="test.classpath,utl.classpath" />
 	</target>
 	
 	<target name="clean"> 

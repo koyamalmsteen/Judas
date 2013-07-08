@@ -21,6 +21,7 @@ import org.geotools.map.Layer;
 import org.geotools.map.MapContent;
 import org.geotools.map.MapContext;
 import org.geotools.styling.SLDParser;
+import org.geotools.styling.StyleFactory;
 import org.geotools.swing.JMapFrame;
 import org.geotools.swing.data.JFileDataStoreChooser;
 import org.geotools.swing.dialog.JExceptionReporter;
@@ -96,7 +97,7 @@ public class JudasMapViewer extends JFrame {
 
         // Add the features and the associated Style object to
         // the MapContent as a new Layer
-        Layer layer = new FeatureLayer(featureSource, style);
+        Layer layer = new FeatureLayer(featureSource, (org.geotools.styling.Style) style);
         map.addLayer(layer);
 
         // Now display the map
@@ -149,7 +150,8 @@ public class JudasMapViewer extends JFrame {
      */
     private Style createFromSLD(File sld) {
         try {
-            SLDParser stylereader = new SLDParser(styleFactory, sld.toURI().toURL());
+            StyleFactory styleFactory = null;
+			SLDParser stylereader = new SLDParser(styleFactory, sld.toURI().toURL());
             Style[] style = stylereader.readXML();
             return style[0];
             
@@ -158,4 +160,4 @@ public class JudasMapViewer extends JFrame {
         }
         return null;
     }
-
+}

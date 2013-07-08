@@ -41,6 +41,9 @@
 		<subant>
 			<fileset file="../Aplot/build.xml" />
 		</subant>
+		<subant target="jar">
+			<fileset file="../Aplot/build.xml" erroronmissingdir="false" />
+		</subant>
 		<mkdir dir="${bin.dir}" />
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
 		<javac srcdir="${test.src}" destdir="${test.bin}" includeantruntime="false" classpathref="test.classpath" />
