@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="all" default="jruby" basedir=".">
+  <property environment="env"/>
+  <property file="build.properties"/>
+
+  <target name="clean" description="Clean up">
+  </target>
+
+  <target name="jruby" description="Install jruby">
+    <condition property="have.resources">
+      <available file="${tmp}/${jruby}"/>
+    </condition>
+
+    <echo message="${have.resources}"/>
+
+    <condition property="have.resources">
+      <available file="${install_dir}"/>
+    </condition>
+
+    <echo message="${have.resources}"/>
+
+    <condition property="have.resources">
+      <available file="${jruby_home}"/>
+    </condition>
+
+    <echo message="${have.resources}"/>
+
+    <get src="${src_jruby}" dest="${dst_jruby}" usetimestamp="true"/>
+    <echo message="### for jruby&#10;" file="${env_set_file}" append="yes"/>
+    <echo message="export PATH=$PATH:${jruby_home}/bin&#10;" file="${env_set_file}" append="yes"/>
+  </target>
+  
+</project>
