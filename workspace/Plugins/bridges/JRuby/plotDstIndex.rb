@@ -1,11 +1,10 @@
 #!/usr/bin/env jruby
-import sys
-
-from org import jfree
-from org.iugonet.www import Aplot
-from org.iugonet.www import Tplot
-from org.iugonet.www import DstIndex
-from java import lang
+#from org import jfree
+#from org.iugonet.www import Aplot
+#from org.iugonet.www import Tplot
+#from org.iugonet.www import DstIndex
+#from java import lang
+require 'org'
 
 strUrl="http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410"
 dstIndex=DstIndex()

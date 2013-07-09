@@ -1,6 +1,4 @@
 #!/usr/bin/env jython
-import sys
-
 from org import jfree
 from org.iugonet.www import Aplot
 from org.iugonet.www import Tplot
