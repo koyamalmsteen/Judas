@@ -5,15 +5,18 @@ require "/home/iugonet/Judas/lib/external/jcommon-1.0.17.jar"
 require "/home/iugonet/Judas/lib/Aplot.jar"
 require "/home/iugonet/Judas/lib/Tplot.jar"
 require "/home/iugonet/Judas/plugins/DstIndex.jar"
+java_import javax.swing.JFrame
 java_import org.jfree.chart.ChartFactory
+java_import org.jfree.chart.ChartFrame
 java_import java.lang.String
+java_import java.lang.Boolean
 java_import org.iugonet.www.DstIndex
 
 strUrl="http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410"
-dstIndex=Java::dstindex.dstindex()
-timeSeriesCollection=Java::dstindex.loaddata(strUrl)
+dstIndex=DstIndex.new()
+timeSeriesCollection=dstIndex.loadData(strUrl)
 
-chart=Java::ChartFactory.createTimeSeriesChart(Java::string("Dst Index"),Java::string("Time"),Java::string("Dst Index [nT]"),timeSeriesCollection,Boolean("FALSE"),Java::Boolean("FALSE"),Java::Boolean("TRUE"))
-frame=jfree.chart.ChartFrame(java.lang.String("Simple TimeSeries Chart"),chart)
+chart=ChartFactory.createTimeSeriesChart(String("Dst Index"),String("Time"),String("Dst Index [nT]"),timeSeriesCollection,FALSE,FALSE,TRUE)
+frame=ChartFrame(String("Simple TimeSeries Chart"),chart)
 frame.pack()
 frame.setVisible=true
