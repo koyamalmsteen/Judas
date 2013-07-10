@@ -11,9 +11,9 @@ java_import org.iugonet.www.DstIndex
 
 strUrl="http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410"
 dstIndex=Java::dstindex.dstindex()
-#timeSeriesCollection=Java::dstIndex.loaddata(strUrl)
+timeSeriesCollection=Java::dstindex.loaddata(strUrl)
 
-chart=Java::ChartFactory.createTimeSeriesChart(Java::java.lang.String("Dst Index"),Java::java.lang.String("Time"),Java::java.lang.String("Dst Index [nT]"),timeSeriesCollection,Boolean("FALSE"),Java::Boolean("FALSE"),Java::Boolean("TRUE"))
+chart=Java::ChartFactory.createTimeSeriesChart(Java::string("Dst Index"),Java::string("Time"),Java::string("Dst Index [nT]"),timeSeriesCollection,Boolean("FALSE"),Java::Boolean("FALSE"),Java::Boolean("TRUE"))
 frame=jfree.chart.ChartFrame(java.lang.String("Simple TimeSeries Chart"),chart)
 frame.pack()
 frame.setVisible=true
