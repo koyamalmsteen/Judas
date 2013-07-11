@@ -7,7 +7,7 @@
 
   <!-- -->
 
-  <target name="all" depends="clean, initial_message, eclipse, key, lib, maven, switch_jdk, final_message" description="Install all"/>
+  <target name="all" depends="clean, initial_message, eclipse, gnuplot, key, lib, maven, switch_jdk, final_message" description="Install all"/>
 
   <target name="clean" description="Clean up">
     <subant target="clean">
@@ -57,6 +57,12 @@
     <echo message="#!/bin/env bash&#x0A;" file="${env.HOME}/eclipse.sh"/>
     <echo message="${env.HOME}/Documents/eclipse/eclipse -data ${env.HOME}/Judas/workspace" file="${env.HOME}/eclipse.sh" append="yes"/>
     <chmod file="${env.HOME}/eclipse.sh" perm="+x"/>
+  </target>
+
+  <target name="gnuplot">
+    <exec executable="yum">
+      <arg line="-y install gnuplot" />
+    </exec>
   </target>
 
   <target name="key" description="Create Security Key">
