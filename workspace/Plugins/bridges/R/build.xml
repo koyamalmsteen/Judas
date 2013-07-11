@@ -3,10 +3,37 @@
   <property environment="env"/>
   <property file="build.properties"/>
 
-  <target name="all" depends="initial_message, final_message" description="Install all"/>
+  <target name="all" depends="initial_message, yum, r, rJava, final_message" description="Install all"/>
 
   <target name="initial_message" description="Display initial message">
     <echo message="###&#x0A;###&#x0A;This installation process takes 11 minutes at least.&#x0A;###&#x0A;###&#x0A;"/>
+  </target>
+
+  <target name="yum" description="Install packages">
+    <exec executable="yum">
+      <arg line="-y install gcc"/>
+    </exec>
+  </target>
+
+  <target name="r" description="Install R">
+    <get src="${src_r}" dest="${dst_r}" usetimestamp="true" />
+    <exec executable="tar" dir="${tmp}">
+      <arg line="xvzf ${dst_r}" />
+    </exec>
+    <exec executable="./configure" dir="${tmp}/${r_prefix}">
+    </exec>
+    <exec executable="make" dir="${tmp}/${r_prefix}">
+    </exec>
+    <exec executable="make" dir="${tmp}/${r_prefix}">
+      <arg value="install"/>
+    </exec>
+  </target>
+
+  <target name="rJava" description="Install rJava">
+    <get src="${src_rJava}" dest="${dst_rJava}" usetimestamp="true" />
+    <exec executable="tar" dir="${tmp}">
+      <arg line="xvzf ${dst_rJava}" />
+    </exec>
   </target>
 
   <target name="final_message" description="Display final message">
