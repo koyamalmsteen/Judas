@@ -3,10 +3,30 @@
   <property environment="env"/>
   <property file="build.properties"/>
 
-  <target name="all" depends="initial_message, final_message" description="Install all"/>
+  <target name="all" depends="initial_message, yum, octave, java_octave, final_message" description="Install all" />
 
   <target name="initial_message" description="Display initial message">
     <echo message="###&#x0A;###&#x0A;This installation process takes 11 minutes at least.&#x0A;###&#x0A;###&#x0A;"/>
+  </target>
+
+  <target name="yum" description="Install packages">
+    <exec executable="yum">
+      <arg line="-y install gcc pcre-devel blas blas-devel lapack lapack-devel suite-sparse flex bison bison-devel gperf libcurl libcurl-devel gtkglext-lib gtkglext-devel glpk glpk-devel ImageMagick-c++ ImageMagic-c++-devel"/>
+    </exec>
+  </target>
+
+  <target name="octave" description="Install Octave">
+    <get src="${src_octave}" dest="${dst_octave}" usetimestamp="true" />
+    <exec executable="tar" dir="${tmp}">
+      <arg line="xvzf ${octave}" />
+    </exec>
+  </target>
+
+  <target name="java_octave" description="Install Java Octave">
+    <get src="${src_java_octave}" dest="${dst_java_octave}" usetimestamp="true" />
+    <exec executable="tar" dir="${tmp}">
+      <arg line="xvzf ${java_octave}" />
+    </exec>
   </target>
 
   <target name="final_message" description="Display final message">
