@@ -60,12 +60,12 @@ public class WindMfih0 extends Tplot {
 				hr = (int) Epoch.breakdown(depoch_1min)[3];
 				mn = (int) Epoch.breakdown(depoch_1min)[4];
 				sc = (int) Epoch.breakdown(depoch_1min)[5];
-				second.add(new Second(sc, mn, hr, dd, mm, yyyy));
+//				second.add(new Second(sc, mn, hr, dd, mm, yyyy));
 
-				float[] bgsm = (float[]) param[5].getRecord(i);
-				this.add(second.get(i), bgsm[0], 0);
-				this.add(second.get(i), bgsm[1], 1);
-				this.add(second.get(i), bgsm[2], 2);
+//				float[] bgsm = (float[]) param[5].getRecord(i);
+//				this.add(second.get(i), bgsm[0], 0);
+//				this.add(second.get(i), bgsm[1], 1);
+//				this.add(second.get(i), bgsm[2], 2);
 			}
 
 		} catch (Exception e) {

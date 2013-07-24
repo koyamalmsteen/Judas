@@ -26,7 +26,10 @@
 		<pathelement location="${ext.dir}/${jfreechart.jar}" />
 		<pathelement location="${ext.dir}/${jcommon.jar}" />
 	</path>
-			
+
+	<condition property="have.bin">
+		<available file="bin" />
+	</condition>
 	<!-- -->
 	
 	<target name="jar" depends="clean,compile">
@@ -50,10 +53,20 @@
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
 	</target>
 	
-	<target name="clean"> 
+	<target name="clean">
+		<antcall target="clean_jar" />
+		<antcall target="clean_bin" />
+	</target>
+	
+	<target name="clean_jar" if="have.jar">
 		<delete>
 			<fileset file="${jar.path}" />
-			<fileset dir="${bin.dir}" includes="**" />
+		</delete>	
+	</target>
+			
+	<target name="clean_bin" if="have.bin">
+		<delete>
+			<fileset dir="${bin.dir}" includes="**" />		
 		</delete>
 	</target>
 	

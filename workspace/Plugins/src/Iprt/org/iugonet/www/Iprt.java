@@ -1,15 +1,16 @@
 package org.iugonet.www;
 
 import java.io.File;
+
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
 import java.net.URL;
 import java.net.URLConnection;
 
-import nom.tam.fits.BasicHDU;
-import nom.tam.fits.Fits;
-import nom.tam.fits.Header;
+//import nom.tam.fits.BasicHDU;
+//import nom.tam.fits.Fits;
+//import nom.tam.fits.Header;
 
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -26,11 +27,11 @@ public class Iprt extends Tplot {
 	void readData(String arg0) {
 
 		try {
-			arg0 = "/home/yagi/20101013_IPRT.fits";
-			Fits fits = new Fits(arg0);
+//			arg0 = "/home/yagi/20101013_IPRT.fits";
+//			Fits fits = new Fits(arg0);
 
-			BasicHDU hdu = (fits.read())[0];
-
+//			BasicHDU hdu = (fits.read())[0];
+/*
 			int numpole = (hdu.getAxes())[0];
 			int numfreq = (hdu.getAxes())[1];
 			int numtime = (hdu.getAxes())[2];
@@ -71,7 +72,7 @@ public class Iprt extends Tplot {
 					}
 				}
 			}
-
+*/
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

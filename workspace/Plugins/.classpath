@@ -52,5 +52,10 @@
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/netcdf-4.3.13.jar"/>
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jcommon-1.0.18.jar"/>
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jfreechart-1.0.15.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/Mplot.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-api-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-data-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-swing-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-render-9.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

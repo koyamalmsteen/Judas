@@ -11,10 +11,12 @@ import org.geotools.map.DefaultMapContext;
 import org.geotools.map.Layer;
 import org.geotools.map.MapContent;
 import org.geotools.map.MapContext;
+import org.geotools.renderer.style.Style;
 import org.geotools.swing.JMapFrame;
 import org.geotools.swing.JMapPane;
 import org.geotools.swing.data.JFileDataStoreChooser;
 
+@SuppressWarnings("deprecation")
 public class Cira86Ascii extends Mplot {
 	
 	Cira86Ascii(){
@@ -54,7 +56,8 @@ public class Cira86Ascii extends Mplot {
         map.setTitle("StyleLab");
 
         // Create a basic Style to render the features
-        Style style = createStyle(file, featureSource);
+        
+//        Style style = createStyle(file, featureSource);
 
         // Add the features and the associated Style object to
         // the MapContent as a new Layer

@@ -27,6 +27,13 @@
 		<pathelement location="${ext.dir}/${jcommon.jar}" />
 	</path>
 
+	<condition property="have.bin">
+		<available file="bin" />
+	</condition>
+		
+	<condition property="have.bin">
+		<available file="bin" />
+	</condition>
 	<!-- -->
 
 	<target name="jar" depends="clean,compile">
@@ -51,12 +58,22 @@
 	</target>
 
 	<target name="clean">
+		<antcall target="clean_jar" />
+		<antcall target="clean_bin" />
+	</target>
+	
+	<target name="clean_jar" if="have.jar">
 		<delete>
 			<fileset file="${jar.path}" />
-			<fileset dir="${bin.dir}" includes="**" />
-		</delete>
+		</delete>	
 	</target>
 
+	<target name="clean_bin" if="have.bin">
+		<delete>
+			<fileset dir="${bin.dir}" includes="**" />		
+		</delete>
+	</target>
+	
 	<target name="javadoc">
 		<javadoc destdir="${javadoc.dir}">
 			<fileset dir="${src.dir}" />
