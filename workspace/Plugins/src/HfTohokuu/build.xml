@@ -55,7 +55,7 @@
 	</target>
 	
 	<target name="clean"> 
-		<antcall target="clear_jar" />
+		<antcall target="clean_jar" />
 		<antcall target="clean_bin" />
 	</target>
 	

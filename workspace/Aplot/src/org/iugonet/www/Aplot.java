@@ -8,7 +8,20 @@ abstract public class Aplot {
 	private String themisRemoteDataDir = "http://themis.stp.isas.jaxa.jp/data/themis/";
 
 	Aplot(){
+		String rootDataDir = System.getenv("ROOT_DATA_DIR");
+		if ( rootDataDir != null ){
+			setRootDataDir(rootDataDir);
+		}
 		
+		String themisDataDir = System.getenv("THEMIS_DATA_DIR");
+		if ( themisDataDir != null ){
+			setThemisDataDir(themisDataDir);
+		}
+		
+		String themisRemoteDataDir = System.getenv("THEMIS_REMOTE_DATA_DIR");
+		if ( themisRemoteDataDir != null ){
+			setThemisRemoteDataDir(themisRemoteDataDir);
+		}
 	}
 	
 	public void setRootDataDir(String rootDataDir) {
