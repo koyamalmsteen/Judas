@@ -3,7 +3,15 @@
 	<property environment="env"/>
 	<property file="../../build.properties"/>
 	
-	<target name="jar">
+	<condition property="have.plugins">
+		<available file="../../plugins" />
+	</condition>
+	
+	<target name="createFolder" unless="have.plugins">
+		<mkdir dir="../../plugins" />
+	</target>
+	
+	<target name="jar" depends="createFolder">
 		<subant target="jar">
 			<fileset file="src/ACE/build.xml" />
 			<fileset file="src/DstIndex/build.xml" />
