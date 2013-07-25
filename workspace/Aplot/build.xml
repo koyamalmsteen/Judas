@@ -11,17 +11,17 @@
 	<property name="jar.name" value="Aplot.jar" />
 	<property name="jar.path" location="${lib.dir}/${jar.name}" />
 
-	<property name="test.src" location="test/src" />
-	<property name="test.bin" location="bin" />
+	<property name="test.src.dir" location="test/src" />
+	<property name="test.bin.dir" location="bin" />
 	<property name="test.class.name" value="sample.MainTest" />
 
+	<path id="classpath">
+		<pathelement location="${src.dir}" />
+	</path>
+	
 	<path id="test.classpath">
 		<pathelement location="${test.bin}" />
 		<pathelement location="${ext.dir}/${junit.jar}" />
-	</path>
-
-	<path id="utl.classpath">
-		<pathelement location="${src.dir}" />
 	</path>
 
 	<!-- -->
@@ -35,7 +35,12 @@
 
 	<target name="compile">
 		<mkdir dir="${bin.dir}" />
-		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="classpath" />
+	</target>
+	
+	<target name="compile.test" depends="compile">
+		<mkdir dir="${test.bin.dir}" />
+		<javac srcdir="${test.src.dir}" destdir="${test.bin.dir}" includeantruntime="false" classpathref="test.classpath" />
 	</target>
 
 	<target name="clean">
@@ -52,7 +57,7 @@
 		</javadoc>
 	</target>
 
-	<target name="test" depends="compile" description="test the source">
+	<target name="test" depends="compile,compile.test" description="test the source">
 		<junit fork="yes" haltonfailure="yes">
 			<formatter type="plain" usefile="false" />
 			<classpath refid="test.classpath" />
