@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="Plugins" default="jar" basedir=".">
+	<taskdef resource="net/sf/antcontrib/antlib.xml" />
+	
 	<property environment="env"/>
 	<property file="../../build.properties"/>
 	

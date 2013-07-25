@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="Iplot" default="jar" basedir=".">
+	<taskdef resource="net/sf/antcontrib/antlib.xml" />
+	
 	<property environment="env"/>
 	<property file="../../build.properties"/>
 
@@ -11,16 +13,16 @@
 	<property name="jar.name" value="Iplot.jar" />
 	<property name="jar.path" location="${lib.dir}/${jar.name}" />
 
-	<property name="test.src" location="test/src" />
-	<property name="test.bin" location="bin" />
-	<property name="test.class.name" value="sample.MainTest" />
+	<property name="test.src.dir" location="test/src" />
+	<property name="test.bin.dir" location="bin" />
+	<property name="test.class.name" value="org.iugonet.www.IplotTest" />
 
+	<path id="classpath">
+	</path>
+		
 	<path id="test.classpath">
 		<pathelement location="${test.bin}" />
 		<pathelement location="${ext.dir}/${junit.jar}" />
-	</path>
-
-	<path id="utl.classpath">
 	</path>
 
 	<!-- -->
@@ -39,8 +41,11 @@
 		<subant>
 			<fileset file="../Aplot/build.xml" />
 		</subant>
+		<subant target="jar">
+			<fileset file="../Aplot/build.xml" erroronmissingdir="false" />
+		</subant>
 		<mkdir dir="${bin.dir}" />
-		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="classpath" />
 	</target>
 
 	<target name="clean">

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="Aplot" default="jar" basedir=".">
+	<taskdef resource="net/sf/antcontrib/antlib.xml" />
+	
 	<property environment="env"/>
 	<property file="../../build.properties"/>
 
@@ -44,11 +46,31 @@
 	</target>
 
 	<target name="clean">
-		<delete>
+
+
+<!--		<delete> -->
+			<!--
 			<fileset file="${jar.path}" />
+			-->
+			<!--
 			<fileset dir="${bin.dir}" includes="**/*.class" />
+			-->
+			<!--
 			<fileset dir="${javadoc.dir}" includes="**" />
-		</delete>
+			-->
+<!--		</delete> -->
+        <if>
+            <available file="${bin.dir}" type="dir" />
+            <then>
+                <delete dir="${bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${javadoc.dir}" type="dir" />
+            <then>
+                <delete dir="${javadoc.dir}" />
+            </then>
+        </if>
 	</target>
 
 	<target name="javadoc">
