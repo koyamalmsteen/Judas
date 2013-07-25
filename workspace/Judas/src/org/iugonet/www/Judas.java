@@ -2,6 +2,7 @@ package org.iugonet.www;
 
 import java.awt.*;
 
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.filechooser.FileFilter;
@@ -20,7 +21,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Properties;
 
 public class Judas extends JFrame {
 

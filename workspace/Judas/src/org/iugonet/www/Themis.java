@@ -17,9 +17,6 @@ import javax.swing.JList;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import javax.swing.undo.UndoableEditSupport;
 
 public class Themis extends Project {
