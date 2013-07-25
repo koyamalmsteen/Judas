@@ -3,6 +3,7 @@ package org.iugonet.www;
 
 import static org.junit.Assert.*;
 
+
 import org.fest.swing.fixture.DialogFixture;
 import org.junit.After;
 import org.junit.Before;

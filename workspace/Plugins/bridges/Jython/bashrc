@@ -1,0 +1,2 @@
+export CLASSPATH=${CLASSPATH}:${HOME}/Judas/lib/Aplot.jar:${HOME}/Judas/lib/Tplot.jar:${HOME}/Judas/plugins/DstIndex.jar:${HOME}/Judas/lib/external/jfreechart-1.0.15.jar:${HOME}/Judas/lib/external/jcommon-1.0.18.jar
+export PATH=${PATH}:${HOME}/jython2.5.2/bin

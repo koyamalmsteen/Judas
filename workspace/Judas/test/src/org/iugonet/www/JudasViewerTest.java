@@ -2,6 +2,7 @@ package org.iugonet.www;
 
 import static org.junit.Assert.*;
 
+
 import org.fest.swing.core.MouseButton;
 import org.fest.swing.fixture.FrameFixture;
 
