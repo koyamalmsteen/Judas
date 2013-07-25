@@ -1,11 +1,5 @@
 package org.iugonet.www;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
-
 import org.iugonet.www.Aplot;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;

@@ -13,7 +13,7 @@
 
 	<property name="test.src.dir" location="test/src" />
 	<property name="test.bin.dir" location="bin" />
-	<property name="test.class.name" value="sample.MainTest" />
+	<property name="test.class.name" value="org.iugonet.www.AplotTest" />
 
 	<path id="classpath">
 		<pathelement location="${src.dir}" />
@@ -57,9 +57,11 @@
 		</javadoc>
 	</target>
 
-	<target name="test" depends="compile,compile.test" description="test the source">
+	<target name="test" depends="compile.test" description="test the source">
 		<junit fork="yes" haltonfailure="yes">
+			<test name="${test.class.name}" />
 			<formatter type="plain" usefile="false" />
+			<classpath refid="classpath" />
 			<classpath refid="test.classpath" />
 		</junit>
 	</target>
