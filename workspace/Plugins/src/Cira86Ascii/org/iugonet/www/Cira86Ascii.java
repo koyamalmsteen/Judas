@@ -27,15 +27,6 @@ public class Cira86Ascii extends Mplot {
 		
 	}
 	
-	void file_http_copy(String arg0, String arg1) {
-		// TODO Auto-generated method stub
-
-	}
-	
-	public void file_http_copy(String arg0){
-		
-	}
-	
 	public JMapPane getJMapPane(){
 
 		File file = new File("/home/iugonet/Downloads/ne_50m_coastline.shp");
