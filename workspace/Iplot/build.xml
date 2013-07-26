@@ -22,13 +22,16 @@
 	<property name="test.class.name" value="org.iugonet.www.IplotTest" />
 
 	<path id="classpath">
+		<pathelement location="${src.dir}" />
+		<pathelement location="${lib.dir}/Aplot.jar" />
 	</path>
 		
 	<path id="test.classpath">
 		<pathelement location="${test.bin}" />
 		<pathelement location="${ext.dir}/${junit.jar}" />
+		<pathelement location="${lib.dir}/Aplot.jar" />
 	</path>
-
+	
 	<!-- -->
 		
 	<target name="jar" depends="compile">
@@ -53,11 +56,24 @@
 	</target>
 
 	<target name="clean">
-		<delete>
-			<fileset file="${jar.path}" />
-			<fileset dir="${bin.dir}" includes="**/*.class" />
-			<fileset dir="${javadoc.dir}" includes="**" />
-		</delete>
+        <if>
+            <available file="${jar.path}" type="file" />
+            <then>
+                <delete file="${jar.path}" />
+            </then>
+        </if>
+        <if>
+            <available file="${bin.dir}" type="dir" />
+            <then>
+                <delete dir="${bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${javadoc.dir}" type="dir" />
+            <then>
+                <delete dir="${javadoc.dir}" />
+            </then>
+        </if>
 	</target>
 
 	<target name="javadoc">

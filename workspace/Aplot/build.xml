@@ -43,24 +43,20 @@
 		<mkdir dir="${bin.dir}" />
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="classpath" />
 	</target>
-	
+
 	<target name="compile.test" depends="compile">
 		<mkdir dir="${test.bin.dir}" />
 		<javac srcdir="${test.src.dir}" destdir="${test.bin.dir}" includeantruntime="false" classpathref="test.classpath" />
 	</target>
 
 	<target name="clean">
-<!--		<delete> -->
-			<!--
-			<fileset file="${jar.path}" />
-			-->
-			<!--
-			<fileset dir="${bin.dir}" includes="**/*.class" />
-			-->
-			<!--
-			<fileset dir="${javadoc.dir}" includes="**" />
-			-->
-<!--		</delete> -->
+        <if>
+            <available file="${jar.path}" type="file" />
+            <then>
+            	<echo message="${jar.path}" />
+                <delete file="${jar.path}" />
+            </then>
+        </if>
         <if>
             <available file="${bin.dir}" type="dir" />
             <then>

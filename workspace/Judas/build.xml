@@ -22,7 +22,8 @@
 	<property name="test.bin.dir" location="bin" />
 	<property name="test.class.name" value="org.iugonet.www.sample.JudasTest" />
 
-	<path id="utl.classpath">
+	<path id="classpath">
+		<pathelement location="${src.dir}" />
 		<pathelement location="${lib.dir}/Tplot.jar" />
 		<pathelement location="${ext.dir}/${jfreechart.jar}" />
 		<pathelement location="${ext.dir}/${jcommon.jar}" />
@@ -70,7 +71,7 @@
 	
 	<target name="compile">
 		<mkdir dir="${bin.dir}" />
-		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="classpath" />
 	</target>
 	
 	<target name="compile.test" depends="compile">
@@ -78,11 +79,26 @@
 		<javac srcdir="${test.src.dir}" destdir="${test.bin.dir}" includeantruntime="false" classpathref="test.classpath" />
 	</target>
 	
-	<target name="clean"> 
-		<delete>
-			<fileset file="${jar.path}" />
-			<fileset dir="${bin.dir}" includes="**" />
-		</delete>
+	<target name="clean">
+        <if>
+            <available file="${jar.path}" type="file" />
+            <then>
+            	<echo message="${jar.path}" />
+                <delete file="${jar.path}" />
+            </then>
+        </if>
+        <if>
+            <available file="${bin.dir}" type="dir" />
+            <then>
+                <delete dir="${bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${javadoc.dir}" type="dir" />
+            <then>
+                <delete dir="${javadoc.dir}" />
+            </then>
+        </if>
 	</target>
 	
 	<target name="javadoc">

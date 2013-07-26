@@ -24,6 +24,7 @@
 	<property name="test.class.name" value="org.iugonet.www.JnlpGeneratorTest" />
 	
 	<path id="classpath">
+		<pathelement location="${src.dir}" />
 		<pathelement location="${ext.dir}/${java_getopt.jar}" />
 	</path>
 			
@@ -61,10 +62,25 @@
 	</target>
 	
 	<target name="clean">
-		<delete>
-			<fileset file="${jar.path}" />
-			<fileset dir="${bin.dir}" includes="**" />
-		</delete>
+        <if>
+            <available file="${jar.path}" type="file" />
+            <then>
+            	<echo message="${jar.path}" />
+                <delete file="${jar.path}" />
+            </then>
+        </if>
+        <if>
+            <available file="${bin.dir}" type="dir" />
+            <then>
+                <delete dir="${bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${javadoc.dir}" type="dir" />
+            <then>
+                <delete dir="${javadoc.dir}" />
+            </then>
+        </if>
 	</target>
 	
 	<target name="test" depends="compile" description="test the source">

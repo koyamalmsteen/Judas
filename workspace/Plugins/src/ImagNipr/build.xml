@@ -17,26 +17,29 @@
 	<property name="jar.name" value="ImagNipr.jar" />
 	<property name="jar.path" location="../../../../plugins/${jar.name}" />
 	
-	<property name="test.src" location="../../test/src/ImagNipr" />
-	<property name="test.bin" location="bin" />
-	<property name="test.class.name" value="sample.MainTest" />
+	<property name="test.src.dir" location="../../test/src/ImagNipr" />
+	<property name="test.bin.dir" location="bin" />
+	<property name="test.class.name" value="org.iugonet.www.ImagNipr" />
 	
-	<path id="test.classpath">
-		<pathelement location="${test.bin}" />
-		<pathelement location="${ext.dir}/${junit.dir}" />
-	</path>
-			
-	<path id="utl.classpath">
+	<path id="classpath">
+		<pathelement location="${src.dir}" />
 		<pathelement location="${lib.dir}/Aplot.jar" />
 		<pathelement location="${lib.dir}/Tplot.jar" />
 		<pathelement location="${ext.dir}/${jfreechart.jar}" />
 		<pathelement location="${ext.dir}/${jcommon.jar}" />
 		<pathelement location="${ext.dir}/${cdfjava.jar}" />
 	</path>
-
-	<condition property="have.bin">
-		<available file="bin" />
-	</condition>
+			
+	<path id="test.classpath">
+		<pathelement location="${test.bin}" />
+		<pathelement location="${ext.dir}/${junit.dir}" />
+		<pathelement location="${lib.dir}/Aplot.jar" />
+		<pathelement location="${lib.dir}/Tplot.jar" />
+		<pathelement location="${ext.dir}/${jfreechart.jar}" />
+		<pathelement location="${ext.dir}/${jcommon.jar}" />
+		<pathelement location="${ext.dir}/${cdfjava.jar}" />
+	</path>
+			
 	<!-- -->
 	
 	<target name="jar" depends="clean,compile">
@@ -57,7 +60,7 @@
 			<fileset file="../../../Tplot/build.xml" erroronmissingdir="false" />
 		</subant>
 		<mkdir dir="${bin.dir}" />
-		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="utl.classpath" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="classpath" />
 	</target>
 
 	<target name="clean"> 

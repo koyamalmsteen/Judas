@@ -65,11 +65,24 @@
 	</target>
 
 	<target name="clean">
-		<delete>
-			<fileset file="${jar.path}" />
-			<fileset dir="${bin.dir}" includes="**/*.class" />
-			<fileset dir="${javadoc.dir}" includes="**" />
-		</delete>
+        <if>
+            <available file="${jar.path}" type="file" />
+            <then>
+                <delete file="${jar.path}" />
+            </then>
+        </if>
+        <if>
+            <available file="${bin.dir}" type="dir" />
+            <then>
+                <delete dir="${bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${javadoc.dir}" type="dir" />
+            <then>
+                <delete dir="${javadoc.dir}" />
+            </then>
+        </if>
 	</target>
 
 	<target name="javadoc">

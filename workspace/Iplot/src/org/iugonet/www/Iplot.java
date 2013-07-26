@@ -2,7 +2,7 @@ package org.iugonet.www;
 
 import javax.swing.JPanel;
 
-abstract public class Iplot extends Aplot{
+abstract public class Iplot extends Aplot {
 
 	Iplot(){
 		
