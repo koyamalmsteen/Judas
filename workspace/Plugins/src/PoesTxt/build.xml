@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project name="PoesTxt" default="jar" basedir=".">
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="/usr/share/java/ant/ant-contrib.jar" />
+		</classpath>
+	</taskdef>
+	
 	<property environment="env"/>
 	<property file="../../../../build.properties"/>
 
@@ -65,7 +71,7 @@
 	<target name="clean_jar" if="have.jar">
 		<delete>
 			<fileset file="${jar.path}" />
-		</delete>	
+		</delete>
 	</target>
 
 	<target name="clean_bin" if="have.bin">
