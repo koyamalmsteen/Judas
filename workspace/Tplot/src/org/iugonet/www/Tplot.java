@@ -1,5 +1,6 @@
 package org.iugonet.www;
 
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 
@@ -69,13 +70,27 @@ abstract public class Tplot extends Aplot {
 		return timeSeries;
 	}
 	
-	@Deprecated
-	abstract void readData(String url);
+	public void readData(String arg) {
+		try {
+			URL url = new URL(arg);
+			readData(url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void readData(URI uri) {
+		String resolver = "http://search.iugonet.org";
+		System.out.println(uri);
+		/*
+		System.out.println(uri);
+		System.out.println(uri.getSchemeSpecificPart());
+		System.out.println(uri.getScheme());
+		*/
+	}
 	
 	abstract void readData(URL url);
 	
-	abstract void readData(URI uri);
-
 	abstract public ChartPanel getChartPanel();
 
 	abstract public JFreeChart getChart();

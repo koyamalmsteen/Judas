@@ -19,16 +19,6 @@ public class NoaaPower extends Tplot {
 		super(1);
 		//timeSeries[0].setKey("NOAA POES (Power)");
 	}
-
-	@Override
-	void readData(String arg) {
-		try {
-			URL url = new URL(arg);
-			readData(url);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-	}
 	
 	@Override
 	void readData(URL url) {
@@ -75,17 +65,6 @@ public class NoaaPower extends Tplot {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	@Override
-	void readData(URI uri) {		
-		String resolver = "http://search.iugonet.org";
-		System.out.println(uri);
-		/*
-		System.out.println(uri);
-		System.out.println(uri.getSchemeSpecificPart());
-		System.out.println(uri.getScheme());
-		*/
 	}
 
 	@Override

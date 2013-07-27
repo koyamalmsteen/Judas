@@ -24,15 +24,6 @@ public class AeIndex extends Tplot {
 		//timeSeries[0].setKey("AE index");
 	}
 
-	void readData(String arg) {
-		try {
-			URL url = new URL(arg);
-			readData(url);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-	}
-
 	@Override
 	void readData(URL url) {
 
@@ -97,17 +88,6 @@ public class AeIndex extends Tplot {
 		}
 	}
 
-	@Override
-	void readData(URI uri) {
-		String resolver = "http://search.iugonet.org";
-		System.out.println(uri);
-		/*
-		System.out.println(uri);
-		System.out.println(uri.getSchemeSpecificPart());
-		System.out.println(uri.getScheme());
-		*/
-	}
-	
 	@Override
 	public ChartPanel getChartPanel() {
 		JFreeChart chart = getChart();

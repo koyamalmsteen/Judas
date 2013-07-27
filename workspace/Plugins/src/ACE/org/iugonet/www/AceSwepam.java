@@ -2,6 +2,8 @@ package org.iugonet.www;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.net.URL;
+
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.Minute;
@@ -17,7 +19,7 @@ public class AceSwepam extends Tplot {
 	}
 
 	@Override
-	void readData(String arg0) {
+	void readData(URL url) {
 
 		String line;
 

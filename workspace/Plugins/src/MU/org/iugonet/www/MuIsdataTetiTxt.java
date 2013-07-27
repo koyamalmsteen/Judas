@@ -19,16 +19,6 @@ public class MuIsdataTetiTxt extends Tplot {
 		super(1);
 		//timeSeries[0].setKey("MU ionosphere power");
 	}
-
-	@Override
-	void readData(String arg) {
-		try {
-			URL url = new URL(arg);
-			readData(url);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-	}
 	
 	@Override
 	void readData(URL url) {
@@ -101,18 +91,6 @@ public class MuIsdataTetiTxt extends Tplot {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	@Override
-	void readData(URI uri) {
-		void readData(URI uri) {
-			String resolver = "http://search.iugonet.org";
-			System.out.println(uri);
-			/*
-			System.out.println(uri);
-			System.out.println(uri.getSchemeSpecificPart());
-			System.out.println(uri.getScheme());
-			*/
 	}
 
 	@Override

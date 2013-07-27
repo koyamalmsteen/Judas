@@ -3,8 +3,6 @@ package org.iugonet.www;
 import java.io.BufferedReader;
 
 import java.io.FileReader;
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -21,16 +19,6 @@ public class DstIndex extends Tplot {
 	public DstIndex() {
 		super(1);
 		// timeSeries[0].setKey("Dst index");
-	}
-
-	@Override
-	void readData(String arg) {
-		try {
-			URL url = new URL(arg);
-			readData(url);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
 	}
 
 	@Override
@@ -82,17 +70,6 @@ public class DstIndex extends Tplot {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
-	}
-
-	@Override
-	void readData(URI uri) {
-		String resolver = "http://search.iugonet.org";
-		System.out.println(uri);
-		/*
-		System.out.println(uri);
-		System.out.println(uri.getSchemeSpecificPart());
-		System.out.println(uri.getScheme());
-		*/
 	}
 	
 	@Override
