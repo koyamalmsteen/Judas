@@ -92,7 +92,7 @@
 	</target>
 
 	<target name="test" depends="compile.test" description="test the source">
-		<junit fork="yes" haltonfailure="yes">
+		<junit fork="yes">
 			<test name="${test.class.name}" />
 			<formatter type="plain" usefile="false" />
 			<classpath refid="test.classpath" />
