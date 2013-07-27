@@ -32,7 +32,7 @@
 			
 	<path id="test.classpath">
 		<pathelement location="${test.bin}" />
-		<pathelement location="${ext.dir}/${junit.dir}" />
+		<pathelement location="${ext.dir}/${junit.jar}" />
 		<pathelement location="${lib.dir}/Aplot.jar" />
 		<pathelement location="${lib.dir}/Tplot.jar" />
 		<pathelement location="${ext.dir}/${jfreechart.jar}" />

@@ -33,6 +33,12 @@
 	<path id="test.classpath">
 		<pathelement location="${test.bin}" />
 		<pathelement location="${ext.dir}/${junit.jar}" />
+		<pathelement location="${src.dir}" />
+		<pathelement location="${lib.dir}/Aplot.jar" />
+		<pathelement location="${lib.dir}/Tplot.jar" />
+		<pathelement location="${ext.dir}/${jfreechart.jar}" />
+		<pathelement location="${ext.dir}/${jcommon.jar}" />
+		<pathelement location="${ext.dir}/${cdfjava.jar}" />
 	</path>
 
 	<!-- -->

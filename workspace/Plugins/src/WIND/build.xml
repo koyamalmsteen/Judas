@@ -32,7 +32,7 @@
 		
 	<path id="test.classpath">
 		<pathelement location="${test.bin.dir}" />
-		<pathelement location="${ext.dir}/${junit.dir}" />
+		<pathelement location="${ext.dir}/${junit.jar}" />
 	</path>
 
 	<!-- -->
