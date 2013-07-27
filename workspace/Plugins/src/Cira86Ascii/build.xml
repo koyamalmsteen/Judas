@@ -18,7 +18,7 @@
 	<property name="jar.path" location="../../../../plugins/${jar.name}" />
 
 	<property name="test.src.dir" location="../../test/src/Cira86Ascii" />
-	<property name="test.bin.dir" location="bin" />
+	<property name="test.bin.dir" location="../../bin" />
 	<property name="test.class.name" value="org.iugonet.www.Cira86AsciiTest" />
 
 	<path id="classpath">
@@ -70,6 +70,12 @@
             <available file="${bin.dir}" type="dir" />
             <then>
                 <delete dir="${bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${test.bin.dir}" type="dir" />
+            <then>
+                <delete dir="${test.bin.dir}" />
             </then>
         </if>
         <if>

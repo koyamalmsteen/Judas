@@ -20,7 +20,7 @@
 	<property name="localhostWebTest.dir" location="/var/www/html/iugonet/iugonet/Judas" />
 	
 	<property name="test.src.dir" location="test/src" />
-	<property name="test.bin.dir" location="bin" />
+	<property name="test.bin.dir" location="test/bin" />
 	<property name="test.class.name" value="org.iugonet.www.JnlpGeneratorTest" />
 	
 	<path id="classpath">
@@ -73,6 +73,12 @@
             <available file="${bin.dir}" type="dir" />
             <then>
                 <delete dir="${bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${test.bin.dir}" type="dir" />
+            <then>
+                <delete dir="${test.bin.dir}" />
             </then>
         </if>
         <if>

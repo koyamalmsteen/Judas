@@ -18,7 +18,7 @@
 	<property name="jar.path" location="../../../../plugins/${jar.name}" />
 	
 	<property name="test.src.dir" location="../../test/src/ImagNipr" />
-	<property name="test.bin.dir" location="bin" />
+	<property name="test.bin.dir" location="../../test/bin" />
 	<property name="test.class.name" value="org.iugonet.www.ImagNipr" />
 	
 	<path id="classpath">
@@ -63,21 +63,31 @@
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="classpath" />
 	</target>
 
-	<target name="clean"> 
-		<antcall target="clean_jar" />
-		<antcall target="clean_bin" />
-	</target>
-	
-	<target name="clean_jar" if="have.jar">
-		<delete>
-			<fileset file="${jar.path}" />
-		</delete>	
-	</target>
-	
-	<target name="clean_bin" if="have.bin">
-		<delete>
-			<fileset dir="${bin.dir}" includes="**" />		
-		</delete>
+	<target name="clean">
+        <if>
+            <available file="${jar.path}" type="file" />
+            <then>
+                <delete file="${jar.path}" />
+            </then>
+        </if>
+        <if>
+            <available file="${bin.dir}" type="dir" />
+            <then>
+                <delete dir="${bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${test.bin.dir}" type="dir" />
+            <then>
+                <delete dir="${test.bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${javadoc.dir}" type="dir" />
+            <then>
+                <delete dir="${javadoc.dir}" />
+            </then>
+        </if>
 	</target>
 
 	<target name="javadoc">
