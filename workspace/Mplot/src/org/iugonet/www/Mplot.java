@@ -8,8 +8,6 @@ abstract public class Mplot extends Aplot{
 		
 	}
 
-	abstract void readData(String arg0);
-
 	abstract void file_http_copy(String start, String end);
 	
 	abstract public JMapPane getJMapPane();

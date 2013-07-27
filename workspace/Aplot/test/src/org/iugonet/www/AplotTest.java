@@ -2,6 +2,8 @@ package org.iugonet.www;
 
 import static org.junit.Assert.*;
 
+import java.net.URL;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +13,12 @@ public class AplotTest {
 	class Sample extends Aplot {
 		Sample(){
 			super();
+		}
+
+		@Override
+		void readData(URL url) {
+			// TODO Auto-generated method stub
+			
 		}
 	}
 	

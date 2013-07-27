@@ -53,8 +53,6 @@ abstract public class XYplot extends Aplot {
 	public void add(Number x, Number y, boolean notify, int dim_num) {
 		xySeries[dim_num].add(x, y, notify);
 	}
-	
-	abstract void readData(String arg0);
 
 	abstract void file_http_copy(String start, String end);
 	

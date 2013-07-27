@@ -1,9 +1,5 @@
 package org.iugonet.www;
 
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.net.URL;
-
 import org.iugonet.www.Aplot;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -69,27 +65,6 @@ abstract public class Tplot extends Aplot {
 	public TimeSeries[] getTimeSeries() {
 		return timeSeries;
 	}
-	
-	public void readData(String arg) {
-		try {
-			URL url = new URL(arg);
-			readData(url);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void readData(URI uri) {
-		String resolver = "http://search.iugonet.org";
-		System.out.println(uri);
-		/*
-		System.out.println(uri);
-		System.out.println(uri.getSchemeSpecificPart());
-		System.out.println(uri.getScheme());
-		*/
-	}
-	
-	abstract void readData(URL url);
 	
 	abstract public ChartPanel getChartPanel();
 

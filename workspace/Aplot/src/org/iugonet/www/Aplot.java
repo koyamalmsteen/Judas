@@ -3,6 +3,8 @@ package org.iugonet.www;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -54,10 +56,31 @@ abstract public class Aplot {
 		return this.themisRemoteDataDir;
 	}
 	
-	@Deprecated
-	public void file_http_copy(String arg0) {
+	public void readData(String strUrl) {
 		try {
-			URL url = new URL(arg0);
+			URL url = new URL(strUrl);
+			readData(url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void readData(URI uri) {
+		String resolver = "http://search.iugonet.org";
+		System.out.println(uri);
+		/*
+		System.out.println(uri);
+		System.out.println(uri.getSchemeSpecificPart());
+		System.out.println(uri.getScheme());
+		*/
+	}
+	
+	abstract void readData(URL url);
+	
+	@Deprecated
+	public void file_http_copy(String strUrl) {
+		try {
+			URL url = new URL(strUrl);
 
 			String[] strArray = url.getPath().split("/");
 			String strDir = "/tmp";

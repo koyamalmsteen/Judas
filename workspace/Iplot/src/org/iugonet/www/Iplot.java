@@ -8,8 +8,6 @@ abstract public class Iplot extends Aplot {
 		
 	}
 	
-	abstract void readData(String arg0);
-
 	@Deprecated
 	abstract void file_http_copy(String start, String end);
 	

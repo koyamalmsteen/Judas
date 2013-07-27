@@ -53,7 +53,7 @@ public class TplotTest1D {
 		}
 
 		@Override
-		void readData(String url) {	
+		public void readData(String url) {	
 		};
 		
 		@Override
@@ -61,7 +61,7 @@ public class TplotTest1D {
 		}
 
 		@Override
-		void readData(URI uri) {
+		public void readData(URI uri) {
 		}
 	}
 
