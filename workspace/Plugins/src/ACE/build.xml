@@ -30,6 +30,7 @@
 	</path>
 			
 	<path id="test.classpath">
+		<pathelement path="./test/bin/org/iugonet/www" />
 		<pathelement location="${ext.dir}/${junit.jar}" />
 		<pathelement location="${lib.dir}/Aplot.jar" />
 		<pathelement location="${lib.dir}/Tplot.jar" />

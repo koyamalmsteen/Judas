@@ -19,13 +19,14 @@
 
 	<property name="test.src.dir" location="test/src" />
 	<property name="test.bin.dir" location="test/bin" />
-	<property name="test.class.name" value="org.iugonet.www.AplotTest" />
+	<property name="test.class.name" value="AplotTest" />
 
 	<path id="classpath">
 		<pathelement location="${src.dir}" />
 	</path>
 
 	<path id="test.classpath">
+		<pathelement path="./test/bin/org/iugonet/www" />
 		<pathelement location="${test.bin}" />
 		<pathelement location="${ext.dir}/${junit.jar}" />
 	</path>
@@ -83,11 +84,13 @@
 	</target>
 
 	<target name="test" depends="compile.test" description="test the source">
+		<exec executable="pwd" />
 		<junit fork="yes">
-			<test name="${test.class.name}" />
+
 			<formatter type="plain" usefile="false" />
 <!--			<classpath refid="classpath" /> -->
 			<classpath refid="test.classpath" />
+			<test name="${test.class.name}" />
 		</junit>
 	</target>
 
