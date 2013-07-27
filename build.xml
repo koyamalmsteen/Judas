@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project name="Judas" default="all" basedir=".">
+  <taskdef resource="net/sf/antcontrib/antlib.xml">
+    <classpath>
+      <pathelement location="/usr/share/java/ant/ant-contrib.jar" />
+    </classpath>
+  </taskdef>
+
   <property environment="env" />
   <property file="build.properties" />
 
+  <property name="plugins.dir" location="plugins" />
+  <property name="lib.dir" location="lib" />
   <property name="javadoc.dir" location="docs" />
 
   <!-- -->
 
-  <target name="all" depends="clean, initial_message, eclipse, gnuplot, key, lib, maven, switch_jdk, final_message" description="Install all"/>
+  <target name="all" depends="clean, initial_message, eclipse, key, lib, maven, switch_jdk, final_message" description="Install all"/>
 
   <target name="clean" description="Clean up">
+    <!--
     <subant target="clean">
       <fileset file="workspace/Aplot/build.xml" />
       <fileset file="workspace/Tplot/build.xml" />
@@ -20,10 +29,25 @@
       <fileset file="workspace/Plugins/build.xml" />
       <fileset file="workspace/Judas/build.xml" />
     </subant>
-    <delete>
-      <fileset dir="plugins" includes="**" />
-      <fileset dir="lib" includes="**" />
-    </delete>
+    -->
+    <if>
+      <available file="${plugins.dir}" type="dir" />
+      <then>
+        <delete file="${plugins.dir}" />
+      </then>
+    </if>
+    <if>
+      <available file="${lib.dir}" type="dir" />
+      <then>
+        <delete dir="${lib.dir}" />
+      </then>
+    </if>
+    <if>
+      <available file="${javadoc.dir}" type="dir" />
+      <then>
+        <delete dir="${javadoc.dir}" />
+      </then>
+    </if>
   </target>
 
   <target name="jar" description="Generate jar files">
@@ -57,12 +81,6 @@
     <echo message="#!/bin/env bash&#x0A;" file="${env.HOME}/eclipse.sh"/>
     <echo message="${env.HOME}/Documents/eclipse/eclipse -data ${env.HOME}/Judas/workspace" file="${env.HOME}/eclipse.sh" append="yes"/>
     <chmod file="${env.HOME}/eclipse.sh" perm="+x"/>
-  </target>
-
-  <target name="gnuplot">
-    <exec executable="yum">
-      <arg line="-y install gnuplot" />
-    </exec>
   </target>
 
   <target name="key" description="Create Security Key">
@@ -237,6 +255,7 @@
       <sourcepath path="workspace/Iplot/src" />
       <sourcepath path="workspace/JnlpGenerator/src" />
       <sourcepath path="workspace/Judas/src" />
+      <sourcepath path="workspace/MetadataHandler/src" />
       <sourcepath path="workspace/Mplot/src" />
       <sourcepath path="workspace/Plugins/src" />
       <sourcepath path="workspace/Tplot/src" />
