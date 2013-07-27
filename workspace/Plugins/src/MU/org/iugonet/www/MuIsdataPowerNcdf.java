@@ -1,7 +1,5 @@
 package org.iugonet.www;
 
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -22,7 +20,7 @@ public class MuIsdataPowerNcdf extends Tplot {
 	@Override
 	void readData(URL url) {
 		try {
-			NetcdfFile ncfile = NetcdfFile.open("/tmp" + arg0);
+			NetcdfFile ncfile = NetcdfFile.open("/tmp" + url.getPath());
 
 			// float lat = ((Array) ncfile.readSection("lat")).getFloat(0);
 			// float lon = ((Array) ncfile.readSection("lon")).getFloat(0);

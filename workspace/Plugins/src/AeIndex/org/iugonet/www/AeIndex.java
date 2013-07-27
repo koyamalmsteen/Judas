@@ -2,8 +2,6 @@ package org.iugonet.www;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 
 import org.iugonet.www.Tplot;

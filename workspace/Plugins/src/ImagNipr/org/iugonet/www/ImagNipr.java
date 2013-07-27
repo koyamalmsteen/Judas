@@ -2,15 +2,8 @@ package org.iugonet.www;
 
 import java.lang.Double;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
 
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
-import java.net.URLConnection;
-
 import gsfc.nssdc.cdf.CDF;
 import gsfc.nssdc.cdf.util.Epoch;
 import gsfc.nssdc.cdf.Variable;
@@ -39,7 +32,7 @@ public class ImagNipr extends Tplot {
 	@Override
 	void readData(URL url) {
 		try {
-			CDF cdf = CDF.open("/tmp" + arg0, 0);
+			CDF cdf = CDF.open("/tmp" + url.getPath(), 0);
 
 			Variable epoch = cdf.getVariable(0);
 			Variable db_dt = cdf.getVariable(4);

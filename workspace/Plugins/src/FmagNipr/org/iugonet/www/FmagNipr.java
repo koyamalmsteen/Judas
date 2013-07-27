@@ -3,15 +3,7 @@ package org.iugonet.www;
 import java.util.ArrayList;
 import java.lang.Double;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
-import java.net.URLConnection;
-
 import gsfc.nssdc.cdf.CDF;
 import gsfc.nssdc.cdf.util.Epoch;
 import gsfc.nssdc.cdf.Variable;
@@ -39,7 +31,7 @@ public class FmagNipr extends Tplot {
 	void readData(URL url) {
 		try {
 			ArrayList<Second> second = new ArrayList<Second>();
-			CDF cdf = CDF.open("/tmp" + arg0, 0);
+			CDF cdf = CDF.open("/tmp" + url.getPath(), 0);
 
 			// // depends epoch_2sec ////
 			Variable epoch_2sec = cdf.getVariable(0);

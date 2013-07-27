@@ -1,9 +1,8 @@
 package org.iugonet.www;
 
 import java.util.ArrayList;
+
 import java.lang.Double;
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 
 import gsfc.nssdc.cdf.CDF;
@@ -36,7 +35,7 @@ public class HfTohokuu extends Tplot {
 			float[] drh, dlh;
 
 			CDF cdf = null;
-			cdf = CDF.open("/tmp" + arg0, 0);
+			cdf = CDF.open("/tmp" + url.getPath(), 0);
 
 			Variable epoch = cdf.getVariable(0);
 			Variable channel = cdf.getVariable(1);

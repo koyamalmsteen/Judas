@@ -1,8 +1,6 @@
 package org.iugonet.www;
 
 import java.lang.Double;
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 
 import gsfc.nssdc.cdf.CDF;
@@ -32,7 +30,7 @@ public class Lfrto extends Tplot {
 			double depoch, dpower, dphase;
 
 			CDF cdf = null;
-			cdf = CDF.open("/tmp" + arg0, 0);
+			cdf = CDF.open("/tmp" + url.getPath(), 0);
 
 			Variable epoch = cdf.getVariable(0);
 			Variable power = cdf.getVariable(4);

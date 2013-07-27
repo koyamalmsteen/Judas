@@ -1,14 +1,7 @@
 package org.iugonet.www;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
 import java.lang.Double;
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
-import java.net.URLConnection;
-
 import gsfc.nssdc.cdf.CDF;
 import gsfc.nssdc.cdf.util.Epoch;
 import gsfc.nssdc.cdf.Variable;
@@ -31,7 +24,7 @@ public class WindMfih0 extends Tplot {
 			double depoch_1min;
 
 			CDF cdf = null;
-			cdf = CDF.open("/tmp" + arg0, 0);
+			cdf = CDF.open("/tmp" + url.getPath(), 0);
 			
 			Variable[] param = new Variable[cdf.getVariables().size()];
 			

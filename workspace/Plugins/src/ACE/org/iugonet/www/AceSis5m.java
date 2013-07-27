@@ -24,7 +24,7 @@ public class AceSis5m extends Tplot {
 		String line;
 
 		try {
-			FileReader fileReader = new FileReader("/tmp" + arg0);
+			FileReader fileReader = new FileReader("/tmp" + url.getPath());
 			bufferedReader = new BufferedReader(fileReader);
 
 			while ((line = bufferedReader.readLine()) != null) {

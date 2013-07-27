@@ -3,15 +3,7 @@ package org.iugonet.www;
 import java.util.ArrayList;
 import java.lang.Double;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
-import java.net.URLConnection;
-
 import gsfc.nssdc.cdf.CDF;
 import gsfc.nssdc.cdf.util.Epoch;
 import gsfc.nssdc.cdf.Variable;
@@ -40,7 +32,7 @@ public class Mm210 extends Tplot {
 			double h_1h, d_1h, z_1h;
 
 			CDF cdf = null;
-			cdf = CDF.open("/tmp" + arg0, 0);
+			cdf = CDF.open("/tmp" + url.getPath(), 0);
 
 			// // depends epoch_1min ////
 			Variable epoch_1min = cdf.getVariable(0);

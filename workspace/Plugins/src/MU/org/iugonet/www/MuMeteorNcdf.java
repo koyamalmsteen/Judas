@@ -1,7 +1,5 @@
 package org.iugonet.www;
 
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 import java.util.List;
 import java.util.Calendar;
@@ -30,7 +28,7 @@ public class MuMeteorNcdf extends Tplot {
 		int sc_t = 0;
 
 		try {
-			NetcdfFile ncfile = NetcdfFile.open("/tmp" + arg0);
+			NetcdfFile ncfile = NetcdfFile.open("/tmp" + url.getPath());
 			List<Variable> vl = ncfile.getVariables();
 
 			// float lon = ((Array) ncfile.readSection("lon")).getFloat(0);

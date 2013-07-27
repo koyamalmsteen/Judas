@@ -1,13 +1,9 @@
 package org.iugonet.www;
 
-
-
 //import nom.tam.fits.BasicHDU;
 //import nom.tam.fits.Fits;
 //import nom.tam.fits.Header;
 
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 
 import org.jfree.chart.ChartPanel;

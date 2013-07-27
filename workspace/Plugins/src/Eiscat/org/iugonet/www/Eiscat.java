@@ -1,9 +1,8 @@
 package org.iugonet.www;
 
 import java.io.BufferedReader;
+
 import java.io.FileReader;
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 
 import org.jfree.chart.ChartPanel;
@@ -57,7 +56,7 @@ public class Eiscat extends Tplot {
 		int n = 0;
 
 		try {
-			FileReader fileReader = new FileReader("/tmp" + arg0);
+			FileReader fileReader = new FileReader("/tmp" + url.getPath());
 			bufferedReader = new BufferedReader(fileReader);
 
 			while ((line = bufferedReader.readLine()) != null) {
