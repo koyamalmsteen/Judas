@@ -2,6 +2,10 @@ package org.iugonet.www;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
+
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.TimeSeriesCollection;
@@ -16,8 +20,17 @@ public class MuIonogramTxt extends Tplot {
 	}
 
 	@Override
-	void readData(String arg0) {
+	void readData(String arg) {
+		try {
+			URL url = new URL(arg);
+			readData(url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
 
+	@Override
+	void readData(URL url) {
 		String line;
 
 		double[][] ionogram = new double[161][217];
@@ -72,9 +85,20 @@ public class MuIonogramTxt extends Tplot {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}		
 	}
 
+	@Override
+	void readData(URI uri) {
+		String resolver = "http://search.iugonet.org";
+		System.out.println(uri);
+		/*
+		System.out.println(uri);
+		System.out.println(uri.getSchemeSpecificPart());
+		System.out.println(uri.getScheme());
+		*/	
+	}
+	
 	@Override
 	public ChartPanel getChartPanel() {
 		// TODO Auto-generated method stub
@@ -92,4 +116,5 @@ public class MuIonogramTxt extends Tplot {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 }

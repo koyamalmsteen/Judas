@@ -1,5 +1,8 @@
 package org.iugonet.www;
 
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.util.List;
 import java.util.Calendar;
 
@@ -19,7 +22,17 @@ public class MuMeteorNcdf extends Tplot {
 	}
 
 	@Override
-	void readData(String arg0) {
+	void readData(String arg) {
+		try {
+			URL url = new URL(arg);
+			readData(url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	void readData(URL url) {
 
 		int yyyy_s = 0;
 		int mm_s = 0;
@@ -83,9 +96,20 @@ public class MuMeteorNcdf extends Tplot {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}		
 	}
 
+	@Override
+	void readData(URI uri) {
+		String resolver = "http://search.iugonet.org";
+		System.out.println(uri);
+		/*
+		System.out.println(uri);
+		System.out.println(uri.getSchemeSpecificPart());
+		System.out.println(uri.getScheme());
+		*/
+	}
+	
 	@Override
 	public ChartPanel getChartPanel() {
 		// TODO Auto-generated method stub
@@ -103,4 +127,5 @@ public class MuMeteorNcdf extends Tplot {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 }

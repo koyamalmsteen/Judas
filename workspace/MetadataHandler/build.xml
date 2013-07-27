@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project name="Aplot" default="jar" basedir=".">
-	<taskdef resource="net/sf/antcontrib/antlib.xml">
+<project name="MetadataHandler" default="jar" basedir=".">
+	<taskdef resource="net/sf/antcontrib/antlib.xml" >
 		<classpath>
-			<pathelement location="/usr/share/java/ant/ant-contrib.jar" />
+	    	<pathelement location="/usr/share/java/ant/ant-contrib.jar" />
 		</classpath>
 	</taskdef>
-
+	
 	<property environment="env"/>
 	<property file="../../build.properties"/>
 
@@ -14,26 +14,35 @@
 	<property name="lib.dir" location="../../lib" />
 	<property name="ext.dir" location="${lib.dir}/external" />
 	<property name="javadoc.dir" location="docs" />
-	<property name="jar.name" value="Aplot.jar" />
+	<property name="jar.name" value="Tplot.jar" />
 	<property name="jar.path" location="${lib.dir}/${jar.name}" />
 
 	<property name="test.src.dir" location="test/src" />
 	<property name="test.bin.dir" location="test/bin" />
-	<property name="test.class.name" value="/home/iugonet/Judas/workspace/Aplot/test/bin/org/iugonet/www/AplotTest" />
+	<property name="test.class.name" value="org.iugonet.www.MetadataHandlerTest" />
 
 	<path id="classpath">
 		<pathelement location="${src.dir}" />
+		<pathelement location="${lib.dir}/Aplot.jar" />
+		<pathelement location="${ext.dir}/${jfreechart.jar}" />
+		<pathelement location="${ext.dir}/${jcommon.jar}" />
 	</path>
-
+	
 	<path id="test.classpath">
-		<pathelement path="." />
-		<pathelement location="${test.bin}" />
+		<pathelement path="./test/bin/org/iugonet/www" />
+		<pathelement location="${test.bin.dir}" />
 		<pathelement location="${ext.dir}/${junit.jar}" />
+		<pathelement location="${lib.dir}/Aplot.jar" />
+		<pathelement location="${ext.dir}/${jfreechart.jar}" />
+		<pathelement location="${ext.dir}/${jcommon.jar}" />
 	</path>
 
 	<!-- -->
 
 	<target name="jar" depends="compile">
+		<subant>
+			<fileset file="../Aplot/build.xml" />
+		</subant>
 		<jar jarfile="${jar.path}">
 			<fileset dir="${src.dir}" includes="**" />
 			<fileset dir="${bin.dir}" includes="**" />
@@ -41,10 +50,16 @@
 	</target>
 
 	<target name="compile">
+		<subant>
+			<fileset file="../Aplot/build.xml" />
+		</subant>
+		<subant target="jar">
+			<fileset file="../Aplot/build.xml" erroronmissingdir="false" />
+		</subant>
 		<mkdir dir="${bin.dir}" />
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="classpath" />
 	</target>
-
+	
 	<target name="compile.test" depends="compile">
 		<mkdir dir="${test.bin.dir}" />
 		<javac srcdir="${test.src.dir}" destdir="${test.bin.dir}" includeantruntime="false" classpathref="test.classpath" />
@@ -84,11 +99,9 @@
 	</target>
 
 	<target name="test" depends="compile.test" description="test the source">
-		<exec executable="pwd" />
 		<junit fork="yes">
 			<test name="${test.class.name}" />
 			<formatter type="plain" usefile="false" />
-<!--			<classpath refid="classpath" /> -->
 			<classpath refid="test.classpath" />
 		</junit>
 	</target>

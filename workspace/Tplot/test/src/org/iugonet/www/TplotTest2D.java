@@ -2,6 +2,8 @@ package org.iugonet.www;
 
 import static org.junit.Assert.*;
 
+import java.net.URI;
+import java.net.URL;
 import java.util.Date;
 
 import org.iugonet.www.Tplot;
@@ -32,9 +34,6 @@ public class TplotTest2D {
 			super(dimension);
 		}
 
-		void readData(String arg0) {
-		}
-
 		void file_http_copy(String start, String end) {
 		}
 
@@ -51,7 +50,19 @@ public class TplotTest2D {
 		@Override
 		public TimeSeriesCollection loadData(String strUrl) {
 			return null;
-		};
+		}
+		
+		@Override
+		void readData(String url) {
+		};		
+
+		@Override
+		void readData(URL url) {
+		}
+
+		@Override
+		void readData(URI uri) {	
+		}
 	}
 
 	Sample sample;

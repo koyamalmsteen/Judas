@@ -1,7 +1,10 @@
 package org.iugonet.www;
 
 import java.io.BufferedReader;
+
 import java.io.FileReader;
+import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -21,12 +24,20 @@ public class DstIndex extends Tplot {
 	}
 
 	@Override
-	void readData(String arg0) {
+	void readData(String arg) {
+		try {
+			URL url = new URL(arg);
+			readData(url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
 
+	@Override
+	void readData(URL url) {
 		String line;
 
 		try {
-			URL url = new URL(arg0);
 			FileReader fileReader = new FileReader("/tmp" + url.getPath());
 			// FileReader fileReader = new
 			// FileReader("/tmp/data/hour/index/dst/1984/dst8410");
@@ -69,11 +80,21 @@ public class DstIndex extends Tplot {
 				// System.out.print(line.substring(117-1,120));
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}	
 	}
 
+	@Override
+	void readData(URI uri) {
+		String resolver = "http://search.iugonet.org";
+		System.out.println(uri);
+		/*
+		System.out.println(uri);
+		System.out.println(uri.getSchemeSpecificPart());
+		System.out.println(uri.getScheme());
+		*/
+	}
+	
 	@Override
 	public ChartPanel getChartPanel() {
 		JFreeChart chart = getChart();
@@ -114,4 +135,5 @@ public class DstIndex extends Tplot {
 
 		return timeSeriesCollection;
 	}
+
 }

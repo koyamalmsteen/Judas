@@ -1,5 +1,8 @@
 package org.iugonet.www;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import org.iugonet.www.DstIndex;
 import org.junit.After;
 import org.junit.Before;
@@ -41,5 +44,17 @@ public class DstIndexTest {
 
 		dstIndex.file_http_copy(arg0);
 		dstIndex.readData(arg0);
+	}
+	
+	@Test
+	public void test03() {
+		String arg = "spase://IUGONET/Granule/WDC_Kyoto/WDC/Dst/index/PT1H/dst198410_wdc";
+		URI uri;
+		try {
+			uri = new URI(arg);
+			System.out.println(uri);
+		} catch (URISyntaxException e) {
+			e.printStackTrace();
+		}
 	}
 }

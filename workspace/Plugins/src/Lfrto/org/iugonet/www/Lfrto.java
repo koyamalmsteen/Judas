@@ -1,6 +1,9 @@
 package org.iugonet.www;
 
 import java.lang.Double;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 
 import gsfc.nssdc.cdf.CDF;
 import gsfc.nssdc.cdf.util.Epoch;
@@ -20,7 +23,17 @@ public class Lfrto extends Tplot {
 	}
 
 	@Override
-	void readData(String arg0) {
+	void readData(String arg) {
+		try {
+			URL url = new URL(arg);
+			readData(url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	void readData(URL url) {
 
 		try {
 			int yyyy, mm, dd, hr, mn, sc;
@@ -62,6 +75,17 @@ public class Lfrto extends Tplot {
 	}
 
 	@Override
+	void readData(URI uri) {
+		String resolver = "http://search.iugonet.org";
+		System.out.println(uri);
+		/*
+		System.out.println(uri);
+		System.out.println(uri.getSchemeSpecificPart());
+		System.out.println(uri.getScheme());
+		*/
+	}
+	
+	@Override
 	public ChartPanel getChartPanel() {
 		// TODO Auto-generated method stub
 		return null;
@@ -78,4 +102,5 @@ public class Lfrto extends Tplot {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 }

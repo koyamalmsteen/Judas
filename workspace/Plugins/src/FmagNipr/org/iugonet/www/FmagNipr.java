@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
+import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -34,8 +36,17 @@ public class FmagNipr extends Tplot {
 	}
 
 	@Override
-	void readData(String arg0) {
-
+	void readData(String arg) {
+		try {
+			URL url = new URL(arg);
+			readData(url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	void readData(URL url) {
 		try {
 			ArrayList<Second> second = new ArrayList<Second>();
 			CDF cdf = CDF.open("/tmp" + arg0, 0);
@@ -69,7 +80,18 @@ public class FmagNipr extends Tplot {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}		
+	}
+
+	@Override
+	void readData(URI uri) {
+		String resolver = "http://search.iugonet.org";
+		System.out.println(uri);
+		/*
+		System.out.println(uri);
+		System.out.println(uri.getSchemeSpecificPart());
+		System.out.println(uri.getScheme());
+		*/
 	}
 
 	@Override
@@ -89,4 +111,5 @@ public class FmagNipr extends Tplot {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 }

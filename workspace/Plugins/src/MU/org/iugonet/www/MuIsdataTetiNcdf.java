@@ -1,5 +1,8 @@
 package org.iugonet.www;
 
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +24,16 @@ public class MuIsdataTetiNcdf extends Tplot {
 
 	@Override
 	void readData(String arg0) {
+		try {
+			URL url = new URL(arg);
+			readData(url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	void readData(URL url) {
 		try {
 			NetcdfFile ncfile = NetcdfFile.open("/tmp" + arg0);
 			List<Variable> vl = ncfile.getVariables();
@@ -68,6 +81,17 @@ public class MuIsdataTetiNcdf extends Tplot {
 	}
 
 	@Override
+	void readData(URI uri) {
+		String resolver = "http://search.iugonet.org";
+		System.out.println(uri);
+		/*
+		System.out.println(uri);
+		System.out.println(uri.getSchemeSpecificPart());
+		System.out.println(uri.getScheme());
+		*/
+	}
+
+	@Override
 	public ChartPanel getChartPanel() {
 		// TODO Auto-generated method stub
 		return null;
@@ -84,4 +108,5 @@ public class MuIsdataTetiNcdf extends Tplot {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 }

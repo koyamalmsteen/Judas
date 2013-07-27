@@ -2,6 +2,9 @@ package org.iugonet.www;
 
 import java.util.ArrayList;
 import java.lang.Double;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
 
 import gsfc.nssdc.cdf.CDF;
 import gsfc.nssdc.cdf.util.Epoch;
@@ -20,7 +23,18 @@ public class HfTohokuu extends Tplot {
 	}
 
 	@Override
-	void readData(String arg0) {
+	void readData(String arg) {
+		try {
+			URL url = new URL(arg);
+			readData(url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Override
+	void readData(URL url) {
+		// TODO Auto-generated method stub
 
 		try {
 			ArrayList<Second> second = new ArrayList<Second>();
@@ -75,9 +89,20 @@ public class HfTohokuu extends Tplot {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}		
 	}
 
+	@Override
+	void readData(URI uri) {
+		String resolver = "http://search.iugonet.org";
+		System.out.println(uri);
+		/*
+		System.out.println(uri);
+		System.out.println(uri.getSchemeSpecificPart());
+		System.out.println(uri.getScheme());
+		*/
+	}
+	
 	@Override
 	public ChartPanel getChartPanel() {
 		// TODO Auto-generated method stub
@@ -95,4 +120,5 @@ public class HfTohokuu extends Tplot {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 }
