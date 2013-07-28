@@ -16,11 +16,6 @@ public class XYplotTest {
 	class Sample extends XYplot{
 
 		@Override
-		void file_http_copy(String start, String end) {
-
-		}
-
-		@Override
 		public ChartPanel getChartPanel() {
 			return null;
 		}
@@ -37,15 +32,16 @@ public class XYplotTest {
 		}
 
 		@Override
-		void readData(URL url) {
-			// TODO Auto-generated method stub
-			
+		void readData(URL url) {	
 		}
 		
 	}
 	
+	Sample sample;
+	
 	@Before
 	public void setUp() throws Exception {
+		sample = new Sample();
 	}
 
 	@After
@@ -53,8 +49,9 @@ public class XYplotTest {
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void test01() {
+		sample.add(1, 1, 0);
+		sample.add(1, 2, 0);
 	}
 
 }
