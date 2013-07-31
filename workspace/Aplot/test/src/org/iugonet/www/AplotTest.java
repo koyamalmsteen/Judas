@@ -2,6 +2,8 @@ package org.iugonet.www;
 
 import static org.junit.Assert.*;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.junit.After;
@@ -80,4 +82,14 @@ public class AplotTest {
 		assertEquals(expected, actual);
 	}
 
+	@Test
+	public void test_readData01(){
+		try {
+			URI uri = new URI("spase://IUGONET/Granule/WDC_Kyoto/WDC/Dst/index/PT1H/dst198410_wdc");
+			sample.readData(uri);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 }

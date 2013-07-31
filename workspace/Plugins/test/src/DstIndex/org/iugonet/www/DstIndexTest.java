@@ -40,9 +40,9 @@ public class DstIndexTest {
 
 	@Test
 	public void test02() {
-		String arg0 = "http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410";
+		String arg = "http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410";
 
-		dstIndex.file_http_copy(arg0);
+		dstIndex.file_http_copy(arg);
 		dstIndex.readData(arg0);
 	}
 	

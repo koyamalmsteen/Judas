@@ -1,12 +1,19 @@
 package org.iugonet.www;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.InetSocketAddress;
 import java.net.MalformedURLException;
+import java.net.Proxy;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLConnection;
+
+import org.w3c.dom.Document;
 
 abstract public class Aplot {
 
@@ -66,8 +73,39 @@ abstract public class Aplot {
 	}
 
 	public void readData(URI uri) {
-		String resolver = "http://search.iugonet.org";
-		System.out.println(uri);
+		String query_head = "http://search.iugonet.org/iugonet/open-search/request?query=ResourceID:";
+		String query_tail = "&Granule=granule";
+
+		try {
+			String query = query_head + uri.getRawSchemeSpecificPart() + query_tail;
+			URL url = new URL(query);
+			Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("proxy.kuins.net",8080));
+// environment variable check			http_proxy=http://proxy.kuins.net:8080
+			URLConnection urlConnection = url.openConnection(proxy);
+//			URLConnection urlConnection = url.openConnection();
+			urlConnection.connect();
+/*			
+			InputStream in = conn.getInputStream();
+
+			File file = new File("/tmp" + url.getPath());
+			FileOutputStream out = new FileOutputStream(file, false);
+			int b;
+			while ((b = in.read()) != -1) {
+				out.write(b);
+			}
+			out.close();
+			in.close();
+			
+			Document document = null;
+			try{
+//				document = getDocument(urlConnection.getInputStream());
+			} catch (Exception e){
+				e.printStackTrace();
+			}
+			*/
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		/*
 		System.out.println(uri);
 		System.out.println(uri.getSchemeSpecificPart());
