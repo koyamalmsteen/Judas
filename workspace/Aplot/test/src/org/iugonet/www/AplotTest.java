@@ -3,7 +3,6 @@ package org.iugonet.www;
 import static org.junit.Assert.*;
 
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.junit.After;

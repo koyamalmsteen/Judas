@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.MalformedURLException;
 import java.net.Proxy;
@@ -79,14 +80,33 @@ abstract public class Aplot {
 		try {
 			String query = query_head + uri.getRawSchemeSpecificPart() + query_tail;
 			URL url = new URL(query);
-			Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("proxy.kuins.net",8080));
-// environment variable check			http_proxy=http://proxy.kuins.net:8080
-			URLConnection urlConnection = url.openConnection(proxy);
-//			URLConnection urlConnection = url.openConnection();
-			urlConnection.connect();
-/*			
-			InputStream in = conn.getInputStream();
+			
+			// check proxy
+			String http_proxy_upper_case = System.getenv("HTTP_PROXY");
+			String http_proxy_lower_case = System.getenv("http_proxy");
 
+			URLConnection urlConnection;
+			if( http_proxy_upper_case != null || http_proxy_lower_case != null ){ // with proxy
+				URL urlProxy;
+				if( http_proxy_upper_case != null ){
+					urlProxy = new URL(http_proxy_upper_case);
+				}else{
+					urlProxy = new URL(http_proxy_lower_case);
+				}
+				Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(urlProxy.getHost(),urlProxy.getPort()));
+				urlConnection = url.openConnection(proxy);
+			}else{                                                                // without proxy
+				urlConnection = url.openConnection();
+			}
+			
+			urlConnection.connect();
+			
+			// contents retrieve
+			
+			InputStream inputStream = urlConnection.getInputStream();
+//			OutputStream outputStream = new OutputStream();
+//			inputStream.read()
+/*
 			File file = new File("/tmp" + url.getPath());
 			FileOutputStream out = new FileOutputStream(file, false);
 			int b;
