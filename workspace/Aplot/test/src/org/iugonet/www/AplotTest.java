@@ -35,7 +35,7 @@ public class AplotTest {
 		sample = null;
 		System.gc();
 	}
-	
+
 	@Test
 	public void test_getRootDataDir01(){
 		String expected = "~/data";
