@@ -1,5 +1,6 @@
 package org.iugonet.www;
 
+import java.net.URI;
 import java.net.URL;
 import java.util.List;
 import java.util.Calendar;
@@ -101,6 +102,18 @@ public class MuMeteorNcdf extends Tplot {
 
 	@Override
 	public TimeSeriesCollection loadData(String strUrl) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TimeSeriesCollection loadData(URI uri) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TimeSeriesCollection loadData(URL arg0) {
 		// TODO Auto-generated method stub
 		return null;
 	}

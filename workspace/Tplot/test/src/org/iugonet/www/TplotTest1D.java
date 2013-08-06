@@ -69,6 +69,12 @@ public class TplotTest1D {
 			// TODO Auto-generated method stub
 			return null;
 		}
+
+		@Override
+		public TimeSeriesCollection loadData(URL url) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 	}
 
 	Sample sample;

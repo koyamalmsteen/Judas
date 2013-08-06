@@ -3,6 +3,7 @@ package org.iugonet.www;
 import java.lang.Double;
 
 
+import java.net.URI;
 import java.net.URL;
 import gsfc.nssdc.cdf.CDF;
 import gsfc.nssdc.cdf.util.Epoch;
@@ -83,6 +84,18 @@ public class ImagNipr extends Tplot {
 
 	@Override
 	public TimeSeriesCollection loadData(String strUrl) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TimeSeriesCollection loadData(URI uri) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TimeSeriesCollection loadData(URL arg0) {
 		// TODO Auto-generated method stub
 		return null;
 	}

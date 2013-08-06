@@ -62,7 +62,7 @@ abstract public class Aplot {
 	public void readData(String strUrl) {
 		try {
 			URL url = new URL(strUrl);
-			readData(url);
+			this.readData(url);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -142,7 +142,23 @@ abstract public class Aplot {
 	public void file_http_copy(String strUrl) {
 		try {
 			URL url = new URL(strUrl);
-
+			this.downloadData(url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void downloadData(String strUrl){
+		try {
+			URL url = new URL(strUrl);
+			this.downloadData(url);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}		
+	}
+	
+	public void downloadData(URL url) {
+		try {
 			String[] strArray = url.getPath().split("/");
 			String strDir = "/tmp";
 			for (int i = 0; i < strArray.length - 1; i++) {

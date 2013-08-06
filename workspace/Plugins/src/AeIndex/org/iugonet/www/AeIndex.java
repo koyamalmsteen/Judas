@@ -2,6 +2,7 @@ package org.iugonet.www;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.net.URI;
 import java.net.URL;
 
 import org.iugonet.www.Tplot;
@@ -125,6 +126,18 @@ public class AeIndex extends Tplot {
 		timeSeriesCollection.addSeries(aeIndex.getTimeSeries(0));
 
 		return timeSeriesCollection;
+	}
+
+	@Override
+	public TimeSeriesCollection loadData(URI uri) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public TimeSeriesCollection loadData(URL arg0) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
