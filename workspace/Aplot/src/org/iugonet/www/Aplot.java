@@ -138,6 +138,13 @@ abstract public class Aplot {
 		
 		return url;
 	}
+	
+	public URI getParentID(URI uri){
+		String query_head = "http://search.iugonet.org/iugonet/open-search/request?query=ResourceID:";
+		String query_tail = "&Granule=granule";
+		
+//		http://localhost/iugonet/browse?type=GranuleParentID&value=spase%3A%2F%2FIUGONET%2FNumericalData%2FWDC_Kyoto%2FWDC%2FNCK%2FMagnetometer%2FPT1H&m=1
+	}
 
 	@Deprecated
 	public void file_http_copy(String strUrl) {
