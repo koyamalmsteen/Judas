@@ -165,7 +165,7 @@ abstract public class Aplot {
 			File fileDir = new File(strDir);
 
 			if (fileDir.exists()) {
-				System.out.println(fileDir + "Directory exists.");
+//				System.out.println(fileDir + "Directory exists.");
 			} else {
 				if (fileDir.mkdirs()) {
 					System.out.println(fileDir.getPath()
@@ -194,7 +194,7 @@ abstract public class Aplot {
 	}
 	
 	public void download(URI uri) {
-		
+		this.download(this.resolve(uri));
 	}
 	
 	public void read(String strUrl) {
