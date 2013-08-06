@@ -91,4 +91,14 @@ public class AplotTest {
 		}
 		
 	}
+	
+	@Test
+	public void test_readData02(){
+		try {
+			URI uri = new URI("spase://IUGONET/Granule/WDC_Kyoto/WDC/Dst/index/PT1H/dst198410_wdc");
+			sample.readData(uri);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

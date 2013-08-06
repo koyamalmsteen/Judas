@@ -23,9 +23,10 @@ public class ImagNiprTest {
 	public void test() {
 		url = "http://iugonet0.nipr.ac.jp";
 		filepath = "/data/imag/syo/20hz/2003/nipr_20hz_imag_syo_20030204_v01.cdf";
+		/*
 		imagNipr.file_http_copy(url + filepath);
 		imagNipr.readData(filepath);
-
+		*/
 		TimeSeries[] timeSeries = imagNipr.getTimeSeries();
 		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {
 			System.out.print(timeSeries[0].getTimePeriod(i).getStart() + " ");

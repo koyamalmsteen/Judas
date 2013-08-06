@@ -25,6 +25,7 @@ public class EiscatTest {
 		url = "http://www.stelab.nagoya-u.ac.jp";
 		filepath = "/~eiscat/data/ESR_anadata/BasicParameters/ant/20110104_32ma_taro_0000.dat";
 
+		/*
 		eiscat.file_http_copy(url + filepath);
 		eiscat.readData(filepath);
 		TimeSeries[] timeSeries = eiscat.getTimeSeries();
@@ -33,6 +34,7 @@ public class EiscatTest {
 			System.out.print(timeSeries[7].getTimePeriod(i).getStart() + " ");
 			System.out.println(timeSeries[7].getDataItem(i).getValue());
 		}
+		*/
 	}
 
 }

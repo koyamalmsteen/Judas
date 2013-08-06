@@ -71,7 +71,7 @@ public class DstIndex extends Tplot {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}	
+		}
 	}
 	
 	@Override
