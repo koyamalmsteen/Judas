@@ -12,20 +12,29 @@ import java.net.URLConnection;
 
 abstract public class Aplot {
 
-
-	private String rootDataDir = "~/data";
-	private String themisDataDir = "~/themis";
+	private String rootDataDir = "/tmp/data";
+	private String themisDataDir = "/tmp/themis";
 	private String themisRemoteDataDir = "http://themis.stp.isas.jaxa.jp/data/themis/";
 
 	Aplot(){
 		String rootDataDir = System.getenv("ROOT_DATA_DIR");
 		if ( rootDataDir != null ){
 			setRootDataDir(rootDataDir);
+			File file = new File(rootDataDir);
+			System.out.println(file.getName());
+			if( !file.exists() ){
+				System.out.println("HOGE");
+			}
 		}
 		
 		String themisDataDir = System.getenv("THEMIS_DATA_DIR");
 		if ( themisDataDir != null ){
 			setThemisDataDir(themisDataDir);
+			File file = new File(themisDataDir);
+			System.out.println(file.getName());
+			if( !file.exists() ){
+				System.out.println("HOGE2");
+			}
 		}
 		
 		String themisRemoteDataDir = System.getenv("THEMIS_REMOTE_DATA_DIR");
@@ -157,7 +166,7 @@ abstract public class Aplot {
 	public void download(URL url) {
 		try {
 			String[] strArray = url.getPath().split("/");
-			String strDir = "/tmp";
+			String strDir = this.getRootDataDir();
 			for (int i = 0; i < strArray.length - 1; i++) {
 				strDir = strDir + "/" + strArray[i];
 			}
@@ -179,7 +188,7 @@ abstract public class Aplot {
 			URLConnection conn = url.openConnection();
 			InputStream in = conn.getInputStream();
 
-			File file = new File("/tmp" + url.getPath());
+			File file = new File(rootDataDir + url.getPath());
 			FileOutputStream out = new FileOutputStream(file, false);
 			int b;
 			while ((b = in.read()) != -1) {
