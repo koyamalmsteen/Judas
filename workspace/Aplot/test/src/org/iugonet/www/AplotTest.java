@@ -19,7 +19,7 @@ public class AplotTest {
 		@Override
 		void readData(URL url) {
 			// TODO Auto-generated method stub
-			
+			System.out.println(url);
 		}
 	}
 	
