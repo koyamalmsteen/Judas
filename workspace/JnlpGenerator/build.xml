@@ -37,7 +37,7 @@
 
 	<!-- -->
 
-	<target name="jar" depends="compile">
+	<target name="jar" depends="compile" description="Jar">
 		<jar jarfile="${jar.path}">
 			<fileset dir="${src.dir}" includes="**" />
 			<fileset dir="${bin.dir}" includes="**" />
@@ -46,23 +46,23 @@
 		<antcall target="sign" />
 	</target>
 	
-	<target name="compile">
+	<target name="compile" description="Compile">
 		<mkdir dir="${bin.dir}" />
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="classpath" />
 	</target>
 	
-	<target name="compile.test" depends="compile">
+	<target name="compile.test" depends="compile" description="Compile test">
 		<mkdir dir="${test.bin.dir}" />
 		<javac srcdir="${test.src.dir}" destdir="${test.bin.dir}" includeantruntime="false" classpathref="test.classpath" />
 	</target>
 
-	<target name="javadoc">
+	<target name="javadoc" description="Javadoc">
 		<javadoc destdir="${javadoc.dir}">
 			<fileset dir="${src.dir}" />
 		</javadoc>
 	</target>
 	
-	<target name="clean">
+	<target name="clean" description="Clean">
         <if>
             <available file="${jar.path}" type="file" />
             <then>
@@ -90,14 +90,14 @@
         </if>
 	</target>
 	
-	<target name="test" depends="compile" description="test the source">
+	<target name="test" depends="compile" description="Test">
 		<junit fork="yes">
 			<formatter type="plain" usefile="false" />
 			<classpath refid="test.classpath" />
 		</junit>
 	</target>
 
-	<target name="localhostWebTest">
+	<target name="localhostWebTest" description="LocalhostWebTest">
 		<mkdir dir="${localhostWebTest.dir}" />
 		<mkdir dir="${localhostWebTest.dir}/jnlp" />
 		<copy todir="${localhostWebTest.dir}/jnlp">
@@ -108,7 +108,7 @@
 		</copy>
 	</target>
 	
-	<target name="sign">
+	<target name="sign" description="Sign">
 		<exec executable="jarsigner">
 			<arg line="-keystore ../../key/keystore -storepass password -keypass password ${jar.path} iugonet" />
 		</exec>

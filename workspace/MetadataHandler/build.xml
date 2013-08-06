@@ -39,7 +39,7 @@
 
 	<!-- -->
 
-	<target name="jar" depends="compile">
+	<target name="jar" depends="compile" description="Jar">
 		<subant>
 			<fileset file="../Aplot/build.xml" />
 		</subant>
@@ -49,7 +49,7 @@
 		</jar>
 	</target>
 
-	<target name="compile">
+	<target name="compile" description="Compile">
 		<subant>
 			<fileset file="../Aplot/build.xml" />
 		</subant>
@@ -60,12 +60,12 @@
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="classpath" />
 	</target>
 	
-	<target name="compile.test" depends="compile">
+	<target name="compile.test" depends="compile" description="Compile test">
 		<mkdir dir="${test.bin.dir}" />
 		<javac srcdir="${test.src.dir}" destdir="${test.bin.dir}" includeantruntime="false" classpathref="test.classpath" />
 	</target>
 
-	<target name="clean">
+	<target name="clean" description="Clean">
         <if>
             <available file="${jar.path}" type="file" />
             <then>
@@ -92,13 +92,13 @@
         </if>
 	</target>
 
-	<target name="javadoc">
+	<target name="javadoc" description="Javadoc">
 		<javadoc destdir="${javadoc.dir}">
 			<fileset dir="${src.dir}" />
 		</javadoc>
 	</target>
 
-	<target name="test" depends="compile.test" description="test the source">
+	<target name="test" depends="compile.test" description="Compile test">
 		<junit fork="yes">
 			<test name="${test.class.name}" />
 			<formatter type="plain" usefile="false" />

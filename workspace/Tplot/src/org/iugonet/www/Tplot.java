@@ -1,5 +1,7 @@
 package org.iugonet.www;
 
+import java.net.URI;
+
 import org.iugonet.www.Aplot;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -71,4 +73,6 @@ abstract public class Tplot extends Aplot {
 	abstract public JFreeChart getChart();
 
 	abstract public TimeSeriesCollection loadData(String strUrl);
+	
+	abstract public TimeSeriesCollection loadData(URI uri);
 }

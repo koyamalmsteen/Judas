@@ -14,10 +14,6 @@ public class MplotTest {
 	class Sample extends Mplot{
 
 		@Override
-		void file_http_copy(String start, String end) {
-		}
-
-		@Override
 		public JMapPane getJMapPane() {
 			return null;
 		}

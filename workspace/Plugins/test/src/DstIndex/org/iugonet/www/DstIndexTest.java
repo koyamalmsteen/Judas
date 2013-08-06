@@ -1,7 +1,9 @@
 package org.iugonet.www;
 
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 
 import org.iugonet.www.DstIndex;
 import org.junit.After;
@@ -40,10 +42,16 @@ public class DstIndexTest {
 
 	@Test
 	public void test02() {
-		String arg = "http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410";
-
-		dstIndex.file_http_copy(arg);
-		dstIndex.readData(arg0);
+		String strUrl = "http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410";
+		try {
+			URL url = new URL(strUrl);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		dstIndex.file_http_copy(strUrl);
+		dstIndex.readData(strUrl);
 	}
 	
 	@Test

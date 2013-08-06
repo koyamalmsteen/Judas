@@ -63,6 +63,12 @@ public class TplotTest2D {
 		@Override
 		public void readData(URI uri) {	
 		}
+
+		@Override
+		public TimeSeriesCollection loadData(URI uri) {
+			// TODO Auto-generated method stub
+			return null;
+		}
 	}
 
 	Sample sample;

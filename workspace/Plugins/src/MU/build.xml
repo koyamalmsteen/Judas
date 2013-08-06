@@ -43,7 +43,7 @@
 
 	<!-- -->
 
-	<target name="jar" depends="clean,compile">
+	<target name="jar" depends="clean,compile" description="Jar">
 		<jar jarfile="${jar.path}">
 			<fileset dir="${src.dir}" includes="**/*.java" />
 			<fileset dir="${bin.dir}" includes="**/*.class" />
@@ -53,7 +53,7 @@
 		</jar>
 	</target>
 
-	<target name="compile">
+	<target name="compile" description="Compile">
 		<subant target="compile">
 			<fileset file="../../../Tplot/build.xml" />
 		</subant>
@@ -64,7 +64,7 @@
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="classpath" />
 	</target>
 
-	<target name="clean">
+	<target name="clean" description="Clean">
         <if>
             <available file="${jar.path}" type="file" />
             <then>
@@ -91,13 +91,13 @@
         </if>
 	</target>
 
-	<target name="javadoc">
+	<target name="javadoc" description="Javadoc">
 		<javadoc destdir="${javadoc.dir}">
 			<fileset dir="${src.dir}" />
 		</javadoc>
 	</target>
 
-	<target name="test" depends="compile" description="test the source">
+	<target name="test" depends="compile" description="Test">
 		<junit fork="yes">
 			<formatter type="plain" usefile="false" />
 			<classpath refid="test.classpath" />

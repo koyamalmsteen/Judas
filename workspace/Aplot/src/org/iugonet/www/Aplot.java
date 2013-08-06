@@ -10,12 +10,6 @@ import java.net.Proxy;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.List;
-
-import org.jdom2.Document;
-import org.jdom2.Element;
-import org.jdom2.input.SAXBuilder;
-import org.jdom2.output.XMLOutputter;
 
 abstract public class Aplot {
 

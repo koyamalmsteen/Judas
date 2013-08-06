@@ -9,11 +9,11 @@
 		<available file="../../plugins" />
 	</condition>
 	
-	<target name="createFolder" unless="have.plugins">
+	<target name="createFolder" unless="have.plugins" description="CreateFolder">
 		<mkdir dir="../../plugins" />
 	</target>
 	
-	<target name="jar" depends="createFolder">
+	<target name="jar" depends="createFolder" description="Jar">
 		<subant target="jar">
 			<fileset file="src/ACE/build.xml" />
 			<fileset file="src/DstIndex/build.xml" />
@@ -39,7 +39,7 @@
 		</subant>
 	</target>
 	
-	<target name="compile">
+	<target name="compile" description="Compile">
 		<subant target="compile">
 			<fileset file="src/ACE/build.xml" />
 			<fileset file="src/DstIndex/build.xml" />
@@ -65,7 +65,7 @@
 		</subant>	
 	</target>
 	
-	<target name="clean">
+	<target name="clean" description="Clean">
 		<subant target="clean">
 			<fileset file="src/ACE/build.xml" />
 			<fileset file="src/DstIndex/build.xml" />
@@ -94,7 +94,7 @@
 		</delete>
 	</target>
 	
-	<target name="javadoc">
+	<target name="javadoc" description="Javadoc">
 		<subant target="javadoc">
 			<fileset file="src/ACE/build.xml" />
 			<fileset file="src/DstIndex/build.xml" />
@@ -120,7 +120,7 @@
 		</subant>
 	</target>
 	
-	<target name="test">
+	<target name="test" description="Test">
 		<subant target="test">
 			<fileset file="src/ACE/build.xml" />
 			<fileset file="src/DstIndex/build.xml" />
