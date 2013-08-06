@@ -3,6 +3,7 @@ package org.iugonet.www;
 import java.io.BufferedReader;
 
 import java.io.FileReader;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import org.jfree.chart.ChartFactory;
@@ -94,14 +95,27 @@ public class DstIndex extends Tplot {
 		return chart;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public TimeSeriesCollection loadData(String strUrl) {
+		URL url = null;
+		
+		try {
+			url = new URL(strUrl);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return this.loadData(url);
+		
+		/*
 		TimeSeriesCollection timeSeriesCollection = new TimeSeriesCollection();
 
 		DstIndex dstIndex = new DstIndex();
 		try {
-			dstIndex.file_http_copy(strUrl);
-			dstIndex.readData(strUrl);
+			url = new URL(strUrl);
+			dstIndex.file_http_copy(url);
+			dstIndex.readData(url);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -110,19 +124,37 @@ public class DstIndex extends Tplot {
 		timeSeries[0] = dstIndex.getTimeSeries(0);
 
 		timeSeriesCollection.addSeries(dstIndex.getTimeSeries(0));
+		*/
+	}
 
+	@Override
+	public TimeSeriesCollection loadData(URL url) {
+		TimeSeriesCollection timeSeriesCollection = new TimeSeriesCollection();
+		
+		DstIndex dstIndex = new DstIndex();
+		
+		try {
+			url = new URL(strUrl);
+			dstIndex.file_http_copy(url);
+			dstIndex.readData(url);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		TimeSeries[] timeSeries = new TimeSeries[1];
+		timeSeries[0] = dstIndex.getTimeSeries(0);
+
+		timeSeriesCollection.addSeries(dstIndex.getTimeSeries(0));
+		
 		return timeSeriesCollection;
 	}
-
+	
 	@Override
 	public TimeSeriesCollection loadData(URI uri) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection loadData(URL arg0) {
-		// TODO Auto-generated method stub
+		/*
+		uri.get
+		System.out.println("HOGE");
+		*/
 		return null;
 	}
 

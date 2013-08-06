@@ -73,9 +73,10 @@ abstract public class Tplot extends Aplot {
 
 	abstract public JFreeChart getChart();
 
+	@Deprecated
 	abstract public TimeSeriesCollection loadData(String strUrl);
 	
-	abstract public TimeSeriesCollection loadData(URI uri);
-	
 	abstract public TimeSeriesCollection loadData(URL url);
+	
+	abstract public TimeSeriesCollection loadData(URI uri);
 }

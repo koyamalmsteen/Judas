@@ -1,6 +1,7 @@
 package org.iugonet.www;
 
 import java.net.MalformedURLException;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -27,6 +28,14 @@ public class DstIndexTest {
 
 	@Test
 	public void test01() {
+		String strUri = "spase://IUGONET/Granule/WDC_Kyoto/WDC/Dst/index/PT1H/dst198410_wdc";
+		URI uri;
+		try {
+			uri = new URI(strUri);
+			dstIndex.loadData(uri);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		/*
 		 * String arg0 =
 		 * "http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410";
@@ -45,21 +54,19 @@ public class DstIndexTest {
 		String strUrl = "http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410";
 		try {
 			URL url = new URL(strUrl);
-		} catch (MalformedURLException e) {
+//			dstIndex.loadData(uri);		
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		dstIndex.file_http_copy(strUrl);
-		dstIndex.readData(strUrl);
 	}
 	
 	@Test
 	public void test03() {
-		String arg = "spase://IUGONET/Granule/WDC_Kyoto/WDC/Dst/index/PT1H/dst198410_wdc";
+		String strUri = "spase://IUGONET/Granule/WDC_Kyoto/WDC/Dst/index/PT1H/dst198410_wdc";
 		URI uri;
 		try {
-			uri = new URI(arg);
+			uri = new URI(strUri);
 			System.out.println(uri);
 		} catch (URISyntaxException e) {
 			e.printStackTrace();

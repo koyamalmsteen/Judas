@@ -59,6 +59,9 @@ abstract public class Aplot {
 		return this.themisRemoteDataDir;
 	}
 	
+	
+	
+	@Deprecated
 	public void readData(String strUrl) {
 		try {
 			URL url = new URL(strUrl);
@@ -67,6 +70,8 @@ abstract public class Aplot {
 			e.printStackTrace();
 		}
 	}
+	
+	abstract void readData(URL url);
 
 	public void readData(URI uri) {
 		String query_head = "http://search.iugonet.org/iugonet/open-search/request?query=ResourceID:";
@@ -136,16 +141,9 @@ abstract public class Aplot {
 		}
 	}
 	
-	abstract void readData(URL url);
-	
 	@Deprecated
-	public void file_http_copy(String strUrl) {
-		try {
-			URL url = new URL(strUrl);
-			this.downloadData(url);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
+	public void file_http_copy(URL url) {
+		this.downloadData(url);
 	}
 	
 	public void downloadData(String strUrl){
