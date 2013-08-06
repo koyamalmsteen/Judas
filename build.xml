@@ -242,14 +242,14 @@
     <chmod file="${install_dir}/${maven_prefix}/bin/mvn" perm="gou+x"/>
   </target>
 
-  <target name="switch_jdk">
+  <target name="switch_jdk" description="Switch JDK">
     <exec executable="bash">
       <arg value="-c" />
       <arg value="echo '2' | alternatives --config java" />
     </exec>
   </target>
 
-  <target name="javadoc">
+  <target name="javadoc" description="Create doc">
     <javadoc destdir="${javadoc.dir}" >
       <sourcepath path="workspace/Aplot/src" />
       <sourcepath path="workspace/Iplot/src" />
