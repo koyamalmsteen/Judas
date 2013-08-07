@@ -90,14 +90,14 @@ public class DstIndex extends Tplot {
 		String ylabel = "Dst index [nT]";
 
 		chart = ChartFactory.createTimeSeriesChart(null, xlabel, ylabel,
-				loadData(strUrl), false, true, false);
+				load(strUrl), false, true, false);
 
 		return chart;
 	}
 
 	@SuppressWarnings("deprecation")
 	@Override
-	public TimeSeriesCollection loadData(String strUrl) {
+	public TimeSeriesCollection load(String strUrl) {
 		URL url = null;
 		
 		try {
@@ -106,7 +106,7 @@ public class DstIndex extends Tplot {
 			e.printStackTrace();
 		}
 		
-		return this.loadData(url);
+		return this.load(url);
 		
 		/*
 		TimeSeriesCollection timeSeriesCollection = new TimeSeriesCollection();
@@ -128,7 +128,7 @@ public class DstIndex extends Tplot {
 	}
 
 	@Override
-	public TimeSeriesCollection loadData(URL url) {
+	public TimeSeriesCollection load(URL url) {
 		TimeSeriesCollection timeSeriesCollection = new TimeSeriesCollection();
 		
 		DstIndex dstIndex = new DstIndex();
@@ -150,7 +150,7 @@ public class DstIndex extends Tplot {
 	}
 	
 	@Override
-	public TimeSeriesCollection loadData(URI uri) {
+	public TimeSeriesCollection load(URI uri) {
 		/*
 		uri.get
 		System.out.println("HOGE");

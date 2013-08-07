@@ -2,6 +2,7 @@ package org.iugonet.www;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import org.geotools.data.FeatureSource;
 import org.geotools.data.FileDataStore;
@@ -23,7 +24,7 @@ public class Cira86Ascii extends Mplot {
 		
 	}
 	
-	public void read(String arg0) {
+	public void read(String strUrl) {
 		
 	}
 	
@@ -60,6 +61,12 @@ public class Cira86Ascii extends Mplot {
 
 		JMapPane jmapPane = new JMapPane();
 		return jmapPane;
+	}
+
+	@Override
+	void read(URL url) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

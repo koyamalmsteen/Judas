@@ -48,7 +48,7 @@ public class TplotTest1D {
 		}
 
 		@Override
-		public TimeSeriesCollection loadData(String strUrl) {
+		public TimeSeriesCollection load(String strUrl) {
 			return null;
 		}
 
@@ -65,13 +65,13 @@ public class TplotTest1D {
 		}
 
 		@Override
-		public TimeSeriesCollection loadData(URI uri) {
+		public TimeSeriesCollection load(URI uri) {
 			// TODO Auto-generated method stub
 			return null;
 		}
 
 		@Override
-		public TimeSeriesCollection loadData(URL url) {
+		public TimeSeriesCollection load(URL url) {
 			// TODO Auto-generated method stub
 			return null;
 		}

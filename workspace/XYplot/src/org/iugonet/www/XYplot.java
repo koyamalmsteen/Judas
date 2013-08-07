@@ -59,6 +59,6 @@ abstract public class XYplot extends Aplot {
 	
 	abstract public JFreeChart getChart();
 	
-	abstract public XYSeriesCollection loadData(String strUrl);
+	abstract public XYSeriesCollection load(String strUrl);
 
 }

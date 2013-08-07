@@ -26,13 +26,13 @@ public class XYplotTest {
 		}
 
 		@Override
-		public XYSeriesCollection loadData(String strUrl) {
+		public XYSeriesCollection load(String strUrl) {
 			return null;
 
 		}
 
 		@Override
-		void readData(URL url) {	
+		void read(URL url) {	
 		}
 		
 	}
@@ -52,6 +52,7 @@ public class XYplotTest {
 	public void test01() {
 		sample.add(1, 1, 0);
 		sample.add(1, 2, 0);
+		assertEquals(1,1);
 	}
 
 }

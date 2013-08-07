@@ -103,13 +103,24 @@ public class AeIndex extends Tplot {
 		String ylabel = "Dst index [nT]";
 
 		chart = ChartFactory.createTimeSeriesChart(null, xlabel, ylabel,
-				loadData(strUrl), false, true, false);
+				load(strUrl), false, true, false);
 
 		return chart;
 	}
 
 	@Override
-	public TimeSeriesCollection loadData(String strUrl) {
+	public TimeSeriesCollection load(String strUrl) {
+		URL url = null;
+		
+		try {
+			url = new URL(strUrl);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return this.load(url);
+		
+		/*
 		TimeSeriesCollection timeSeriesCollection = new TimeSeriesCollection();
 
 		AeIndex aeIndex = new AeIndex();
@@ -126,18 +137,18 @@ public class AeIndex extends Tplot {
 		timeSeriesCollection.addSeries(aeIndex.getTimeSeries(0));
 
 		return timeSeriesCollection;
+		*/
 	}
 
 	@Override
-	public TimeSeriesCollection loadData(URI uri) {
+	public TimeSeriesCollection load(URL url) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
-	public TimeSeriesCollection loadData(URL arg0) {
+	public TimeSeriesCollection load(URI uri) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

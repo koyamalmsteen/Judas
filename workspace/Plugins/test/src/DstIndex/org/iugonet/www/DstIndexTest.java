@@ -32,7 +32,7 @@ public class DstIndexTest {
 		URI uri;
 		try {
 			uri = new URI(strUri);
-			dstIndex.loadData(uri);
+			dstIndex.load(uri);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

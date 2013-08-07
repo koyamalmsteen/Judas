@@ -22,12 +22,12 @@ public class GeneralImage extends Iplot{
 	}
 
 	@Override
-	void read(String arg0) {
+	void read(String strUrl) {
 
 		String line;
 
 		try {
-			URL url = new URL(arg0);
+			URL url = new URL(strUrl);
 			FileReader fileReader = new FileReader("/tmp" + url.getPath());
 			// FileReader fileReader = new
 			// FileReader("/tmp/data/hour/index/dst/1984/dst8410");
@@ -85,12 +85,6 @@ public class GeneralImage extends Iplot{
 		jpanel.add(newImagePane);
 		
 		return jpanel;
-	}
-
-	@Override
-	void file_http_copy(String start, String end) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
