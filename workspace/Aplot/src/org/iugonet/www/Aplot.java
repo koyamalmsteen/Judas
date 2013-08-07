@@ -59,8 +59,6 @@ abstract public class Aplot {
 		return this.themisRemoteDataDir;
 	}
 	
-	
-	
 	@Deprecated
 	public void readData(String strUrl) {
 		try {
@@ -143,19 +141,19 @@ abstract public class Aplot {
 	
 	@Deprecated
 	public void file_http_copy(URL url) {
-		this.downloadData(url);
+		this.download(url);
 	}
 	
-	public void downloadData(String strUrl){
+	public void download(String strUrl){
 		try {
 			URL url = new URL(strUrl);
-			this.downloadData(url);
+			this.download(url);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}		
 	}
 	
-	public void downloadData(URL url) {
+	public void download(URL url) {
 		try {
 			String[] strArray = url.getPath().split("/");
 			String strDir = "/tmp";
