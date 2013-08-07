@@ -25,7 +25,7 @@ public class MuTroposphereWindTxtTest {
 		filepath = "/radar-group/mu/data/data/ver01.0807_1.01/198603/19860317/19860317.uwnd.csv";
 
 		muTroposphereWindTxt.file_http_copy(url + filepath);
-		muTroposphereWindTxt.readData(filepath);
+		muTroposphereWindTxt.read(filepath);
 
 		TimeSeries[] timeSeries = muTroposphereWindTxt.getTimeSeries();
 

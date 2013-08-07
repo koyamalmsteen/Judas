@@ -37,7 +37,7 @@ public class MuMeteorNcdfTest {
 	public void test() {
 
 		muMeteorNcdf1month.file_http_copy(url + filepath);
-		muMeteorNcdf1month.readData(filepath);
+		muMeteorNcdf1month.read(filepath);
 
 		TimeSeries[] timeSeries = muMeteorNcdf1month.getTimeSeries();
 		// for (int i = 0; i < num; i++) {

@@ -25,7 +25,7 @@ public class MuMeteorTxtTest {
 		filepath = "/radar-group/mu/meteor/data/text/1_day/h1km_t60min00/1990/W19900518.h1t60min00.txt";
 
 		muMeteorTxt.file_http_copy(url + filepath);
-		muMeteorTxt.readData(filepath);
+		muMeteorTxt.read(filepath);
 
 		TimeSeries[] timeSeries = muMeteorTxt.getTimeSeries();
 

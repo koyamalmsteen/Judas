@@ -25,7 +25,7 @@ public class MuIsdataDriftNcdfTest {
 		filepath = "/radar-group/mu/isdata/data/drift/netcdf/1992/19920722_drift.nc";
 
 		muIsdataDriftNcdf.file_http_copy(url + filepath);
-		muIsdataDriftNcdf.readData(filepath);
+		muIsdataDriftNcdf.read(filepath);
 
 		TimeSeries[] timeSeries = muIsdataDriftNcdf.getTimeSeries();
 		for (int i = 0; i < 9; i++) {

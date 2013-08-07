@@ -27,7 +27,7 @@ public class Mm210Test {
 		url = "http://gemsissc.stelab.nagoya-u.ac.jp";
 		filepath = "/data/ergsc/ground/geomag/mm210/1min/ewa/2008/mm210_1min_ewa_20080222_v01.cdf";
 		mm210.file_http_copy(url + filepath);
-		mm210.readData(filepath);
+		mm210.read(filepath);
 
 		TimeSeries[] timeSeries = mm210.getTimeSeries();
 		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {

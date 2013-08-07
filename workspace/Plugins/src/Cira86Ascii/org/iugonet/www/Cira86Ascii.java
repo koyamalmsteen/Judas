@@ -23,7 +23,7 @@ public class Cira86Ascii extends Mplot {
 		
 	}
 	
-	public void readData(String arg0) {
+	public void read(String arg0) {
 		
 	}
 	

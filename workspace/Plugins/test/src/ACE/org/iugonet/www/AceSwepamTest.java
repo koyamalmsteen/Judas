@@ -28,7 +28,7 @@ public class AceSwepamTest {
 		filepath = "/ftpdir/lists/ace2/201303_ace_swepam_1h.txt";
 
 		aceSwepam.file_http_copy(url + filepath);
-		aceSwepam.readData(filepath);
+		aceSwepam.read(filepath);
 		TimeSeries[] timeSeries = aceSwepam.getTimeSeries();
 
 		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {

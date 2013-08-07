@@ -25,7 +25,7 @@ public class LfrtoTest {
 		filepath = "/lf/cdf/ath/201301/lfrto_30sec_ath_nau_20130101_v01.cdf";
 
 		lfrto.file_http_copy(url + filepath);
-		lfrto.readData(filepath);
+		lfrto.read(filepath);
 		TimeSeries[] timeSeries = lfrto.getTimeSeries();
 
 		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {

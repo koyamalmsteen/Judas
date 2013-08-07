@@ -22,7 +22,7 @@ public class Mm210 extends Tplot {
 	}
 	
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 		try {
 			ArrayList<Second> second = new ArrayList<Second>();
 

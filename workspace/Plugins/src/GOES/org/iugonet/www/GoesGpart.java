@@ -20,7 +20,7 @@ public class GoesGpart extends Tplot {
 	}
 
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 		String line;
 
 		try {

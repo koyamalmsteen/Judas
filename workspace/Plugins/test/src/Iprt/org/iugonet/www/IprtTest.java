@@ -25,7 +25,7 @@ public class IprtTest {
 		filepath = "/db/IPRT-SUN/DATA2/2010/20101013_IPRT.fits";
 
 		iprt.file_http_copy(url + filepath);
-		iprt.readData(filepath);
+		iprt.read(filepath);
 
 		TimeSeries[] timeSeries = iprt.getTimeSeries();
 		for (int i = 0; i < timeSeries[400].getItemCount(); i++) {

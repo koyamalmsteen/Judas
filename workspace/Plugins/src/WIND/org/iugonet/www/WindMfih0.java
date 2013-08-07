@@ -19,7 +19,7 @@ public class WindMfih0 extends Tplot {
 	}
 
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 		try {
 			int yyyy, mm, dd, hr, mn, sc;
 			double depoch_1min;

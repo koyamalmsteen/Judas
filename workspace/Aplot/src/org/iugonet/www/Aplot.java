@@ -60,18 +60,18 @@ abstract public class Aplot {
 	}
 	
 	@Deprecated
-	public void readData(String strUrl) {
+	public void read(String strUrl) {
 		try {
 			URL url = new URL(strUrl);
-			this.readData(url);
+			this.read(url);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	abstract void readData(URL url);
+	abstract void read(URL url);
 
-	public void readData(URI uri) {
+	public void read(URI uri) {
 		String query_head = "http://search.iugonet.org/iugonet/open-search/request?query=ResourceID:";
 		String query_tail = "&Granule=granule";
 
@@ -132,7 +132,7 @@ abstract public class Aplot {
 		
 			// a rush job!
 			URL url = new URL(strAtom.substring(strAtom.indexOf("<URL>")+5,strAtom.indexOf("</URL>")));
-			readData(url);
+			read(url);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

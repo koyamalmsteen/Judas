@@ -21,7 +21,7 @@ public class MuMeteorNcdf extends Tplot {
 	}
 
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 
 		int yyyy_s = 0;
 		int mm_s = 0;

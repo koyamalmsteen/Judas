@@ -28,7 +28,7 @@ public class NoaaPowerTest {
 		filepath = "/ftpdir/lists/hpi/power_2013.txt";
 
 		noaaPower.file_http_copy(url + filepath);
-		noaaPower.readData(filepath);
+		noaaPower.read(filepath);
 
 		TimeSeries[] timeSeries = noaaPower.getTimeSeries();
 		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {

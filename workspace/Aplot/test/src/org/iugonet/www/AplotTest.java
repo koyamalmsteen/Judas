@@ -17,7 +17,7 @@ public class AplotTest {
 		}
 
 		@Override
-		void readData(URL url) {
+		void read(URL url) {
 			// TODO Auto-generated method stub
 			System.out.println(url);
 		}
@@ -85,7 +85,7 @@ public class AplotTest {
 	public void test_readData01(){
 		try {
 			URI uri = new URI("spase://IUGONET/Granule/WDC_Kyoto/WDC/Dst/index/PT1H/dst198410_wdc");
-			sample.readData(uri);
+			sample.read(uri);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -96,7 +96,7 @@ public class AplotTest {
 	public void test_readData02(){
 		try {
 			URI uri = new URI("spase://IUGONET/Granule/WDC_Kyoto/WDC/Dst/index/PT1H/dst198410_wdc");
-			sample.readData(uri);
+			sample.read(uri);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

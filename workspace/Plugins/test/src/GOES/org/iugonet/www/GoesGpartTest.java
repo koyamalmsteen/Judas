@@ -26,7 +26,7 @@ public class GoesGpartTest {
 		filepath = "/ftpdir/lists/particle/20130324_Gs_part_5m.txt";
 
 		goesGpart.file_http_copy(url + filepath);
-		goesGpart.readData(filepath);
+		goesGpart.read(filepath);
 		TimeSeries[] timeSeries = goesGpart.getTimeSeries();
 
 		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {

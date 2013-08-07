@@ -26,7 +26,7 @@ public class PoesTxtTest {
 		filepath = "/sem/poes/data/avg/txt/1998/noaa15/poes_n15_19980701.txt";
 
 		// poesTxt.file_http_copy(url + filepath);
-		poesTxt.readData(filepath);
+		poesTxt.read(filepath);
 
 		TimeSeries[] timeSeries = poesTxt.getTimeSeries();
 		for (int i = 0; i < timeSeries[1].getItemCount(); i++) {

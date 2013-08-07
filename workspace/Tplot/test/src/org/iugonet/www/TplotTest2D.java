@@ -53,15 +53,15 @@ public class TplotTest2D {
 		}
 		
 		@Override
-		public void readData(String url) {
+		public void read(String url) {
 		};		
 
 		@Override
-		void readData(URL url) {
+		void read(URL url) {
 		}
 
 		@Override
-		public void readData(URI uri) {	
+		public void read(URI uri) {	
 		}
 
 		@Override

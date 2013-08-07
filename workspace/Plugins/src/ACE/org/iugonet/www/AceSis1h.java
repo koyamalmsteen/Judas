@@ -20,7 +20,7 @@ public class AceSis1h extends Tplot {
 	}
 
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 
 		String line;
 

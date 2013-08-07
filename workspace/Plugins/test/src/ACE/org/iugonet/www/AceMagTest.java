@@ -29,7 +29,7 @@ public class AceMagTest {
 		filepath = "/ftpdir/lists/ace/20130322_ace_mag_1m.txt";
 
 		aceMag.file_http_copy(url + filepath);
-		aceMag.readData(filepath);
+		aceMag.read(filepath);
 		TimeSeries[] timeSeries = aceMag.getTimeSeries();
 
 		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {

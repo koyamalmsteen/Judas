@@ -31,7 +31,7 @@ public class ImagNipr extends Tplot {
 	}
 
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 		try {
 			CDF cdf = CDF.open("/tmp" + url.getPath(), 0);
 

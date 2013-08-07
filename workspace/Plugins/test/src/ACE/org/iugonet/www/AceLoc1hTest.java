@@ -28,7 +28,7 @@ public class AceLoc1hTest {
 		filepath = "/ftpdir/lists/ace2/201303_ace_loc_1h.txt";
 
 		aceLoc1h.file_http_copy(url + filepath);
-		aceLoc1h.readData(filepath);
+		aceLoc1h.read(filepath);
 		TimeSeries[] timeSeries = aceLoc1h.getTimeSeries();
 
 		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {

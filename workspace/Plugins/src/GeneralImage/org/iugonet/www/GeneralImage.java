@@ -22,7 +22,7 @@ public class GeneralImage extends Iplot{
 	}
 
 	@Override
-	void readData(String arg0) {
+	void read(String arg0) {
 
 		String line;
 

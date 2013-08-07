@@ -29,7 +29,7 @@ public class FmagNipr extends Tplot {
 	}
 	
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 		try {
 			ArrayList<Second> second = new ArrayList<Second>();
 			CDF cdf = CDF.open("/tmp" + url.getPath(), 0);

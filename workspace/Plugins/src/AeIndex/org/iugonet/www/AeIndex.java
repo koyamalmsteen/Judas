@@ -24,7 +24,7 @@ public class AeIndex extends Tplot {
 	}
 
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 
 		String line;
 
@@ -115,7 +115,7 @@ public class AeIndex extends Tplot {
 		AeIndex aeIndex = new AeIndex();
 		try {
 			aeIndex.file_http_copy(strUrl);
-			aeIndex.readData(strUrl);
+			aeIndex.read(strUrl);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

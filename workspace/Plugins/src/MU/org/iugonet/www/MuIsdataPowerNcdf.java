@@ -19,7 +19,7 @@ public class MuIsdataPowerNcdf extends Tplot {
 	}
 
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 		try {
 			NetcdfFile ncfile = NetcdfFile.open("/tmp" + url.getPath());
 

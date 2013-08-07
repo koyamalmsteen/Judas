@@ -25,7 +25,7 @@ public class MuIsdataTetiNcdfTest {
 		filepath = "/radar-group/mu/isdata/data/teti/netcdf/1986/19860714_teti.nc";
 
 		muIsdataTetiNcdf.file_http_copy(url + filepath);
-		muIsdataTetiNcdf.readData(filepath);
+		muIsdataTetiNcdf.read(filepath);
 
 		TimeSeries[] timeSeries = muIsdataTetiNcdf.getTimeSeries();
 		for (int i = 0; i < timeSeries[1].getItemCount(); i++) {

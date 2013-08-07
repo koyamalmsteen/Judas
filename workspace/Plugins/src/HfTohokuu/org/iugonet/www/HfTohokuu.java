@@ -23,7 +23,7 @@ public class HfTohokuu extends Tplot {
 	}
 	
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 		// TODO Auto-generated method stub
 
 		try {

@@ -32,6 +32,6 @@ public class AeIndexTest {
 		String arg0 = "http://wdc-data.iugonet.org/data/hour/index/ae/1957/ae.5707.ngdc5";
 
 		aeIndex.file_http_copy(arg0);
-		aeIndex.readData(arg0);
+		aeIndex.read(arg0);
 	}
 }

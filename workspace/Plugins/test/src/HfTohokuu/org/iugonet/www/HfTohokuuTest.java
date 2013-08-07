@@ -27,7 +27,7 @@ public class HfTohokuuTest {
 		filepath = "/~jupiter/it_hf/cdf2/20040109/it_h1_hf_2004010922_v02.cdf";
 
 		hfTohokuu.file_http_copy(url + filepath);
-		hfTohokuu.readData(filepath);
+		hfTohokuu.read(filepath);
 	}
 
 }

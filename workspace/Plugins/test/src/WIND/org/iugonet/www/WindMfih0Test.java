@@ -24,7 +24,7 @@ public class WindMfih0Test {
 		url = "http://spdf.gsfc.nasa.gov";
 		filepath = "/pub/data/wind/mfi/mfi_h0/1994/wi_h0_mfi_19941113_v05.cdf";
 		windMfih0.file_http_copy(url+filepath);
-		windMfih0.readData(filepath);
+		windMfih0.read(filepath);
 		
 		TimeSeries[] timeSeries = windMfih0.getTimeSeries();
 

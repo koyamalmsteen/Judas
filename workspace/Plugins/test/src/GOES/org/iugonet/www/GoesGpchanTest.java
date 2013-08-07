@@ -26,7 +26,7 @@ public class GoesGpchanTest {
 		filepath = "/ftpdir/lists/pchan/Gs_pchan_5m.txt";
 
 		goesGpchan.file_http_copy(url + filepath);
-		goesGpchan.readData(filepath);
+		goesGpchan.read(filepath);
 		TimeSeries[] timeSeries = goesGpchan.getTimeSeries();
 
 		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {

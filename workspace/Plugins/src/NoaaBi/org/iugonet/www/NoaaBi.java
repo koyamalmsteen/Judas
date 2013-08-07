@@ -20,7 +20,7 @@ public class NoaaBi extends Tplot {
 	}
 	
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 		String line;
 		int sensor = 21; // select sensor
 							// http://www.swpc.noaa.gov/ftpdir/lists/bi/README

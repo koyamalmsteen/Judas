@@ -18,7 +18,7 @@ public class Iprt extends Tplot {
 	}
 
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 
 		try {
 //			arg0 = "/home/yagi/20101013_IPRT.fits";

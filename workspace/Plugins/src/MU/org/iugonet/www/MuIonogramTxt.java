@@ -19,7 +19,7 @@ public class MuIonogramTxt extends Tplot {
 	}
 
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 		String line;
 
 		double[][] ionogram = new double[161][217];

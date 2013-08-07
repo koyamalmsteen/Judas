@@ -24,7 +24,7 @@ public class DstIndex extends Tplot {
 	}
 
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 		String line;
 
 		try {
@@ -115,7 +115,7 @@ public class DstIndex extends Tplot {
 		try {
 			url = new URL(strUrl);
 			dstIndex.file_http_copy(url);
-			dstIndex.readData(url);
+			dstIndex.read(url);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -136,7 +136,7 @@ public class DstIndex extends Tplot {
 		try {
 			url = new URL(strUrl);
 			dstIndex.file_http_copy(url);
-			dstIndex.readData(url);
+			dstIndex.read(url);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -28,7 +28,7 @@ public class NoaaBiTest {
 		filepath = "/ftpdir/lists/bi/bi_2013.txt";
 
 		noaaBi.file_http_copy(url + filepath);
-		noaaBi.readData(filepath);
+		noaaBi.read(filepath);
 
 		TimeSeries[] timeSeries = noaaBi.getTimeSeries();
 		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {

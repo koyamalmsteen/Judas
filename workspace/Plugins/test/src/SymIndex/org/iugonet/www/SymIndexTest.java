@@ -29,7 +29,7 @@ public class SymIndexTest {
 		filepath = "/data/min/index/asy/1988/asy8803.wdc";
 
 		symIndex.file_http_copy(url + filepath);
-		symIndex.readData(filepath);
+		symIndex.read(filepath);
 		TimeSeries[] timeSeries = symIndex.getTimeSeries();
 
 		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {
@@ -43,7 +43,7 @@ public class SymIndexTest {
 		url = "http://wdc-data.iugonet.org";
 		filepath = "/data/min/index/asy/1988/asy8803.wdc";
 		symIndex.file_http_copy(url + filepath);
-		symIndex.readData(filepath);
+		symIndex.read(filepath);
 	}
 
 }

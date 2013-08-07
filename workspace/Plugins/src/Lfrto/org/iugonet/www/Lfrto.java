@@ -22,7 +22,7 @@ public class Lfrto extends Tplot {
 	}
 
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 
 		try {
 			int yyyy, mm, dd, hr, mn, sc;

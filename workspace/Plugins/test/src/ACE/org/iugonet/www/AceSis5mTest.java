@@ -28,7 +28,7 @@ public class AceSis5mTest {
 		filepath = "/ftpdir/lists/ace/20130322_ace_sis_5m.txt";
 
 		aceSis5m.file_http_copy(url + filepath);
-		aceSis5m.readData(filepath);
+		aceSis5m.read(filepath);
 		TimeSeries[] timeSeries = aceSis5m.getTimeSeries();
 
 		for (int i = 0; i < timeSeries[0].getItemCount(); i++) {

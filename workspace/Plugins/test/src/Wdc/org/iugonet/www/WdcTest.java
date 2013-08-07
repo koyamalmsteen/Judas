@@ -24,7 +24,7 @@ public class WdcTest {
 		String arg0 = "http://wdc-data.iugonet.org/data/min/nur/2006/nur0603.wdc";
 
 		wdc.file_http_copy(arg0);
-		wdc.readData(arg0);
+		wdc.read(arg0);
 	}
 
 }

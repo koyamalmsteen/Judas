@@ -20,7 +20,7 @@ public class MuIsdataTetiTxt extends Tplot {
 	}
 	
 	@Override
-	void readData(URL url) {
+	void read(URL url) {
 
 		String line;
 		Second second = new Second(0, 0, 0, 1, 1, 2000);
