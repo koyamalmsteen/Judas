@@ -24,7 +24,7 @@ public class MuIsdataTetiNcdfTest {
 		url = "http://www.rish.kyoto-u.ac.jp";
 		filepath = "/radar-group/mu/isdata/data/teti/netcdf/1986/19860714_teti.nc";
 
-		muIsdataTetiNcdf.file_http_copy(url + filepath);
+		muIsdataTetiNcdf.download(url + filepath);
 		muIsdataTetiNcdf.read(filepath);
 
 		TimeSeries[] timeSeries = muIsdataTetiNcdf.getTimeSeries();

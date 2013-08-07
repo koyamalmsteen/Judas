@@ -24,7 +24,7 @@ public class MuTroposphereWindTxtTest {
 		url = "http://www.rish.kyoto-u.ac.jp";
 		filepath = "/radar-group/mu/data/data/ver01.0807_1.01/198603/19860317/19860317.uwnd.csv";
 
-		muTroposphereWindTxt.file_http_copy(url + filepath);
+		muTroposphereWindTxt.download(url + filepath);
 		muTroposphereWindTxt.read(filepath);
 
 		TimeSeries[] timeSeries = muTroposphereWindTxt.getTimeSeries();

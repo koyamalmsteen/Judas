@@ -29,7 +29,7 @@ public class AceEpamTest {
 		// filepath = "/ftpdir/lists/ace2/201303_ace_epam_1h.txt";
 		filepath = "/ftpdir/lists/ace/20130322_ace_epam_5m.txt";
 
-		aceEpam.file_http_copy(url + filepath);
+		aceEpam.download(url + filepath);
 		aceEpam.read(filepath);
 		TimeSeries[] timeSeries = aceEpam.getTimeSeries();
 

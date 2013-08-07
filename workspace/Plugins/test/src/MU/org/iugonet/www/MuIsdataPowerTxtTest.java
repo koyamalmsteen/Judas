@@ -27,7 +27,7 @@ public class MuIsdataPowerTxtTest {
 		url = "http://www.rish.kyoto-u.ac.jp";
 		filepath = "/radar-group/mu/isdata/data/pwr/text/1986/19860811_pwr1.txt";
 
-		muIsdataPowerTxt.file_http_copy(url + filepath);
+		muIsdataPowerTxt.download(url + filepath);
 		muIsdataPowerTxt.read(filepath);
 
 		TimeSeries[] timeSeries = muIsdataPowerTxt.getTimeSeries();

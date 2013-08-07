@@ -1,9 +1,6 @@
 package org.iugonet.www;
 
-import java.net.MalformedURLException;
-
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 import org.iugonet.www.DstIndex;
@@ -54,7 +51,7 @@ public class DstIndexTest {
 		String strUrl = "http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410";
 		try {
 			URL url = new URL(strUrl);
-//			dstIndex.loadData(uri);		
+//			dstIndex.load(uri);		
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,7 +65,7 @@ public class DstIndexTest {
 		try {
 			uri = new URI(strUri);
 			System.out.println(uri);
-		} catch (URISyntaxException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

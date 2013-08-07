@@ -23,7 +23,7 @@ public class MuIonogramTxtTest {
 		url = "http://database.rish.kyoto-u.ac.jp";
 		filepath = "/arch/mudb/data/ionosonde/text/2001/200101/20010118/200101181714_ionogram.txt";
 
-		muIonogramTxt.file_http_copy(url + filepath);
+		muIonogramTxt.download(url + filepath);
 		muIonogramTxt.read(filepath);
 
 		// TimeSeries timeSeries = muIonogramTxt.getTimeSeries();

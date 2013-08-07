@@ -24,7 +24,7 @@ public class MuIsdataPowerNcdfTest {
 		url = "http://www.rish.kyoto-u.ac.jp";
 		filepath = "/radar-group/mu/isdata/data/pwr/netcdf/1986/19860811_pwr.nc";
 
-		muIsdataPowerNcdf.file_http_copy(url + filepath);
+		muIsdataPowerNcdf.download(url + filepath);
 		muIsdataPowerNcdf.read(filepath);
 
 		TimeSeries[] timeSeries = muIsdataPowerNcdf.getTimeSeries();

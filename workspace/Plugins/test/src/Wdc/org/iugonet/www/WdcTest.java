@@ -21,10 +21,10 @@ public class WdcTest {
 
 	@Test
 	public void test01() {
-		String arg0 = "http://wdc-data.iugonet.org/data/min/nur/2006/nur0603.wdc";
+		String strUrl = "http://wdc-data.iugonet.org/data/min/nur/2006/nur0603.wdc";
 
-		wdc.file_http_copy(arg0);
-		wdc.read(arg0);
+		wdc.download(strUrl);
+		wdc.read(strUrl);
 	}
 
 }

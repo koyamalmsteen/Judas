@@ -23,7 +23,7 @@ public class FmagNiprTest {
 	public void test() {
 		url = "http://iugonet0.nipr.ac.jp";
 		filepath = "/data/fmag/tjo/2sec/1988/nipr_2sec_fmag_tjo_19880529_v02.cdf";
-		fmagNipr.file_http_copy(url + filepath);
+		fmagNipr.download(url + filepath);
 		fmagNipr.read(filepath);
 
 		TimeSeries[] timeSeries = fmagNipr.getTimeSeries();

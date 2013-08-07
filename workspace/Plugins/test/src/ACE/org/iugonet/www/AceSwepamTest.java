@@ -27,7 +27,7 @@ public class AceSwepamTest {
 		url = "http://www.swpc.noaa.gov";
 		filepath = "/ftpdir/lists/ace2/201303_ace_swepam_1h.txt";
 
-		aceSwepam.file_http_copy(url + filepath);
+		aceSwepam.download(url + filepath);
 		aceSwepam.read(filepath);
 		TimeSeries[] timeSeries = aceSwepam.getTimeSeries();
 

@@ -27,7 +27,7 @@ public class MuIsdataDriftTxtTest {
 		url = "http://www.rish.kyoto-u.ac.jp";
 		filepath = "/radar-group/mu/isdata/data/drift/text/1986/19860917_drift.txt";
 
-		muIsdataDriftTxt.file_http_copy(url + filepath);
+		muIsdataDriftTxt.download(url + filepath);
 		muIsdataDriftTxt.read(filepath);
 
 		TimeSeries[] timeSeries = muIsdataDriftTxt.getTimeSeries();

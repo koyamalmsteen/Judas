@@ -27,7 +27,7 @@ public class AceSis5mTest {
 		url = "http://www.swpc.noaa.gov";
 		filepath = "/ftpdir/lists/ace/20130322_ace_sis_5m.txt";
 
-		aceSis5m.file_http_copy(url + filepath);
+		aceSis5m.download(url + filepath);
 		aceSis5m.read(filepath);
 		TimeSeries[] timeSeries = aceSis5m.getTimeSeries();
 

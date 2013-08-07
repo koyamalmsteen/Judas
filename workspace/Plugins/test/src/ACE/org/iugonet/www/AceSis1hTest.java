@@ -27,7 +27,7 @@ public class AceSis1hTest {
 		url = "http://www.swpc.noaa.gov";
 		filepath = "/ftpdir/lists/ace2/201303_ace_sis_1h.txt";
 
-		aceSis1h.file_http_copy(url + filepath);
+		aceSis1h.download(url + filepath);
 		aceSis1h.read(filepath);
 		TimeSeries[] timeSeries = aceSis1h.getTimeSeries();
 

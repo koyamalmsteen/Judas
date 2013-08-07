@@ -24,7 +24,7 @@ public class IprtTest {
 		url = "http://radio.gp.tohoku.ac.jp";
 		filepath = "/db/IPRT-SUN/DATA2/2010/20101013_IPRT.fits";
 
-		iprt.file_http_copy(url + filepath);
+		iprt.download(url + filepath);
 		iprt.read(filepath);
 
 		TimeSeries[] timeSeries = iprt.getTimeSeries();

@@ -28,7 +28,7 @@ public class AceMagTest {
 		// filepath = "/ftpdir/lists/ace2/201303_ace_mag_1h.txt";
 		filepath = "/ftpdir/lists/ace/20130322_ace_mag_1m.txt";
 
-		aceMag.file_http_copy(url + filepath);
+		aceMag.download(url + filepath);
 		aceMag.read(filepath);
 		TimeSeries[] timeSeries = aceMag.getTimeSeries();
 

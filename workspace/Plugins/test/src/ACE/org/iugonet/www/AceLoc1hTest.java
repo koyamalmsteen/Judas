@@ -27,7 +27,7 @@ public class AceLoc1hTest {
 		url = "http://www.swpc.noaa.gov";
 		filepath = "/ftpdir/lists/ace2/201303_ace_loc_1h.txt";
 
-		aceLoc1h.file_http_copy(url + filepath);
+		aceLoc1h.download(url + filepath);
 		aceLoc1h.read(filepath);
 		TimeSeries[] timeSeries = aceLoc1h.getTimeSeries();
 

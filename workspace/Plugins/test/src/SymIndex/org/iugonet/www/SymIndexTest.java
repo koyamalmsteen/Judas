@@ -28,7 +28,7 @@ public class SymIndexTest {
 		url = "http://wdc-data.iugonet.org";
 		filepath = "/data/min/index/asy/1988/asy8803.wdc";
 
-		symIndex.file_http_copy(url + filepath);
+		symIndex.download(url + filepath);
 		symIndex.read(filepath);
 		TimeSeries[] timeSeries = symIndex.getTimeSeries();
 
