@@ -64,6 +64,12 @@ public class WindMfih0 extends Tplot {
 	}
 	
 	@Override
+	public TimeSeriesCollection load(URL url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
 	public ChartPanel getChartPanel() {
 		// TODO Auto-generated method stub
 		return null;
@@ -75,22 +81,4 @@ public class WindMfih0 extends Tplot {
 		return null;
 	}
 
-	@Override
-	public TimeSeriesCollection load(String strUrl) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URL url) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public TimeSeriesCollection load(URI uri) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 }

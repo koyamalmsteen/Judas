@@ -3,8 +3,6 @@ package org.iugonet.www;
 import java.io.BufferedReader;
 
 import java.io.FileReader;
-import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -23,7 +21,6 @@ public class DstIndex extends Tplot {
 		// timeSeries[0].setKey("Dst index");
 	}
 
-	@Override
 	void read(URL url) {
 		String line;
 
@@ -75,6 +72,27 @@ public class DstIndex extends Tplot {
 	}
 	
 	@Override
+	public TimeSeriesCollection load(URL url) {
+		TimeSeriesCollection timeSeriesCollection = new TimeSeriesCollection();
+		
+		DstIndex dstIndex = new DstIndex();
+		
+		try {
+			dstIndex.download(url);  // file_http_copy
+			dstIndex.read(url);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		TimeSeries[] timeSeries = new TimeSeries[1];
+		timeSeries[0] = dstIndex.getTimeSeries(0);
+
+		timeSeriesCollection.addSeries(dstIndex.getTimeSeries(0));
+		
+		return timeSeriesCollection;
+	}
+	
+	@Override
 	public ChartPanel getChartPanel() {
 		JFreeChart chart = getChart();
 
@@ -93,69 +111,6 @@ public class DstIndex extends Tplot {
 				load(strUrl), false, true, false);
 
 		return chart;
-	}
-
-	@SuppressWarnings("deprecation")
-	@Override
-	public TimeSeriesCollection load(String strUrl) {
-		URL url = null;
-		
-		try {
-			url = new URL(strUrl);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return this.load(url);
-		
-		/*
-		TimeSeriesCollection timeSeriesCollection = new TimeSeriesCollection();
-
-		DstIndex dstIndex = new DstIndex();
-		try {
-			url = new URL(strUrl);
-			dstIndex.file_http_copy(url);
-			dstIndex.read(url);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		TimeSeries[] timeSeries = new TimeSeries[1];
-		timeSeries[0] = dstIndex.getTimeSeries(0);
-
-		timeSeriesCollection.addSeries(dstIndex.getTimeSeries(0));
-		*/
-	}
-
-	@Override
-	public TimeSeriesCollection load(URL url) {
-		TimeSeriesCollection timeSeriesCollection = new TimeSeriesCollection();
-		
-		DstIndex dstIndex = new DstIndex();
-		
-		try {
-			url = new URL(strUrl);
-			dstIndex.file_http_copy(url);
-			dstIndex.read(url);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		TimeSeries[] timeSeries = new TimeSeries[1];
-		timeSeries[0] = dstIndex.getTimeSeries(0);
-
-		timeSeriesCollection.addSeries(dstIndex.getTimeSeries(0));
-		
-		return timeSeriesCollection;
-	}
-	
-	@Override
-	public TimeSeriesCollection load(URI uri) {
-		/*
-		uri.get
-		System.out.println("HOGE");
-		*/
-		return null;
 	}
 
 }

@@ -88,6 +88,12 @@ public class Mm210 extends Tplot {
 	}
 
 	@Override
+	public TimeSeriesCollection load(URL url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
 	public ChartPanel getChartPanel() {
 		// TODO Auto-generated method stub
 		return null;
@@ -95,24 +101,6 @@ public class Mm210 extends Tplot {
 
 	@Override
 	public JFreeChart getChart() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(String strUrl) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URL url) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public TimeSeriesCollection load(URI uri) {
 		// TODO Auto-generated method stub
 		return null;
 	}

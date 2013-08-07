@@ -22,12 +22,10 @@ public class GeneralImage extends Iplot{
 	}
 
 	@Override
-	void read(String strUrl) {
-
+	void read(URL url) {
 		String line;
 
 		try {
-			URL url = new URL(strUrl);
 			FileReader fileReader = new FileReader("/tmp" + url.getPath());
 			// FileReader fileReader = new
 			// FileReader("/tmp/data/hour/index/dst/1984/dst8410");
@@ -70,8 +68,9 @@ public class GeneralImage extends Iplot{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
-
+	
 	@Override
 	public JPanel getJPanel() {
 		String imagePath = "/tmp/tux.gif";

@@ -6,7 +6,7 @@ public class SuperDARN {
 		
 	}
 	
-	void readData(String arg0) {
+	void read(String arg0) {
 		
 	}
 

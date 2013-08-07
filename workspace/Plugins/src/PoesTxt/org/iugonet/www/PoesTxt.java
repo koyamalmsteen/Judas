@@ -18,8 +18,8 @@ public class PoesTxt extends Tplot {
 		super(34);
 	}
 	
-	@Override
 	void read(URL url) {
+
 		String line;
 		String[] param_name = null;
 
@@ -59,6 +59,12 @@ public class PoesTxt extends Tplot {
 	}
 
 	@Override
+	public TimeSeriesCollection load(URL url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
 	public ChartPanel getChartPanel() {
 		// TODO Auto-generated method stub
 		return null;
@@ -69,24 +75,5 @@ public class PoesTxt extends Tplot {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public TimeSeriesCollection load(String strUrl) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URL url) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public TimeSeriesCollection load(URI uri) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 }

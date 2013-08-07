@@ -2,7 +2,6 @@ package org.iugonet.www;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.net.URI;
 import java.net.URL;
 
 import org.iugonet.www.Tplot;
@@ -10,7 +9,6 @@ import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.Minute;
-import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
 
 public class AeIndex extends Tplot {
@@ -86,6 +84,29 @@ public class AeIndex extends Tplot {
 			e.printStackTrace();
 		}
 	}
+	
+	@Override
+	public TimeSeriesCollection load(URL url) {
+		/*
+		TimeSeriesCollection timeSeriesCollection = new TimeSeriesCollection();
+
+		AeIndex aeIndex = new AeIndex();
+		try {
+			aeIndex.file_http_copy(strUrl);
+			aeIndex.read(strUrl);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		TimeSeries[] timeSeries = new TimeSeries[1];
+		timeSeries[0] = aeIndex.getTimeSeries(0);
+
+		timeSeriesCollection.addSeries(aeIndex.getTimeSeries(0));
+
+		return timeSeriesCollection;
+		*/
+		return null;
+	}
 
 	@Override
 	public ChartPanel getChartPanel() {
@@ -108,47 +129,4 @@ public class AeIndex extends Tplot {
 		return chart;
 	}
 
-	@Override
-	public TimeSeriesCollection load(String strUrl) {
-		URL url = null;
-		
-		try {
-			url = new URL(strUrl);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return this.load(url);
-		
-		/*
-		TimeSeriesCollection timeSeriesCollection = new TimeSeriesCollection();
-
-		AeIndex aeIndex = new AeIndex();
-		try {
-			aeIndex.file_http_copy(strUrl);
-			aeIndex.read(strUrl);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		TimeSeries[] timeSeries = new TimeSeries[1];
-		timeSeries[0] = aeIndex.getTimeSeries(0);
-
-		timeSeriesCollection.addSeries(aeIndex.getTimeSeries(0));
-
-		return timeSeriesCollection;
-		*/
-	}
-
-	@Override
-	public TimeSeriesCollection load(URL url) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public TimeSeriesCollection load(URI uri) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

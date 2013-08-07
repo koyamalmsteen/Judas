@@ -59,22 +59,12 @@ abstract public class Aplot {
 		return this.themisRemoteDataDir;
 	}
 	
-	@Deprecated
-	public void read(String strUrl) {
-		try {
-			URL url = new URL(strUrl);
-			this.read(url);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	abstract void read(URL url);
-
-	public void read(URI uri) {
+	public URL resolve(URI uri){
 		String query_head = "http://search.iugonet.org/iugonet/open-search/request?query=ResourceID:";
 		String query_tail = "&Granule=granule";
 
+		URL url = null;
+		
 		try {
 			String query = query_head + uri.getRawSchemeSpecificPart() + query_tail;
 			URL urlQuery = new URL(query);
@@ -131,17 +121,29 @@ abstract public class Aplot {
 			byteArrayOutputStream.close();
 		
 			// a rush job!
-			URL url = new URL(strAtom.substring(strAtom.indexOf("<URL>")+5,strAtom.indexOf("</URL>")));
+			url = new URL(strAtom.substring(strAtom.indexOf("<URL>")+5,strAtom.indexOf("</URL>")));
 			read(url);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		return url;
+	}
+
+	@Deprecated
+	public void file_http_copy(String strUrl) {
+		this.download(strUrl);
 	}
 	
 	@Deprecated
 	public void file_http_copy(URL url) {
 		this.download(url);
+	}
+	
+	@Deprecated
+	public void file_http_copy(URI uri) {
+		this.download(uri);
 	}
 	
 	public void download(String strUrl){
@@ -190,5 +192,24 @@ abstract public class Aplot {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void download(URI uri) {
+		
+	}
+	
+	public void read(String strUrl) {
+		try {
+			URL url = new URL(strUrl);
+			this.read(url);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	abstract void read(URL url);
+
+	public void read(URI uri) {
+		this.read(this.resolve(uri));
 	}
 }

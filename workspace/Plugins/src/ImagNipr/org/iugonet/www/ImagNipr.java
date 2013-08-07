@@ -1,9 +1,6 @@
 package org.iugonet.www;
 
 import java.lang.Double;
-
-
-import java.net.URI;
 import java.net.URL;
 import gsfc.nssdc.cdf.CDF;
 import gsfc.nssdc.cdf.util.Epoch;
@@ -71,6 +68,12 @@ public class ImagNipr extends Tplot {
 	}
 	
 	@Override
+	public TimeSeriesCollection load(URL url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
 	public ChartPanel getChartPanel() {
 		// TODO Auto-generated method stub
 		return null;
@@ -81,22 +84,5 @@ public class ImagNipr extends Tplot {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public TimeSeriesCollection load(String strUrl) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URL url) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
-	@Override
-	public TimeSeriesCollection load(URI uri) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

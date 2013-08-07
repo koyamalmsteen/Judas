@@ -2,7 +2,6 @@ package org.iugonet.www;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.net.URI;
 import java.net.URL;
 
 import org.jfree.chart.ChartPanel;
@@ -90,6 +89,12 @@ public class GoesGpart extends Tplot {
 	}
 
 	@Override
+	public TimeSeriesCollection load(URL url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public ChartPanel getChartPanel() {
 		// TODO Auto-generated method stub
 		return null;
@@ -101,21 +106,4 @@ public class GoesGpart extends Tplot {
 		return null;
 	}
 
-	@Override
-	public TimeSeriesCollection load(String strUrl) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URL url) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URI uri) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

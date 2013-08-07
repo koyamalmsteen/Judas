@@ -2,7 +2,6 @@ package org.iugonet.www;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.net.URI;
 import java.net.URL;
 
 import org.jfree.chart.ChartPanel;
@@ -52,6 +51,12 @@ public class AceLoc1h extends Tplot {
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public TimeSeriesCollection load(URL url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	@Override
 	public ChartPanel getChartPanel() {
@@ -61,24 +66,6 @@ public class AceLoc1h extends Tplot {
 
 	@Override
 	public JFreeChart getChart() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(String strUrl) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URL url) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URI uri) {
 		// TODO Auto-generated method stub
 		return null;
 	}

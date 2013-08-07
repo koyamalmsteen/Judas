@@ -73,10 +73,21 @@ abstract public class Tplot extends Aplot {
 
 	abstract public JFreeChart getChart();
 
-	@Deprecated
-	abstract public TimeSeriesCollection load(String strUrl);
+	public TimeSeriesCollection load(String strUrl) {
+		URL url = null;
+		
+		try {
+			url = new URL(strUrl);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return this.load(url);
+	}
 	
 	abstract public TimeSeriesCollection load(URL url);
 	
-	abstract public TimeSeriesCollection load(URI uri);
+	public TimeSeriesCollection load(URI uri) {
+		return this.load(this.resolve(uri));
+	}
 }

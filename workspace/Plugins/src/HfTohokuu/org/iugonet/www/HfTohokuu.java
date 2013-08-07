@@ -3,7 +3,6 @@ package org.iugonet.www;
 import java.util.ArrayList;
 
 import java.lang.Double;
-import java.net.URI;
 import java.net.URL;
 
 import gsfc.nssdc.cdf.CDF;
@@ -81,6 +80,12 @@ public class HfTohokuu extends Tplot {
 			e.printStackTrace();
 		}		
 	}
+
+	@Override
+	public TimeSeriesCollection load(URL url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	@Override
 	public ChartPanel getChartPanel() {
@@ -94,21 +99,4 @@ public class HfTohokuu extends Tplot {
 		return null;
 	}
 
-	@Override
-	public TimeSeriesCollection load(String strUrl) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URL url) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URI uri) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

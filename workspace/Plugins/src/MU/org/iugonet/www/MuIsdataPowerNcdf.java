@@ -1,6 +1,5 @@
 package org.iugonet.www;
 
-import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -74,6 +73,12 @@ public class MuIsdataPowerNcdf extends Tplot {
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public TimeSeriesCollection load(URL url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	@Override
 	public ChartPanel getChartPanel() {
@@ -87,21 +92,4 @@ public class MuIsdataPowerNcdf extends Tplot {
 		return null;
 	}
 
-	@Override
-	public TimeSeriesCollection load(String strUrl) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URL url) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public TimeSeriesCollection load(URI uri) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

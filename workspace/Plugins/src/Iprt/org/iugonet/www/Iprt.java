@@ -4,7 +4,6 @@ package org.iugonet.www;
 //import nom.tam.fits.Fits;
 //import nom.tam.fits.Header;
 
-import java.net.URI;
 import java.net.URL;
 
 import org.jfree.chart.ChartPanel;
@@ -74,6 +73,12 @@ public class Iprt extends Tplot {
 	}
 
 	@Override
+	public TimeSeriesCollection load(URL url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
 	public ChartPanel getChartPanel() {
 		// TODO Auto-generated method stub
 		return null;
@@ -85,21 +90,4 @@ public class Iprt extends Tplot {
 		return null;
 	}
 
-	@Override
-	public TimeSeriesCollection load(String strUrl) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URL url) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URI uri) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

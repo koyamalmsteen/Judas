@@ -76,6 +76,12 @@ public class MuIonogramTxt extends Tplot {
 			e.printStackTrace();
 		}		
 	}
+
+	@Override
+	public TimeSeriesCollection load(URL url) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	@Override
 	public ChartPanel getChartPanel() {
@@ -85,24 +91,6 @@ public class MuIonogramTxt extends Tplot {
 
 	@Override
 	public JFreeChart getChart() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(String strUrl) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public TimeSeriesCollection load(URL url) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public TimeSeriesCollection load(URI uri) {
 		// TODO Auto-generated method stub
 		return null;
 	}
