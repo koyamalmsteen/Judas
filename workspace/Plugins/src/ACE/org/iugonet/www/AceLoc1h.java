@@ -17,6 +17,11 @@ public class AceLoc1h extends Tplot {
 		super(1);
 		//timeSeries[0].setKey("ACE Location (GSE Coordinates)");
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

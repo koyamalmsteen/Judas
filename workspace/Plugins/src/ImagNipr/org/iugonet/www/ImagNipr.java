@@ -26,6 +26,11 @@ public class ImagNipr extends Tplot {
 				.setKey("NIPR 20Hz Resolution Induction Magnetometer Data - gps 1pps time pulse");
 				*/
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

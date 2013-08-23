@@ -17,6 +17,11 @@ public class AceEpam extends Tplot {
 		super(1);
 		//timeSeries[0].setKey("ACE Electron, Proton, and Alpha Monitor");
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

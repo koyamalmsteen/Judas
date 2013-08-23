@@ -18,6 +18,11 @@ public class Wdc extends Tplot {
 		super(4);
 		// getTimeSeries(1).setKey("Geomagnetic Data");
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

@@ -17,6 +17,11 @@ public class WindMfih0 extends Tplot {
 //		super(43);
 		super(3);
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

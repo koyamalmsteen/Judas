@@ -18,6 +18,11 @@ public class NoaaBi extends Tplot {
 		//timeSeries[0].setKey("NOAA POES (Energetic Particle Belt Indices)");
 	}
 	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
 	@Override
 	void read(URL url) {
 		String line;

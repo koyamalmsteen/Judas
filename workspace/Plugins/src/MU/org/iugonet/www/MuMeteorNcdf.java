@@ -18,6 +18,11 @@ public class MuMeteorNcdf extends Tplot {
 	public MuMeteorNcdf(int num) {
 		super(num);
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

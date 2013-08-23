@@ -18,6 +18,11 @@ public class AceSis1h extends Tplot {
 		//timeSeries[0].setKey("ACE Solar Isotope Spectrometer (1hour)");
 	}
 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
 	@Override
 	void read(URL url) {
 

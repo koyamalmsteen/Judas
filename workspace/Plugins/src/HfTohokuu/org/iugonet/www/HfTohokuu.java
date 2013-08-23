@@ -21,6 +21,11 @@ public class HfTohokuu extends Tplot {
 		//timeSeries[0].setKey("Iitate HF");
 	}
 	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
 	@Override
 	void read(URL url) {
 		// TODO Auto-generated method stub

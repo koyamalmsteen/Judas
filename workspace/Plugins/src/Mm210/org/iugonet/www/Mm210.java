@@ -21,6 +21,11 @@ public class Mm210 extends Tplot {
 		//timeSeries[0].setKey("MM210 magnetometer");
 	}
 	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
 	@Override
 	void read(URL url) {
 		try {

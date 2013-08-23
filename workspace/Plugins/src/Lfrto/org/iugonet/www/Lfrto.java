@@ -19,6 +19,11 @@ public class Lfrto extends Tplot {
 		//timeSeries[0].setKey("LFRTO - power(amplitude)");
 		//timeSeries[1].setKey("LFRTO - phase");
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

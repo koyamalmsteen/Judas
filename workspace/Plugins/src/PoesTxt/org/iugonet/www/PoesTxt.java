@@ -18,6 +18,11 @@ public class PoesTxt extends Tplot {
 		super(34);
 	}
 	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
 	void read(URL url) {
 
 		String line;

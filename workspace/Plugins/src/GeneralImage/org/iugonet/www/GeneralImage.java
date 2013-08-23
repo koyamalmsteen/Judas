@@ -20,6 +20,11 @@ public class GeneralImage extends Iplot{
 //		super(1);
 		// timeSeries[0].setKey("Dst index");
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

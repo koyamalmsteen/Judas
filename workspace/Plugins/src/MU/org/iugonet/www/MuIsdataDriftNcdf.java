@@ -19,6 +19,11 @@ public class MuIsdataDriftNcdf extends Tplot {
 		super(9);
 		//timeSeries[0].setKey("netcdf");
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

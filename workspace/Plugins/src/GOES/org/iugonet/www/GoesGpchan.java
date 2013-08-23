@@ -17,6 +17,11 @@ public class GoesGpchan extends Tplot {
 		super(1);
 		//timeSeries[0].setKey("GOES Energetic Proton Flux Channels");
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

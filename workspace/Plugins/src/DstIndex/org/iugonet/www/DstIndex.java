@@ -21,6 +21,11 @@ public class DstIndex extends Tplot {
 		// timeSeries[0].setKey("Dst index");
 	}
 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
 	void read(URL url) {
 		String line;
 

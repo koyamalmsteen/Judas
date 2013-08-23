@@ -17,6 +17,11 @@ public class AceSwepam extends Tplot {
 		super(1);
 		//timeSeries[0].setKey("ACE Solar Wind Electron Proton Alpha Monitor");
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

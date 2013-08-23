@@ -15,6 +15,11 @@ public class Iprt extends Tplot {
 	public Iprt() {
 		super(820);
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

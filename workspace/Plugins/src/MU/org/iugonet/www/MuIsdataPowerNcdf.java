@@ -16,6 +16,11 @@ public class MuIsdataPowerNcdf extends Tplot {
 	public MuIsdataPowerNcdf() {
 		super(256 * 4);
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

@@ -20,6 +20,11 @@ public class AeIndex extends Tplot {
 		super(1);
 		//timeSeries[0].setKey("AE index");
 	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
 
 	@Override
 	void read(URL url) {

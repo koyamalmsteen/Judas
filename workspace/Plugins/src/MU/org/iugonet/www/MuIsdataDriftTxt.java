@@ -18,6 +18,11 @@ public class MuIsdataDriftTxt extends Tplot {
 		//timeSeries[0].setKey("MU ionosphere drift");
 	}
 	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
 	@Override
 	void read(URL url) {
 
