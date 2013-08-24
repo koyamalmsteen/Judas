@@ -71,7 +71,7 @@
     <get src="${src_eclipse}" dest="${dst_eclipse}" usetimestamp="yes"/>
     <!-- To stay away to use untar task because untar task for ant 1.7.1 is buggy. -->
     <exec executable="tar" dir="${tmp}">
-      <arg value="xvzf"/>
+      <arg value="xzf"/>
       <arg value="${dst_eclipse}"/>
       <arg value="--directory"/>
       <arg value="${env.HOME}/Documents"/>
@@ -171,6 +171,10 @@
     <copy file="${dst_hdf5}" todir="${judas_home}/lib/external" />    
     <!-- -->
     <get src="${src_hdf4}" dest="${dst_hdf4}" usetimestamp="yes" />
+    <exec executable="tar">
+      <arg line="xjf ${dst_hdf4} --directory=${tmp}" />
+      <arg
+    </exec>
     <untar src="${dst_hdf4}" dest="${tmp}" compression="bzip2" />
     <copy file="${dst_hdf4}" todir="${judas_home}/lib/external" />    
     <!-- -->
