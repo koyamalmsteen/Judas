@@ -166,23 +166,27 @@
     <get src="${src_fits}" dest="${dst_fits}" usetimestamp="yes"/>
     <copy file="${dst_fits}" todir="${judas_home}/lib/external"/>    
     <!-- -->
+    <!--
     <get src="${src_hdf5}" dest="${dst_hdf5}" usetimestamp="yes" />
     <exec executable="tar">
-      <arg line="xjf ${dst_hdf5} --directory=${tmp}" />
+      <arg line="xjf ${dst_hdf5} - -directory=${tmp}" />
     </exec>
     <exec executable="./configure" dir="${tmp}/${hdf4_prefix}">
     </exec>
     <exec executable="make" dir="${tmp}/${hdf4_prefix}">
     </exec>
+    -->
     <!-- -->
+    <!--
     <get src="${src_hdf4}" dest="${dst_hdf4}" usetimestamp="yes" />
     <exec executable="tar">
-      <arg line="xjf ${dst_hdf4} --directory=${tmp}" />
+      <arg line="xjf ${dst_hdf4} - -directory=${tmp}" />
     </exec>
     <exec executable="./configure" dir="${tmp}/${hdf4_prefix}">
     </exec>
     <exec executable="make" dir="${tmp}/${hdf4_prefix}">
     </exec>
+    -->
     <!-- -->
     <get src="${src_hdf-java_linux32}" dest="${dst_hdf-java_linux32}" usetimestamp="yes" />
     <exec executable="tar">
