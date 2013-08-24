@@ -185,15 +185,19 @@
     </exec>
     <!-- -->
     <get src="${src_hdf-java_linux32}" dest="${dst_hdf-java_linux32}" usetimestamp="yes" />
-    <untar src="${dst_hdf-java_linux32}" dest="${tmp}" />
-    <copy file="${dst_hdf-java_linux32}" todir="${judas_home}/lib/external" />     <!-- -->
+    <exec executable="tar">
+      <arg line="xf ${dst_hdf-java_linux32} --directory=${tmp}" />
+    </exec>
+    <!-- -->
     <get src="${src_hdf-java_macintel32}" dest="${dst_hdf-java_macintel32}" usetimestamp="yes" />
-    <untar src="${dst_hdf-java_macintel32}" dest="${tmp}" />
-    <copy file="${dst_hdf-java_macintel32}" todir="${judas_home}/lib/external" />
+    <exec executable="tar">
+      <arg line="xf ${dst_hdf-java_macintel32} --directory=${tmp}" />
+    </exec>
     <!-- -->
     <get src="${src_hdf-java_win32}" dest="${dst_hdf-java_win32}" usetimestamp="yes" />
-    <untar src="${dst_hdf-java_win32}" dest="${tmp}" />
-    <copy file="${dst_hdf-java_win32}" todir="${judas_home}/lib/external" />
+    <exec executable="tar">
+      <arg line="xf ${dst_hdf-java_win32} --directory=${tmp}" />
+    </exec>
     <!-- -->
     <get src="${src_jython}" dest="${dst_jython}" usetimestamp="yes"/>
     <exec executable="java">
