@@ -178,8 +178,6 @@
     </exec>
     <exec executable="make" dir="${tmp}/${hdf4_prefix}">
     </exec>
-    <untar src="${dst_hdf4}" dest="${tmp}" compression="bzip2" />
-    <copy file="${dst_hdf4}" todir="${judas_home}/lib/external" />    
     <!-- -->
     <get src="${src_hdf-java_linux32}" dest="${dst_hdf-java_linux32}" usetimestamp="yes" />
     <untar src="${dst_hdf-java_linux32}" dest="${tmp}" />
