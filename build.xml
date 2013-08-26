@@ -101,15 +101,16 @@
     <!-- -->
     <get src="${src_geotools}" dest="${dst_geotools}" usetimestamp="yes"/>
     <unzip src="${dst_geotools}" dest="${tmp}"/>
-    <copy file="${tmp}/${geotools_prefix}/gt-swing-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
-    <copy file="${tmp}/${geotools_prefix}/gt-data-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
-    <copy file="${tmp}/${geotools_prefix}/gt-render-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
-    <copy file="${tmp}/${geotools_prefix}/gt-api-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
-    <copy file="${tmp}/${geotools_prefix}/gt-main-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
-    <copy file="${tmp}/${geotools_prefix}/gt-coverage-${geotools_version}.jar" todir="${judas_home}/lib/external" />
-    <copy file="${tmp}/${geotools_prefix}/gt-metadata-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
-    <copy file="${tmp}/${geotools_prefix}/gt-opengis-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
-    <copy file="${tmp}/${geotools_prefix}/gt-referencing-${geotools_version}.jar" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/${gt_api.jar}" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/${gt_main.jar}" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/${gt_swing.jar}" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/${gt_data.jar}" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/${gt_coverage.jar}" todir="${judas_home}/lib/external" />
+    <copy file="${tmp}/${geotools_prefix}/${gt_referencing.jar}" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/${gt_shapefile.jar}" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/${gt_render.jar}" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/${gt_metadata.jar}" todir="${judas_home}/lib/external"/>
+    <copy file="${tmp}/${geotools_prefix}/${gt_opengis.jar}" todir="${judas_home}/lib/external"/>
     <copy file="${tmp}/${geotools_prefix}/${jts.jar}" todir="${judas_home}/lib/external"/>
     <!-- -->
     <get src="${src_jythonconsole}" dest="${dst_jythonconsole}" usetimestamp="yes"/>

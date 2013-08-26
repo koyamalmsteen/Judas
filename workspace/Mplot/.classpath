@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-opengis-9.2.jar"/>
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-render-9.2.jar"/>
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-referencing-9.2.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-shapefile-9.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
