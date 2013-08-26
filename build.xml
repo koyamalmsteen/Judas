@@ -260,7 +260,7 @@
     <chmod file="${install_dir}/${maven_prefix}/bin/mvn" perm="gou+x"/>
   </target>
 
-  <target name="naturalearthdata">
+  <target name="map">
     <get src="${src_ne}" dest="${dst_ne}" usetimestamp="yes"/>
     <!-- To stay away to use untar task because untar task for ant 1.7.1 is buggy. -->
     <exec executable="unzip" dir="${tmp}">
