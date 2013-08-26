@@ -1,7 +1,9 @@
 package org.iugonet.www;
 
-import org.jfree.chart.ChartPanel;
+import java.net.URI;
+import java.net.URL;
 
+import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.xy.XYDataItem;
 import org.jfree.data.xy.XYSeries;
@@ -59,6 +61,9 @@ abstract public class XYplot extends Aplot {
 	
 	abstract public JFreeChart getChart();
 	
-	abstract public XYSeriesCollection load(String strUrl);
-
+	abstract public XYSeriesCollection load(URL url);
+	
+	public XYSeriesCollection load(URI uri) {
+		return this.load(this.resolve(uri));
+	}
 }

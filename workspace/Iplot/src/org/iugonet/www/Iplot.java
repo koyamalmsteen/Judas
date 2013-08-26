@@ -1,5 +1,8 @@
 package org.iugonet.www;
 
+import java.net.URI;
+import java.net.URL;
+
 import javax.swing.JPanel;
 
 abstract public class Iplot extends Aplot {
@@ -31,6 +34,9 @@ abstract public class Iplot extends Aplot {
 		*/
 	}
 
-	abstract public JPanel getJPanel();
+	abstract public JPanel load(URL url);
 
+	public JPanel load(URI uri) {
+		return this.load(this.resolve(uri));
+	}
 }
