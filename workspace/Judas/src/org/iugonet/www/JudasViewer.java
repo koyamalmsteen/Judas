@@ -80,7 +80,7 @@ public class JudasViewer extends JFrame {
 		setContentPane(contentPane);
 
 		if ( pluginName.equals("DstIndex") ) {
-			DstIndex dstIndex = new DstIndex();		
+//			DstIndex dstIndex = new DstIndex();		
 //			getContentPane().add(dstIndex.getChartPanel());
 		}
 		getContentPane().setVisible(true);
