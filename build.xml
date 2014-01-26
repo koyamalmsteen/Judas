@@ -189,20 +189,21 @@
     </exec>
     -->
     <!-- -->
-    <get src="${src_hdf-java_linux32}" dest="${dst_hdf-java_linux32}" usetimestamp="yes" />
+    <get src="${src_hdf-java_linux}" dest="${dst_hdf-java_linux}" usetimestamp="yes" />
     <exec executable="tar">
-      <arg line="xf ${dst_hdf-java_linux32} --directory=${tmp}" />
+      <arg line="xvzf ${dst_hdf-java_linux} --directory=${tmp}" />
     </exec>
     <!-- -->
-    <get src="${src_hdf-java_macintel32}" dest="${dst_hdf-java_macintel32}" usetimestamp="yes" />
+    <get src="${src_hdf-java_macosx}" dest="${dst_hdf-java_macosx}" usetimestamp="yes" />
     <exec executable="tar">
-      <arg line="xf ${dst_hdf-java_macintel32} --directory=${tmp}" />
+      <arg line="xvzf ${dst_hdf-java_macosx} --directory=${tmp}" />
     </exec>
     <!-- -->
     <get src="${src_hdf-java_win32}" dest="${dst_hdf-java_win32}" usetimestamp="yes" />
-    <exec executable="tar">
-      <arg line="xf ${dst_hdf-java_win32} --directory=${tmp}" />
-    </exec>
+    <unzip src="${dst_hdf-java_win32}" dest="${tmp}" />
+    <!-- -->
+    <get src="${src_hdf-java_win64}" dest="${dst_hdf-java_win64}" usetimestamp="yes" />
+    <unzip src="${dst_hdf-java_win64}" dest="${tmp}" />
     <!-- -->
     <get src="${src_jython}" dest="${dst_jython}" usetimestamp="yes"/>
     <exec executable="java">
@@ -213,9 +214,16 @@
     <unzip src="${dst_jeditor}" dest="${tmp}"/>
     <copy file="${tmp}/jEditorGPL.jar" todir="${judas_home}/lib/external"/>    
     <!-- couldn't execute get task behind the http proxy to ftp server -->
-    <!--
+<!--
+    <ftp server="ftp.unidata.ucar.edu" binary="yes" action="get">
+      <fileset dir="/pub/netcdf-java/v4.3">
+	<include name="netcdfAll-4.3.jar" />
+      </fileset>
+    </ftp>
+-->
+<!--
     <get src="${src_netcdf}" dest="${dst_netcdf}" usetimestamp="yes"/>
-    -->
+-->
     <echo message="${src_netcdf}" />    
     <exec executable="curl" dir="${tmp}">
       <arg line="-O ${src_netcdf} -o ${netcdf}" />
