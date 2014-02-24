@@ -15,7 +15,7 @@
 
   <!-- -->
 
-  <target name="all" depends="clean, initial_message, eclipse, key, lib, maven, switch_jdk, final_message" description="Install all"/>
+  <target name="all" depends="clean, init, eclipse, key, lib, maven, switch_jdk, final_message" description="Install all"/>
 
   <target name="clean" description="Clean up">
     <!--
@@ -61,6 +61,11 @@
       <fileset file="workspace/Plugins/build.xml" />
       <fileset file="workspace/Judas/build.xml" />
     </subant>
+  </target>
+
+  <target name="init" description="Initialize">
+    <mkdir dir="${tmp}" />
+    <antcall name="initial_message" />
   </target>
 
   <target name="initial_message" description="Display initial message">
