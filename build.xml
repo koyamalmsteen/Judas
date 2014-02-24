@@ -65,6 +65,7 @@
 
   <target name="init" description="Initialize">
     <mkdir dir="${tmp}" />
+    <mkdir dir="${env.HOME}/Judas/lib/external" />
     <antcall target="initial_message" />
   </target>
 
