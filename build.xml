@@ -65,7 +65,7 @@
 
   <target name="init" description="Initialize">
     <mkdir dir="${tmp}" />
-    <antcall name="initial_message" />
+    <antcall target="initial_message" />
   </target>
 
   <target name="initial_message" description="Display initial message">
