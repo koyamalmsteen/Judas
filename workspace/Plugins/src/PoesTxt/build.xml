@@ -10,8 +10,6 @@
 	<property file="../../../../build.properties"/>
 
 	<property name="src.dir" location="." />
-	<property name="lib.dir" location="../../../../lib" />
-	<property name="ext.dir" location="${lib.dir}/external" />
 	<property name="javadoc.dir" location="docs" />
 	<property name="jar.name" value="PoesTxt.jar" />
 	<property name="jar.path" location="../../../../plugins/${jar.name}" />
