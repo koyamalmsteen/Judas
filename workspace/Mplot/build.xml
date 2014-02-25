@@ -10,7 +10,6 @@
 	<property file="../../build.properties"/>
 
 	<property name="src.dir" location="src" />
-	<property name="javadoc.dir" location="docs" />
 	<property name="jar.name" value="Mplot.jar" />
 	<property name="jar.path" location="${lib.dir}/${jar.name}" />
 	
