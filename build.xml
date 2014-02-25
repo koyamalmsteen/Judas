@@ -15,7 +15,7 @@
 
   <!-- -->
 
-  <target name="all" depends="clean, init, eclipse, key, lib, maven, switch_jdk, final_message" description="Install all"/>
+  <target name="all" depends="clean, init, eclipse, key, maven, lib, switch_jdk, final_message" description="Install all"/>
 
   <target name="clean" description="Clean up">
     <!--
