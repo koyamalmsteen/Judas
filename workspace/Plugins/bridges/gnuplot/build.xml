@@ -18,7 +18,7 @@
   <target name="awk4j" description="Install awk4j">
     <get src="${src_awk4j}" dest="${dst_awk4j}" usetimestamp="yes" />
     <unzip src="${dst_awk4j}" dest="${tmp}" />
-    <copy file="${tmp}/awk4j-bin/lib/awk4j.jar" todir="${judas_home}/lib/external" />
+    <copy file="${tmp}/awk4j-bin/lib/awk4j.jar" todir="${judas.HOME}/lib/external" />
   </target>
 
   <target name="final_message" description="Display final message">
