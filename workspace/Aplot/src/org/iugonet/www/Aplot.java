@@ -12,9 +12,15 @@ import java.net.URLConnection;
 
 abstract public class Aplot {
 
-	private String rootDataDir = "/tmp/data";
-	private String themisDataDir = "/tmp/themis";
-	private String themisRemoteDataDir = "http://themis.stp.isas.jaxa.jp/data/themis/";
+	private final String DEFAULT_ROOT_DATA_DIR = "/tmp/data";
+	private final String DEFAULT_THEMIS_DATA_DIR = "/tmp/themis";
+	private final String DEFAULT_THEMIS_REMOTE_DATA_DIR = "http://themis.stp.isas.jaxa.jp/data/themis/";
+	
+	private String rootDataDir = DEFAULT_ROOT_DATA_DIR;
+	private String themisDataDir = DEFAULT_THEMIS_DATA_DIR;
+	private String themisRemoteDataDir = DEFAULT_THEMIS_REMOTE_DATA_DIR;
+
+	private int paradigm; // 1: Experimental Sci., 2: Theoretical Sci., 3: Computational Sci.
 
 	Aplot(){
 		String rootDataDir = System.getenv("ROOT_DATA_DIR");
@@ -228,5 +234,17 @@ abstract public class Aplot {
 
 	public void read(URI uri) {
 		this.read(this.resolve(uri));
+	}
+	
+	public int getParadigm() {
+		return paradigm;
+	}
+
+	public void setParadigm(int paradigm) {
+		if( paradigm == 1 || paradigm == 2 || paradigm == 3 ){
+			this.paradigm = paradigm;	
+		}else{
+		//	
+		}
 	}
 }
