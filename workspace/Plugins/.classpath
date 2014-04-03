@@ -43,20 +43,8 @@
 	<classpathentry excluding="Eiscat/|ImagNipr/|Cira86Ascii/|GOES/|Mm210/|Lfrto/|HfTohokuu/|NoaaBi/|AeIndex/|WIND/|PoesTxt/|Wdc/|NoaaPower/|ACE/|SymIndex/|Iprt/|FmagNipr/|DstIndex/|MU/" kind="src" path="test/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/Tplot.jar"/>
 	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/Aplot.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/cdfjava.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/Iplot.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jai_codec.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jai_core.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/netcdf-4.3.13.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jcommon-1.0.18.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jfreechart-1.0.15.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/Mplot.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-api-9.2.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-data-9.2.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-swing-9.2.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/gt-render-9.2.jar"/>
-	<classpathentry kind="lib" path="/home/iugonet/Judas/plugins/DstIndex.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jcommon-1.0.21.jar"/>
+	<classpathentry kind="lib" path="/home/iugonet/Judas/lib/external/jfreechart-1.0.17.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

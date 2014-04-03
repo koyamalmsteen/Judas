@@ -156,10 +156,12 @@
     <get src="${src_java_getopt}" dest="${dst_java_getopt}" usetimestamp="yes" />
     <copy file="${tmp}/${java_getopt}" todir="${judas.HOME}/lib/external" />
     <!-- -->
+<!--
     <get src="${src_jai}" dest="${dst_jai}" usetimestamp="yes" />
     <unzip src="${dst_jai}" dest="${tmp}" />
     <copy file="${tmp}/jai-${jai_version}/lib/jai_codec.jar" todir="${judas.HOME}/lib/external" />
     <copy file="${tmp}/jai-${jai_version}/lib/jai_core.jar" todir="${judas.HOME}/lib/external" />
+-->
     <!-- -->
     <get src="${src_cdfjava}" dest="${dst_cdfjava}" usetimestamp="yes" />
     <copy file="${tmp}/${cdfjava}" todir="${judas.HOME}/lib/external" />

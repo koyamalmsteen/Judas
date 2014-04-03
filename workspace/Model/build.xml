@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="Aplot" default="jar" basedir=".">
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="/usr/share/java/ant/ant-contrib.jar" />
+		</classpath>
+	</taskdef>
+
+	<property environment="env"/>
+	<property file="../../build.properties"/>
+
+	<property name="src.dir" location="src" />
+	<property name="jar.name" value="Aplot.jar" />
+	<property name="jar.path" location="${lib.dir}/${jar.name}" />
+
+	<property name="test.src.dir" location="test/src" />
+	<property name="test.bin.dir" location="test/bin" />
+	<property name="test.class.name" value="org.iugonet.www.Aplot" />
+
+	<path id="classpath">
+		<pathelement location="${src.dir}" />
+	</path>
+
+	<path id="test.classpath">
+		<pathelement path="." />
+		<pathelement location="${test.bin}" />
+		<pathelement location="${ext.dir}/${junit.jar}" />
+	</path>
+
+	<!-- -->
+
+	<target name="jar" depends="compile" description="jar">
+		<jar jarfile="${jar.path}">
+			<fileset dir="${src.dir}" includes="**" />
+			<fileset dir="${bin.dir}" includes="**" />
+		</jar>
+	</target>
+
+	<target name="compile" description="compile">
+		<mkdir dir="${bin.dir}" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="classpath" />
+	</target>
+
+	<target name="compile.test" depends="compile">
+		<mkdir dir="${test.bin.dir}" />
+		<javac srcdir="${test.src.dir}" destdir="${test.bin.dir}" includeantruntime="false" classpathref="test.classpath" />
+	</target>
+
+	<target name="clean">
+        <if>
+            <available file="${jar.path}" type="file" />
+            <then>
+                <delete file="${jar.path}" />
+            </then>
+        </if>
+        <if>
+            <available file="${bin.dir}" type="dir" />
+            <then>
+                <delete dir="${bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${test.bin.dir}" type="dir" />
+            <then>
+                <delete dir="${test.bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${javadoc.dir}" type="dir" />
+            <then>
+                <delete dir="${javadoc.dir}" />
+            </then>
+        </if>
+	</target>
+
+	<target name="javadoc" description="Javadoc">
+		<javadoc destdir="${javadoc.dir}">
+			<fileset dir="${src.dir}" />
+		</javadoc>
+	</target>
+
+	<target name="test" depends="compile.test" description="test the source">
+		<exec executable="pwd" />
+		<junit fork="yes">
+			<test name="${test.class.name}" />
+			<formatter type="plain" usefile="false" />
+<!--			<classpath refid="classpath" /> -->
+			<classpath refid="test.classpath" />
+		</junit>
+	</target>
+
+</project>
