@@ -172,6 +172,9 @@
     <get src="${src_junit}" dest="${dst_junit}" usetimestamp="yes" />
     <copy file="${tmp}/${junit.jar}" todir="${judas.HOME}/lib/external" />
     <!-- -->
+    <get src="${src_oai4j}" dest="${dst_oai4j}" usetimestamp="yes" />
+<!--    <copy file="${tmp}/${oai4j.jar}" todir="${judas.HOME}/lib/external" /> -->
+    <!-- -->
     <get src="${src_fits}" dest="${dst_fits}" usetimestamp="yes" />
     <copy file="${dst_fits}" todir="${judas.HOME}/lib/external" />    
     <!-- -->
