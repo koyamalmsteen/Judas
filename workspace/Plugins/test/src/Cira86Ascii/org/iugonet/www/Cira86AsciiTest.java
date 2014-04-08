@@ -2,6 +2,8 @@ package org.iugonet.www;
 
 import static org.junit.Assert.*;
 
+import java.net.URI;
+
 import org.iugonet.www.Cira86Ascii;
 import org.junit.After;
 import org.junit.Before;
@@ -27,5 +29,40 @@ public class Cira86AsciiTest {
 		// http://nssdcftp.gsfc.nasa.gov/models/atmospheric/cira/cira86ascii/
 		fail("Not yet implemented");
 	}
+	
+	@Test
+	public void xmlEncoderTest() throws Exception {
+		URI uri = new URI(
+				"spase://IUGONET/Granule/ICSWSE/MAGDAS/AAB/fluxgate/PT1S_ICSWSE_storage/AAB_SEC_200811010000_mgd");
+		sample.read(uri);
+		
+		try{
+			XMLEncoder xmlEncoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("goods.xml")));
+			encoder.writeObject(goodsArray);
+			encoder.close();
+		} catch(FileNotFoundException ex){
+			System.err.println(ex);
+		}
+	}
 
+	@Test
+	public void xmlDecoderTest() throws Exception {
+		URI uri = new URI(
+				"spase://IUGONET/Granule/ICSWSE/MAGDAS/AAB/fluxgate/PT1S_ICSWSE_storage/AAB_SEC_200811010000_mgd");
+		sample.read(uri);
+		
+		try{
+			XMLDecoder xmlDecoder = new XMLDecoder(new BufferedInputStream(new FileInputStread("goods.xml")));
+			goodArray = (Goods[])decoder.readObject();
+			decoder.close();
+		}catch(FileNotFoundException ex){
+			System.err.println(ex);
+			return;
+		}
+		
+		for(int i=0;i<goodsArray.length;i++){
+			System.out.println("name:");
+		}
+		
+	}
 }
