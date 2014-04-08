@@ -2,6 +2,8 @@ package org.iugonet.www;
 
 import java.net.URI;
 import java.net.URL;
+import java.beans.*;
+import java.io.*;
 
 import org.iugonet.www.DstIndex;
 import org.junit.After;

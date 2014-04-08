@@ -1,6 +1,8 @@
 package org.iugonet.www;
 
 import java.net.URI;
+import java.beans.*;
+import java.io.*;
 
 import org.junit.After;
 import org.junit.Before;

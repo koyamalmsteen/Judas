@@ -1,12 +1,13 @@
 package org.iugonet.www;
 
-import static org.junit.Assert.*;
-
+import java.beans.*;
+import java.io.*;
 import java.net.URI;
 import java.net.URL;
 
 import javax.swing.JPanel;
 
+import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

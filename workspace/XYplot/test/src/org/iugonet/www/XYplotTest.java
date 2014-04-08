@@ -1,10 +1,11 @@
 package org.iugonet.www;
 
-import static org.junit.Assert.*;
-
+import java.beans.*;
+import java.io.*;
 import java.net.URI;
 import java.net.URL;
 
+import static org.junit.Assert.*;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.xy.XYSeriesCollection;

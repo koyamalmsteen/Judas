@@ -1,6 +1,8 @@
 package org.iugonet.www;
 
 import java.net.URI;
+import java.beans.*;
+import java.io.*;
 
 import org.jfree.data.time.TimeSeries;
 import org.junit.After;

@@ -1,8 +1,10 @@
 package org.iugonet.www;
 
-import static org.junit.Assert.*;
-
+import java.beans.*;
+import java.io.*;
 import java.net.URI;
+
+import static org.junit.Assert.*;
 
 import org.iugonet.www.Cira86Ascii;
 import org.junit.After;
