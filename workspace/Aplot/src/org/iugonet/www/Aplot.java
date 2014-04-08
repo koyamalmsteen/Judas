@@ -4,52 +4,52 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.io.Serializable;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 
-abstract public class Aplot implements Serializable{
+abstract public class Aplot {
 
 	private final String DEFAULT_ROOT_DATA_DIR = "/tmp/data";
 	private final String DEFAULT_THEMIS_DATA_DIR = "/tmp/themis";
 	private final String DEFAULT_THEMIS_REMOTE_DATA_DIR = "http://themis.stp.isas.jaxa.jp/data/themis/";
-	
+
 	private String rootDataDir = DEFAULT_ROOT_DATA_DIR;
 	private String themisDataDir = DEFAULT_THEMIS_DATA_DIR;
 	private String themisRemoteDataDir = DEFAULT_THEMIS_REMOTE_DATA_DIR;
 
-	private int paradigm; // 1: Experimental Sci., 2: Theoretical Sci., 3: Computational Sci.
+	private int paradigm; // 1: Experimental Sci., 2: Theoretical Sci., 3:
+							// Computational Sci.
 
-	Aplot(){
+	Aplot() {
 		String rootDataDir = System.getenv("ROOT_DATA_DIR");
-		if ( rootDataDir != null ){
+		if (rootDataDir != null) {
 			setRootDataDir(rootDataDir);
 			File file = new File(rootDataDir);
 			System.out.println(file.getName());
-			if( !file.exists() ){
+			if (!file.exists()) {
 				System.out.println("HOGE");
 			}
 		}
-		
+
 		String themisDataDir = System.getenv("THEMIS_DATA_DIR");
-		if ( themisDataDir != null ){
+		if (themisDataDir != null) {
 			setThemisDataDir(themisDataDir);
 			File file = new File(themisDataDir);
 			System.out.println(file.getName());
-			if( !file.exists() ){
+			if (!file.exists()) {
 				System.out.println("HOGE2");
 			}
 		}
-		
+
 		String themisRemoteDataDir = System.getenv("THEMIS_REMOTE_DATA_DIR");
-		if ( themisRemoteDataDir != null ){
+		if (themisRemoteDataDir != null) {
 			setThemisRemoteDataDir(themisRemoteDataDir);
 		}
 	}
-	
+
 	public void setRootDataDir(String rootDataDir) {
 		this.rootDataDir = rootDataDir;
 	}
@@ -73,84 +73,86 @@ abstract public class Aplot implements Serializable{
 	public String getThemisRemoteDataDir() {
 		return this.themisRemoteDataDir;
 	}
-	
-	public URL resolve(URI uri){
+
+	public URL resolve(URI uri) {
 		String query_head = "http://search.iugonet.org/iugonet/open-search/request?query=ResourceID:";
 		String query_tail = "&Granule=granule";
 
 		URL url = null;
-		
+
 		try {
-			String query = query_head + uri.getRawSchemeSpecificPart() + query_tail;
+			String query = query_head + uri.getRawSchemeSpecificPart()
+					+ query_tail;
 			URL urlQuery = new URL(query);
-			
+
 			// check proxy
 			String http_proxy_upper_case = System.getenv("HTTP_PROXY");
 			String http_proxy_lower_case = System.getenv("http_proxy");
 
 			URLConnection urlConnection;
-			if( http_proxy_upper_case != null || http_proxy_lower_case != null ){ // with proxy
+			if (http_proxy_upper_case != null || http_proxy_lower_case != null) { // with
+																					// proxy
 				URL urlProxy;
-				if( http_proxy_upper_case != null ){
+				if (http_proxy_upper_case != null) {
 					urlProxy = new URL(http_proxy_upper_case);
-				}else{
+				} else {
 					urlProxy = new URL(http_proxy_lower_case);
 				}
-				Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(urlProxy.getHost(),urlProxy.getPort()));
+				Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(
+						urlProxy.getHost(), urlProxy.getPort()));
 				urlConnection = urlQuery.openConnection(proxy);
-			}else{                                                                // without proxy
+			} else { // without proxy
 				urlConnection = urlQuery.openConnection();
 			}
-			
+
 			urlConnection.connect();
-			
+
 			// contents retrieve
-			
-			ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();			
+
+			ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 			InputStream inputStream = urlConnection.getInputStream();
-			
+
 			int b;
-			
-			while( (b = inputStream.read()) != -1 ){
+
+			while ((b = inputStream.read()) != -1) {
 				byteArrayOutputStream.write(b);
 			}
-			
+
 			inputStream.close();
 
 			// retrieve metadata
-			
+
 			byte[] byteAtom = byteArrayOutputStream.toByteArray();
 			String strAtom = new String(byteAtom, "UTF-8");
-//			Document atomFeed = new SAXBuilder().build(url);
-//			Element root = atomFeed.getRootElement();
+			// Document atomFeed = new SAXBuilder().build(url);
+			// Element root = atomFeed.getRootElement();
 			/*
-			List list = root.getChildren("Spase");
-			for(int i=0;i<list.size();i++){
-				Element node = (Element) list.get(i);
-			}
-			*/
+			 * List list = root.getChildren("Spase"); for(int
+			 * i=0;i<list.size();i++){ Element node = (Element) list.get(i); }
+			 */
 
-//			XMLOutputter xmlOutputter = new XMLOutputter();
-//			System.out.println(xmlOutputter.outputString(atomFeed));
+			// XMLOutputter xmlOutputter = new XMLOutputter();
+			// System.out.println(xmlOutputter.outputString(atomFeed));
 
 			byteArrayOutputStream.close();
-		
+
 			// a rush job!
-			url = new URL(strAtom.substring(strAtom.indexOf("<URL>")+5,strAtom.indexOf("</URL>")));
+			url = new URL(strAtom.substring(strAtom.indexOf("<URL>") + 5,
+					strAtom.indexOf("</URL>")));
 			read(url);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return url;
 	}
-	
-	public URI getParentID(URI uri){
+
+	public URI getParentID(URI uri) {
 		String queryHead = "http://search.iugonet.org/iugonet/open-search/request?query=ResourceID:";
 		String queryTail = "&Granule=granule";
-		
-//		http://localhost/iugonet/browse?type=GranuleParentID&value=spase%3A%2F%2FIUGONET%2FNumericalData%2FWDC_Kyoto%2FWDC%2FNCK%2FMagnetometer%2FPT1H&m=1		
+
+		// http://localhost/iugonet/browse?type=GranuleParentID&value=spase%3A%2F%2FIUGONET%2FNumericalData%2FWDC_Kyoto%2FWDC%2FNCK%2FMagnetometer%2FPT1H&m=1
 		URI uriResult = null;
 		return uriResult;
 	}
@@ -159,26 +161,26 @@ abstract public class Aplot implements Serializable{
 	public void file_http_copy(String strUrl) {
 		this.download(strUrl);
 	}
-	
+
 	@Deprecated
 	public void file_http_copy(URL url) {
 		this.download(url);
 	}
-	
+
 	@Deprecated
 	public void file_http_copy(URI uri) {
 		this.download(uri);
 	}
-	
-	public void download(String strUrl){
+
+	public void download(String strUrl) {
 		try {
 			URL url = new URL(strUrl);
 			this.download(url);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}		
+		}
 	}
-	
+
 	public void download(URL url) {
 		try {
 			String[] strArray = url.getPath().split("/");
@@ -190,7 +192,7 @@ abstract public class Aplot implements Serializable{
 			File fileDir = new File(strDir);
 
 			if (fileDir.exists()) {
-//				System.out.println(fileDir + "Directory exists.");
+				// System.out.println(fileDir + "Directory exists.");
 			} else {
 				if (fileDir.mkdirs()) {
 					System.out.println(fileDir.getPath()
@@ -217,11 +219,11 @@ abstract public class Aplot implements Serializable{
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void download(URI uri) {
 		this.download(this.resolve(uri));
 	}
-	
+
 	public void read(String strUrl) {
 		try {
 			URL url = new URL(strUrl);
@@ -230,22 +232,22 @@ abstract public class Aplot implements Serializable{
 			e.printStackTrace();
 		}
 	}
-	
+
 	abstract void read(URL url);
 
 	public void read(URI uri) {
 		this.read(this.resolve(uri));
 	}
-	
+
 	public int getParadigm() {
 		return paradigm;
 	}
 
 	public void setParadigm(int paradigm) {
-		if( paradigm == 1 || paradigm == 2 || paradigm == 3 ){
-			this.paradigm = paradigm;	
-		}else{
-		//	
+		if (paradigm == 1 || paradigm == 2 || paradigm == 3) {
+			this.paradigm = paradigm;
+		} else {
+			//
 		}
 	}
 }

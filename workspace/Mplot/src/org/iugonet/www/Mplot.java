@@ -5,7 +5,7 @@ import java.net.URL;
 
 import org.geotools.swing.JMapPane;
 
-abstract public class Mplot extends Aplot implements Serializable {
+abstract public class Mplot extends Aplot {
 
 	Mplot(){
 		

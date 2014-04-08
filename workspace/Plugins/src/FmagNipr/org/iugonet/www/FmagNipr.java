@@ -1,7 +1,6 @@
 package org.iugonet.www;
 
 import java.util.ArrayList;
-import java.io.Serializable;
 import java.lang.Double;
 import java.net.URL;
 
@@ -14,7 +13,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.Second;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class FmagNipr extends Tplot implements Serializable {
+public class FmagNipr extends Tplot {
 
 	public FmagNipr() {
 		super(3);

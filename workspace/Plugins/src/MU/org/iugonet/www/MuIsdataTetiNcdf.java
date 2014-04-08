@@ -1,6 +1,5 @@
 package org.iugonet.www;
 
-import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +13,7 @@ import ucar.ma2.Array;
 import ucar.nc2.NetcdfFile;
 import ucar.nc2.Variable;
 
-public class MuIsdataTetiNcdf extends Tplot implements Serializable {
+public class MuIsdataTetiNcdf extends Tplot {
 
 	public MuIsdataTetiNcdf() {
 		// 7 parameter, 12 height channel;

@@ -1,6 +1,5 @@
 package org.iugonet.www;
 
-import java.io.Serializable;
 import java.lang.Double;
 import java.net.URL;
 
@@ -13,7 +12,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.Millisecond;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class ImagNipr extends Tplot implements Serializable {
+public class ImagNipr extends Tplot {
 
 	public ImagNipr() {
 		super(4);

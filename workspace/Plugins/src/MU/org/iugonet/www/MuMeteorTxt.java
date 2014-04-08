@@ -2,7 +2,6 @@ package org.iugonet.www;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.Serializable;
 import java.net.URL;
 import java.util.Calendar;
 
@@ -11,7 +10,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.Second;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class MuMeteorTxt extends Tplot implements Serializable {
+public class MuMeteorTxt extends Tplot {
 
 	private BufferedReader bufferedReader;
 

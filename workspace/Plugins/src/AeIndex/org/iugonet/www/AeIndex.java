@@ -2,7 +2,6 @@ package org.iugonet.www;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.Serializable;
 import java.net.URL;
 
 import org.iugonet.www.Tplot;
@@ -12,7 +11,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.Minute;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class AeIndex extends Tplot implements Serializable {
+public class AeIndex extends Tplot {
 
 	private BufferedReader bufferedReader;
 	private String strUrl = "http://wdc-data.iugonet.org/data/hour/index/ae/1957/ae.5707.ngdc5";

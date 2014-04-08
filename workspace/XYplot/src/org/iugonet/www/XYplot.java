@@ -1,6 +1,5 @@
 package org.iugonet.www;
 
-import java.io.Serializable;
 import java.net.URI;
 import java.net.URL;
 
@@ -10,7 +9,7 @@ import org.jfree.data.xy.XYDataItem;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
-abstract public class XYplot extends Aplot implements Serializable{
+abstract public class XYplot extends Aplot {
 
 	private XYSeries[] xySeries;
 

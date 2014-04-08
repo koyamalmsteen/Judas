@@ -1,7 +1,6 @@
 package org.iugonet.www;
 
 import java.util.ArrayList;
-import java.io.Serializable;
 import java.lang.Double;
 import java.net.URI;
 import java.net.URL;
@@ -15,7 +14,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.Second;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class Mm210 extends Tplot implements Serializable {
+public class Mm210 extends Tplot {
 
 	public Mm210() {
 		super(1);

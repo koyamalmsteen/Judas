@@ -1,6 +1,5 @@
 package org.iugonet.www;
 
-import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -12,7 +11,7 @@ import org.jfree.data.time.TimeSeriesCollection;
 import ucar.ma2.Array;
 import ucar.nc2.NetcdfFile;
 
-public class MuIsdataPowerNcdf extends Tplot implements Serializable {
+public class MuIsdataPowerNcdf extends Tplot {
 
 	public MuIsdataPowerNcdf() {
 		super(256 * 4);

@@ -1,6 +1,5 @@
 package org.iugonet.www;
 
-import java.io.Serializable;
 import java.lang.Double;
 import java.net.URI;
 import java.net.URL;
@@ -13,7 +12,7 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class WindMfih0 extends Tplot implements Serializable {
+public class WindMfih0 extends Tplot {
 
 	public WindMfih0() {
 //		super(43);

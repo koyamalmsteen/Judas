@@ -11,7 +11,6 @@ package org.iugonet.www;
 
 import java.awt.Color;
 import java.io.File;
-import java.io.Serializable;
 
 import org.geotools.data.FeatureSource;
 import org.geotools.data.FileDataStore;
@@ -45,7 +44,7 @@ import com.vividsolutions.jts.geom.MultiLineString;
 import com.vividsolutions.jts.geom.MultiPolygon;
 import com.vividsolutions.jts.geom.Polygon;
 
-public class StyleLab implements Serializable {
+public class StyleLab {
 
     static StyleFactory styleFactory = CommonFactoryFinder.getStyleFactory();
     static FilterFactory filterFactory = CommonFactoryFinder.getFilterFactory();
