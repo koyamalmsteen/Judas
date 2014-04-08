@@ -1,9 +1,10 @@
 package org.iugonet.www;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 import java.lang.Double;
-
 import java.net.URL;
+
 import gsfc.nssdc.cdf.CDF;
 import gsfc.nssdc.cdf.util.Epoch;
 import gsfc.nssdc.cdf.Variable;
@@ -13,7 +14,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.Second;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class FmagNipr extends Tplot {
+public class FmagNipr extends Tplot implements Serializable {
 
 	public FmagNipr() {
 		super(3);

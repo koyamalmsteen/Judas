@@ -1,15 +1,15 @@
 package org.iugonet.www;
 
+import java.io.Serializable;
 import java.net.URI;
 import java.net.URL;
 
 import org.iugonet.www.Aplot;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
-
 import org.jfree.data.time.*;
 
-abstract public class Tplot extends Aplot {
+abstract public class Tplot extends Aplot implements Serializable {
 
 	private TimeSeries[] timeSeries;
 
@@ -68,25 +68,25 @@ abstract public class Tplot extends Aplot {
 	public TimeSeries[] getTimeSeries() {
 		return timeSeries;
 	}
-	
+
 	abstract public ChartPanel getChartPanel();
 
 	abstract public JFreeChart getChart();
 
 	public TimeSeriesCollection load(String strUrl) {
 		URL url = null;
-		
+
 		try {
 			url = new URL(strUrl);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return this.load(url);
 	}
-	
+
 	abstract public TimeSeriesCollection load(URL url);
-	
+
 	public TimeSeriesCollection load(URI uri) {
 		return this.load(this.resolve(uri));
 	}

@@ -1,6 +1,8 @@
 package org.iugonet.www;
 
-public class SuperDARN {
+import java.io.Serializable;
+
+public class SuperDARN implements Serializable {
 
 	public SuperDARN(){
 		

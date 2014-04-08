@@ -1,9 +1,10 @@
 package org.iugonet.www;
 
 import java.io.BufferedReader;
-
 import java.io.FileReader;
+import java.io.Serializable;
 import java.net.URL;
+
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -11,7 +12,7 @@ import org.jfree.data.time.Second;
 import org.jfree.data.time.TimeSeries;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class DstIndex extends Tplot {
+public class DstIndex extends Tplot implements Serializable {
 
 	private BufferedReader bufferedReader;
 	private String strUrl = "http://wdc-data.iugonet.org/data/hour/index/dst/1984/dst8410";

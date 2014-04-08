@@ -2,6 +2,7 @@ package org.iugonet.www;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.net.URL;
 
 import org.iugonet.www.Tplot;
@@ -10,7 +11,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.Minute;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class Wdc extends Tplot {
+public class Wdc extends Tplot implements Serializable {
 
 	private BufferedReader bufferedReader;
 

@@ -1,7 +1,7 @@
 package org.iugonet.www;
 
 import java.util.ArrayList;
-
+import java.io.Serializable;
 import java.lang.Double;
 import java.net.URL;
 
@@ -14,7 +14,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.Second;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class HfTohokuu extends Tplot {
+public class HfTohokuu extends Tplot implements Serializable {
 
 	public HfTohokuu() {
 		super(1);

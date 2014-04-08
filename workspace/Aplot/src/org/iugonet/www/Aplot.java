@@ -4,13 +4,14 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
 
-abstract public class Aplot {
+abstract public class Aplot implements Serializable{
 
 	private final String DEFAULT_ROOT_DATA_DIR = "/tmp/data";
 	private final String DEFAULT_THEMIS_DATA_DIR = "/tmp/themis";

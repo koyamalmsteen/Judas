@@ -1,5 +1,6 @@
 package org.iugonet.www;
 
+import java.io.Serializable;
 import java.lang.Double;
 import java.net.URL;
 
@@ -12,7 +13,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.Second;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class Lfrto extends Tplot {
+public class Lfrto extends Tplot implements Serializable {
 
 	public Lfrto() {
 		super(2);

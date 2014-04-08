@@ -1,5 +1,6 @@
 package org.iugonet.www;
 
+import java.io.Serializable;
 import java.net.URL;
 import java.util.List;
 import java.util.Calendar;
@@ -13,7 +14,7 @@ import ucar.ma2.Array;
 import ucar.nc2.NetcdfFile;
 import ucar.nc2.Variable;
 
-public class MuMeteorNcdf extends Tplot {
+public class MuMeteorNcdf extends Tplot implements Serializable {
 
 	public MuMeteorNcdf(int num) {
 		super(num);

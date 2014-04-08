@@ -1,11 +1,12 @@
 package org.iugonet.www;
 
+import java.io.Serializable;
 import java.net.URI;
 import java.net.URL;
 
 import javax.swing.JPanel;
 
-abstract public class Iplot extends Aplot {
+abstract public class Iplot extends Aplot implements Serializable{
 
 	Iplot(){
 		/*

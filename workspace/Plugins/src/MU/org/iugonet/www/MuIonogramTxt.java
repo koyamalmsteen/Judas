@@ -2,6 +2,7 @@ package org.iugonet.www;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.net.URI;
 import java.net.URL;
 
@@ -9,7 +10,7 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class MuIonogramTxt extends Tplot {
+public class MuIonogramTxt extends Tplot implements Serializable {
 
 	private BufferedReader bufferedReader;
 

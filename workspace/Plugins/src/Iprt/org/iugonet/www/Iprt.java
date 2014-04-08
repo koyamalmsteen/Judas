@@ -4,13 +4,14 @@ package org.iugonet.www;
 //import nom.tam.fits.Fits;
 //import nom.tam.fits.Header;
 
+import java.io.Serializable;
 import java.net.URL;
 
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.time.TimeSeriesCollection;
 
-public class Iprt extends Tplot {
+public class Iprt extends Tplot implements Serializable {
 
 	public Iprt() {
 		super(820);

@@ -1,5 +1,6 @@
 package org.iugonet.www;
 
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ import ucar.ma2.Array;
 import ucar.nc2.NetcdfFile;
 import ucar.nc2.Variable;
 
-public class MuIsdataDriftNcdf extends Tplot {
+public class MuIsdataDriftNcdf extends Tplot implements Serializable {
 
 	public MuIsdataDriftNcdf() {
 		super(9);

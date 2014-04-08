@@ -2,6 +2,7 @@ package org.iugonet.www;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.URL;
 
 import org.geotools.data.FeatureSource;
@@ -18,7 +19,7 @@ import org.geotools.swing.JMapPane;
 import org.geotools.swing.data.JFileDataStoreChooser;
 
 @SuppressWarnings("deprecation")
-public class Cira86Ascii extends Mplot {
+public class Cira86Ascii extends Mplot implements Serializable {
 	
 	Cira86Ascii(){
 		

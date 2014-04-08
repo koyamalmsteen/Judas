@@ -2,7 +2,9 @@ package org.iugonet.www;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.Serializable;
 import java.net.URL;
+
 import javax.media.jai.JAI;
 import javax.media.jai.PlanarImage;
 import javax.swing.JPanel;
@@ -10,7 +12,7 @@ import javax.swing.JScrollPane;
 
 import com.sun.media.jai.widget.DisplayJAI;
 
-public class GeneralImage extends Iplot{
+public class GeneralImage extends Iplot implements Serializable {
 
 	private BufferedReader bufferedReader;
 	private String strUrl = "http://wdc.kugi.kyoto-u.ac.jp/film/image/rapid/aso/1953/r530823.tif";
