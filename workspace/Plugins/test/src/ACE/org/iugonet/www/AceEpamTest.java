@@ -66,16 +66,11 @@ public class AceEpamTest {
 		
 		try{
 			XMLDecoder xmlDecoder = new XMLDecoder(new BufferedInputStream(new FileInputStream("goods.xml")));
-			goodArray = (Goods[])xmlDecoder.readObject();
+			sample = (Sample)xmlDecoder.readObject();
 			xmlDecoder.close();
 		}catch(FileNotFoundException ex){
 			System.err.println(ex);
 			return;
 		}
-		
-		for(int i=0;i<goodsArray.length;i++){
-			System.out.println("name:");
-		}
-		
 	}
 }

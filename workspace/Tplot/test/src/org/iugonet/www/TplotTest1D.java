@@ -319,10 +319,5 @@ public class TplotTest1D {
 			System.err.println(ex);
 			return;
 		}
-		
-		for(int i=0;i<sample.length;i++){
-			System.out.println("name:");
-		}
-		
 	}
 }

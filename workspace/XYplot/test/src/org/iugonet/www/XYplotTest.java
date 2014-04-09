@@ -85,11 +85,6 @@ public class XYplotTest {
 		}catch(FileNotFoundException ex){
 			System.err.println(ex);
 			return;
-		}
-		
-		for(int i=0;i<sample.length;i++){
-			System.out.println("name:");
-		}
-		
+		}	
 	}
 }

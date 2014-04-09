@@ -66,11 +66,6 @@ public class ImagNiprTest {
 		}catch(FileNotFoundException ex){
 			System.err.println(ex);
 			return;
-		}
-		
-		for(int i=0;i<goodsArray.length;i++){
-			System.out.println("name:");
-		}
-		
+		}	
 	}
 }
