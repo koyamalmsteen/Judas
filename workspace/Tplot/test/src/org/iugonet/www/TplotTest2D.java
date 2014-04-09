@@ -297,8 +297,8 @@ public class TplotTest2D {
 		
 		try{
 			XMLEncoder xmlEncoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("goods.xml")));
-			encoder.writeObject(goodsArray);
-			encoder.close();
+			xmlEncoder.writeObject(sample);
+			xmlEncoder.close();
 		} catch(FileNotFoundException ex){
 			System.err.println(ex);
 		}
@@ -311,15 +311,15 @@ public class TplotTest2D {
 		sample.read(uri);
 		
 		try{
-			XMLDecoder xmlDecoder = new XMLDecoder(new BufferedInputStream(new FileInputStread("goods.xml")));
-			goodArray = (Goods[])decoder.readObject();
-			decoder.close();
+			XMLDecoder xmlDecoder = new XMLDecoder(new BufferedInputStream(new FileInputStream("goods.xml")));
+			sample = (Sample) xmlDecoder.readObject();
+			xmlDecoder.close();
 		}catch(FileNotFoundException ex){
 			System.err.println(ex);
 			return;
 		}
 		
-		for(int i=0;i<goodsArray.length;i++){
+		for(int i=0;i<sample.length;i++){
 			System.out.println("name:");
 		}
 		
