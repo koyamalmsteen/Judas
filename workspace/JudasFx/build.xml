@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="Judas" default="jar" basedir=".">
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="/usr/share/java/ant/ant-contrib.jar" />
+		</classpath>
+	</taskdef>
+	
+	<property environment="env"/>
+	<property file="../../build.properties"/>
+		
+	<property name="src.dir" location="src" />
+	<property name="icons.dir" location="." />
+	<property name="jar.name" value="Judas.jar" />
+	<property name="jar.path" location="${lib.dir}/${jar.name}" />
+	
+	<property name="test.src.dir" location="test/src" />
+	<property name="test.bin.dir" location="test/bin" />
+	<property name="test.class.name" value="org.iugonet.www.sample.JudasTest" />
+
+	<path id="classpath">
+		<pathelement location="${src.dir}" />
+		<pathelement location="${lib.dir}/Tplot.jar" />
+		<pathelement location="${ext.dir}/${jfreechart.jar}" />
+		<pathelement location="${ext.dir}/${jcommon.jar}" />
+		<pathelement location="${ext.dir}/${jyconsole.jar}" />
+		<pathelement location="${ext.dir}/${jdom.jar}" />
+		<pathelement location="${ext.dir}/${java_getopt.jar}" />
+		<pathelement location="${ext.dir}/${gt_api.jar}" />		
+		<pathelement location="${ext.dir}/${gt_main.jar}" />	
+		<pathelement location="${ext.dir}/${gt_swing.jar}" />
+		<pathelement location="${ext.dir}/${swingx.jar}" />
+		<pathelement location="../../plugins/DstIndex.jar" />
+		<pathelement location="../../plugins/AeIndex.jar" />
+	</path>
+	
+	<path id="test.classpath">
+		<pathelement path="./test/bin/org/iugonet/www" />
+		<pathelement location="${test.bin}" />
+		<pathelement location="${ext.dir}.${junit.jar}" />
+		<pathelement location="${lib.dir}/Tplot.jar" />
+		<pathelement location="${ext.dir}/${jfreechart.jar}" />
+		<pathelement location="${ext.dir}/${jcommon.jar}" />
+		<pathelement location="${ext.dir}/${jyconsole.jar}" />
+		<pathelement location="${ext.dir}/${jdom.jar}" />
+		<pathelement location="${ext.dir}/${java_getopt.jar}" />
+		<pathelement location="${ext.dir}/${gt_api.jar}" />		
+		<pathelement location="${ext.dir}/${gt_main.jar}" />	
+		<pathelement location="${ext.dir}/${gt_swing.jar}" />
+		<pathelement location="${ext.dir}/${swingx.jar}" />
+		<pathelement location="../../plugins/DstIndex.jar" />
+		<pathelement location="../../plugins/AeIndex.jar" />
+	</path>
+
+	<!-- -->
+		
+	<target name="jar" depends="compile" description="Jar">
+		<jar jarfile="${jar.path}">
+			<fileset dir="${src.dir}" includes="**" />
+			<fileset dir="${bin.dir}" includes="**" />
+			<fileset dir="${icons.dir}" />
+			<manifest>
+				<attribute name="Main-Class" value="org.iugonet.www.Judas" />	
+			</manifest>	
+		</jar>
+		<antcall target="sign" />
+	</target>
+	
+	<target name="compile" description="Compile">
+		<mkdir dir="${bin.dir}" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" includeantruntime="false" classpathref="classpath" />
+	</target>
+	
+	<target name="compile.test" depends="compile" description="Compile test">
+		<mkdir dir="${test.bin.dir}" />
+		<javac srcdir="${test.src.dir}" destdir="${test.bin.dir}" includeantruntime="false" classpathref="test.classpath" />
+	</target>
+	
+	<target name="clean" description="Clean">
+        <if>
+            <available file="${jar.path}" type="file" />
+            <then>
+            	<echo message="${jar.path}" />
+                <delete file="${jar.path}" />
+            </then>
+        </if>
+        <if>
+            <available file="${bin.dir}" type="dir" />
+            <then>
+                <delete dir="${bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${test.bin.dir}" type="dir" />
+            <then>
+                <delete dir="${test.bin.dir}" />
+            </then>
+        </if>
+        <if>
+            <available file="${javadoc.dir}" type="dir" />
+            <then>
+                <delete dir="${javadoc.dir}" />
+            </then>
+        </if>
+	</target>
+	
+	<target name="javadoc" description="Javadoc">
+		<javadoc destdir="${javadoc.dir}">
+			<fileset dir="${src.dir}" />
+		</javadoc>
+	</target>
+	
+	<target name="test" depends="compile" description="Test">
+		<junit fork="yes">
+			<formatter type="plain" usefile="false" />
+			<classpath refid="test.classpath" />
+		</junit>
+	</target>
+	
+	<target name="sign" description="sign">
+		<exec executable="jarsigner">
+			<arg line="-keystore ../../key/keystore -storepass password -keypass password ${jar.path} iugonet" />
+		</exec>
+	</target>
+
+</project>
