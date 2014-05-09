@@ -248,7 +248,7 @@
     <!-- -->
     <get src="${src_groovy}" dest="${dst_groovy}" usetimestamp="yes" />
     <unzip src="${dst_groovy}" dest="${tmp}" />
-    <copy file="${tmp}/groovy.jar" todir="${judas.HOME}/lib/external" />
+    <copy file="${tmp}/${groovy_prefix}/${groovy_prefix}.jar" todir="${judas.HOME}/lib/external" />
     <!-- -->
     <get src="${src_scale}" dest="${dst_scale}" usetimestamp="yes" />
     <unzip src="${dst_scale}" dest="${tmp}" />
