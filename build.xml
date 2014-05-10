@@ -252,7 +252,7 @@
     <!-- -->
     <get src="${src_scala}" dest="${dst_scala}" usetimestamp="yes" />
     <untar src="${dst_scala}" dest="${tmp}" compression="gzip" />
-    <copy file="${tmp}/scala.jar" todir="${judas.HOME}/lib/external" />
+    <copy file="${tmp}/${scale_prefix}/lib/scala-library.jar" todir="${judas.HOME}/lib/external" />
     <!-- -->
     <get src="${src_jruby}" dest="${dst_jruby}" usetimestamp="yes" />
     <unzip src="${dst_jruby}" dest="${tmp}" />
