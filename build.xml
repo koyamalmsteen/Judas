@@ -250,9 +250,9 @@
     <unzip src="${dst_groovy}" dest="${tmp}" />
     <copy file="${tmp}/groovy-${groovy_version}/lib/groovy-${groovy_version}.jar" todir="${judas.HOME}/lib/external" />
     <!-- -->
-    <get src="${src_scale}" dest="${dst_scale}" usetimestamp="yes" />
-    <unzip src="${dst_scale}" dest="${tmp}" />
-    <copy file="${tmp}/scale.jar" todir="${judas.HOME}/lib/external" />
+    <get src="${src_scala}" dest="${dst_scala}" usetimestamp="yes" />
+    <unzip src="${dst_scala}" dest="${tmp}" />
+    <copy file="${tmp}/scala.jar" todir="${judas.HOME}/lib/external" />
     <!-- -->
     <get src="${src_jruby}" dest="${dst_jruby}" usetimestamp="yes" />
     <unzip src="${dst_jruby}" dest="${tmp}" />
